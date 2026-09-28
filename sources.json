@@ -1,0 +1,47 @@
+[
+  {
+    "id": "gita",
+    "title": "Bhagavad Gita",
+    "short": "Gita",
+    "lang": "sanskrit",
+    "enabled": true,
+    "files": "BhagavadGita/chapter_*.html",
+    "iast_style": "ch-for-c",
+    "group_by": "file",
+    "group_label": "Chapter {n}: {title}"
+  },
+  {
+    "id": "vs",
+    "title": "Vishnu Sahasranamam",
+    "short": "VS",
+    "lang": "sanskrit",
+    "enabled": true,
+    "files": "Vishnu/vishnu_sahasranamam.html",
+    "group_by": "heading",
+    "groups": [
+      {"id": "purva", "label": "Pūrva-bhāga (preliminary, nyāsa, dhyānam)", "headings": ["purva", "purvanyasa", "dhyanam"]},
+      {"id": "stotram", "label": "Stotram (the thousand names)", "headings": ["stotram"]},
+      {"id": "uttara", "label": "Uttara-bhāga (phala-śruti, nyāsa)", "headings": ["phala", "uttaranyasa"]}
+    ]
+  },
+  {"id": "bhaja_govindam", "title": "Bhaja Govindam", "short": "Bhaja Govindam", "lang": "sanskrit", "enabled": true, "files": "Shankaracharya/bhaja_govindam.html", "iast_style": "itrans",
+   "group_by": "heading",
+   "groups": [
+     {"id": "refrain", "label": "Refrain (Verse 1)", "headings": ["refrain"]},
+     {"id": "dvadasha", "label": "Dvādaśa-mañjarikā (Verses 2–13)", "headings": ["dvadasha"]},
+     {"id": "chaturdasha", "label": "Caturdaśa-mañjarikā (Verses 14–27)", "headings": ["chaturdasha"]},
+     {"id": "final", "label": "Concluding verses (28–31)", "headings": ["final"]}
+   ]},
+  {"id": "suprabhatam", "title": "Sri Venkateswara Suprabhatam", "short": "Suprabhatam", "lang": "sanskrit", "enabled": false, "files": "Venkateswara/sri_venkateswara_suprabhatam.html", "group_by": "none"},
+  {"id": "kanakadhara", "title": "Kanakadhara Stotram", "short": "Kanakadhara", "lang": "sanskrit", "enabled": false, "files": "Lakshmi/kanakadhara_stotram.html", "group_by": "none"},
+  {"id": "mahishasura_mardini", "title": "Mahishasura Mardini Stotram", "short": "Mahishasura Mardini", "lang": "sanskrit", "enabled": false, "files": "Durga/mahishasura_mardini_stotram.html", "group_by": "none"},
+  {"id": "bhavani_ashtakam", "title": "Bhavani Ashtakam", "short": "Bhavani Ashtakam", "lang": "sanskrit", "enabled": false, "files": "Durga/bhavani_ashtakam.html", "group_by": "none"},
+  {"id": "ganesha_pancharatnam", "title": "Ganesha Pancharatnam", "short": "Ganesha Pancharatnam", "lang": "sanskrit", "enabled": false, "files": "Ganesha/ganesha_pancharatnam.html", "group_by": "none"},
+  {"id": "guru_paduka", "title": "Guru Paduka Stotram", "short": "Guru Paduka", "lang": "sanskrit", "enabled": false, "files": "Shankaracharya/guru_paduka_stotram.html", "group_by": "none"},
+  {"id": "guruvashtakam", "title": "Guruvashtakam", "short": "Guruvashtakam", "lang": "sanskrit", "enabled": false, "files": "Shankaracharya/guruvashtakam.html", "group_by": "none"},
+  {"id": "dakshinamurthy", "title": "Dakshinamurthy Stotram", "short": "Dakshinamurthy", "lang": "sanskrit", "enabled": false, "files": "Shiva/dakshinamurthy_stotram.html", "group_by": "none"},
+  {"id": "lingashtakam", "title": "Lingashtakam", "short": "Lingashtakam", "lang": "sanskrit", "enabled": false, "files": "Shiva/lingastakam.html", "group_by": "none"},
+  {"id": "hanuman_chalisa", "title": "Hanuman Chalisa", "short": "Hanuman Chalisa", "lang": "awadhi", "enabled": false, "files": "Hanuman/hanuman_chalisa.html", "group_by": "none"},
+  {"id": "hanuman_bahuk", "title": "Hanuman Bahuk", "short": "Hanuman Bahuk", "lang": "awadhi", "enabled": false, "files": "Hanuman/hanuman_bahuk.html", "group_by": "none"},
+  {"id": "sankata_mochana", "title": "Sankata Mochana Hanuman Ashtakam", "short": "Sankata Mochana", "lang": "awadhi", "enabled": false, "files": "Hanuman/sankata_mochana_hanuman_ashtakam.html", "group_by": "none"}
+]
