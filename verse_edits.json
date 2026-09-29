@@ -98,5 +98,110 @@
     "deva": "अथ चित्तं समाधातुं न शक्नोषि मयि स्थिरम् ।\nअभ्यासयोगेन ततो मामिच्छाप्तुं धनञ्जय ॥ ९॥",
     "iast": "atha cittaṃ samādhātuṃ na śaknoṣi mayi sthiram |\nabhyāsa-yogena tato mām icchāptuṃ dhanañjaya || 9 ||",
     "te": "అథ చిత్తం సమాధాతుం - న శక్నోషి మయి స్థిరమ్ ।\nఅభ్యాస యోగేన తతః - మామిచ్ఛాప్తుం ధనంజయ ॥ 9 ॥"
+  },
+  "vs:purva:Dhyānam 1": {
+    "deva": "क्षीरोदन्वत्प्रदेशे शुचिमणिविलसत्सैकते मौक्तिकानां मालाकॢप्तासनस्थः स्फटिकमणिनिभैर्मौक्तिकैर्मण्डिताङ्गः ।\nशुभ्रैरभ्रैरदभ्रैरुपरिविरचितैर्मुक्तपीयूषवर्षैरानन्दी नः पुनीयादरिनलिनगदाशङ्खपाणिर्मुकुन्दः ॥ १॥",
+    "iast": "kṣīrodanvat-pradeśe śuci-maṇi-vilasat-saikate mauktikānāṃ mālā-kḷptāsana-sthaḥ sphaṭika-maṇi-nibhair mauktikair maṇḍitāṅgaḥ |\nśubhrair abhrair adabhrair upari-viracitair mukta-pīyūṣa-varṣair ānandī naḥ punīyād ari-nalina-gadā-śaṅkha-pāṇir mukundaḥ || 1 ||",
+    "te": "క్షీరోదన్వత్ప్రదేశే శుచి-మణి-విలసత్-సైకతే మౌక్తికానాం మాలా-కౢప్తాసన-స్థః స్ఫటిక-మణి-నిభైర్-మౌక్తికైర్-మండితాంగః ।\nశుభ్రైరభ్రైరదభ్రైరుపరి-విరచితైర్-ముక్త-పీయూష-వర్షైరానందీ నః పునీయాదరి-నలిన-గదా-శంఖ-పాణిర్-ముకుందః ॥ 1 ॥"
+  },
+  "vs:purva:Pūrva Nyāsaḥ": {
+    "deva": "ॐ अस्य श्रीविष्णोर्दिव्यसहस्रनामस्तोत्रमहामन्त्रस्य ।\nश्रीवेदव्यासो भगवान् ऋषिः ।\nअनुष्टुप् छन्दः ।\nश्रीमहाविष्णुः परमात्मा श्रीमन्नारायणो देवता ।\nअमृतांशूद्भवो भानुरिति बीजम् ।\nदेवकीनन्दनः स्रष्टेति शक्तिः ।\nउद्भवः क्षोभणो देव इति परमो मन्त्रः ।\nशङ्खभृन्नन्दकी चक्रीति कीलकम् ।\nशार्ङ्गधन्वा गदाधर इत्यस्त्रम् ।\nरथाङ्गपाणिरक्षोभ्य इति नेत्रम् ।\nत्रिसामा सामगः सामेति कवचम् ।\nआनन्दं परब्रह्मेति योनिः ।\nऋतुः सुदर्शनः काल इति दिग्बन्धः ।\nश्रीविश्वरूप इति ध्यानम् ।\nश्रीमहाविष्णुप्रीत्यर्थे सहस्रनामस्तोत्रपाठे विनियोगः ॥",
+    "iast": "oṃ asya śrī-viṣṇor-divya-sahasra-nāma-stotra-mahā-mantrasya |\nśrī-veda-vyāso bhagavān ṛṣiḥ |\nanuṣṭup chandaḥ |\nśrī-mahā-viṣṇuḥ paramātmā śrīman-nārāyaṇo devatā |\namṛtāṃśūdbhavo bhānur iti bījam |\ndevakī-nandanaḥ sraṣṭeti śaktiḥ |\nudbhavaḥ kṣobhaṇo deva iti paramo mantraḥ |\nśaṅkha-bhṛn-nandakī cakrīti kīlakam |\nśārṅga-dhanvā gadādhara ity astram |\nrathāṅga-pāṇir akṣobhya iti netram |\ntrisāmā sāmagaḥ sāmeti kavacam |\nānandaṃ para-brahmeti yoniḥ |\nṛtuḥ sudarśanaḥ kāla iti digbandhaḥ |\nśrī-viśva-rūpa iti dhyānam |\nśrī-mahā-viṣṇu-prīty-arthe sahasra-nāma-stotra-pāṭhe viniyogaḥ ||",
+    "te": "ఓం అస్య శ్రీ విష్ణోర్దివ్య సహస్రనామ స్తోత్ర మహామంత్రస్య ।\nశ్రీ వేదవ్యాసో భగవాన్ ఋషిః ।\nఅనుష్టుప్ ఛందః ।\nశ్రీమహావిష్ణుః పరమాత్మా శ్రీమన్నారాయణో దేవతా ।\nఅమృతాంశూద్భవో భానురితి బీజమ్ ।\nదేవకీనందనః స్రష్టేతి శక్తిః ।\nఉద్భవః, క్షోభణో దేవ ఇతి పరమోమంత్రః ।\nశంఖభృన్నందకీ చక్రీతి కీలకమ్ ।\nశార్ంగధన్వా గదాధర ఇత్యస్త్రమ్ ।\nరథాంగపాణి రక్షోభ్య ఇతి నేత్రమ్ ।\nత్రిసామాసామగః సామేతి కవచమ్ ।\nఆనందం పరబ్రహ్మేతి యోనిః ।\nఋతుస్సుదర్శనః కాల ఇతి దిగ్బంధః ।\nశ్రీవిశ్వరూప ఇతి ధ్యానమ్ ।\nశ్రీ మహావిష్ణు ప్రీత్యర్థే సహస్రనామ స్తోత్రపాఠే(జపే) వినియోగః ॥"
+  },
+  "vs:purva:Pūrva Pīṭhikā 10": {
+    "deva": "जगत्प्रभुं देवदेवमनन्तं पुरुषोत्तमम् ।\nस्तुवन्नामसहस्रेण पुरुषः सततोत्थितः ॥ १०॥",
+    "iast": "jagat-prabhuṃ deva-devam anantaṃ puruṣottamam |\nstuvan nāma-sahasreṇa puruṣaḥ satatotthitaḥ || 10 ||",
+    "te": "జగత్ప్రభుం దేవదేవ మనంతం పురుషోత్తమమ్ ।\nస్తువన్నామ సహస్రేణ పురుషః సతతోత్థితః ॥ 10 ॥"
+  },
+  "vs:purva:Pūrva Pīṭhikā 11": {
+    "deva": "तमेव चार्चयन्नित्यं भक्त्या पुरुषमव्ययम् ।\nध्यायन् स्तुवन् नमस्यंश्च यजमानस्तमेव च ॥ ११॥",
+    "iast": "tam eva cārcayan nityaṃ bhaktyā puruṣam avyayam |\ndhyāyan stuvan namasyaṃś ca yajamānas tam eva ca || 11 ||",
+    "te": "తమేవ చార్చయన్నిత్యం భక్త్యా పురుషమవ్యయమ్ ।\nధ్యాయన్ స్తువన్నమస్యంశ్చ యజమానస్తమేవ చ ॥ 11 ॥"
+  },
+  "vs:purva:Pūrva Pīṭhikā 12": {
+    "deva": "अनादिनिधनं विष्णुं सर्वलोकमहेश्वरम् ।\nलोकाध्यक्षं स्तुवन्नित्यं सर्वदुःखातिगो भवेत् ॥ १२॥",
+    "iast": "anādi-nidhanaṃ viṣṇuṃ sarva-loka-maheśvaram |\nlokādhyakṣaṃ stuvan nityaṃ sarva-duḥkhātigo bhavet || 12 ||",
+    "te": "అనాది నిధనం విష్ణుం సర్వలోక మహేశ్వరమ్ ।\nలోకాధ్యక్షం స్తువన్నిత్యం సర్వ దుఃఖాతిగో భవేత్ ॥ 12 ॥"
+  },
+  "vs:purva:Pūrva Pīṭhikā 13": {
+    "deva": "ब्रह्मण्यं सर्वधर्मज्ञं लोकानां कीर्तिवर्धनम् ।\nलोकनाथं महद्भूतं सर्वभूतभवोद्भवम् ॥ १३॥",
+    "iast": "brahmaṇyaṃ sarva-dharma-jñaṃ lokānāṃ kīrti-vardhanam |\nloka-nāthaṃ mahad-bhūtaṃ sarva-bhūta-bhavodbhavam || 13 ||",
+    "te": "బ్రహ్మణ్యం సర్వ ధర్మజ్ఞం లోకానాం కీర్తి వర్ధనమ్ ।\nలోకనాథం మహద్భూతం సర్వభూత భవోద్భవమ్ ॥ 13 ॥"
+  },
+  "vs:purva:Pūrva Pīṭhikā 14": {
+    "deva": "एष मे सर्वधर्माणां धर्मोऽधिकतमो मतः ।\nयद्भक्त्या पुण्डरीकाक्षं स्तवैरर्चेन्नरः सदा ॥ १४॥",
+    "iast": "eṣa me sarva-dharmāṇāṃ dharmo 'dhikatamo mataḥ |\nyad bhaktyā puṇḍarīkākṣaṃ stavair arcet naraḥ sadā || 14 ||",
+    "te": "ఏష మే సర్వధర్మాణాం ధర్మోఽధిక తమోమతః ।\nయద్భక్త్యా పుండరీకాక్షం స్తవైరర్చేన్నరః సదా ॥ 14 ॥"
+  },
+  "vs:purva:Pūrva Pīṭhikā 15": {
+    "deva": "परमं यो महत्तेजः परमं यो महत्तपः ।\nपरमं यो महद्ब्रह्म परमं यः परायणम् ॥ १५॥",
+    "iast": "paramaṃ yo mahat tejaḥ paramaṃ yo mahat tapaḥ |\nparamaṃ yo mahad brahma paramaṃ yaḥ parāyaṇam || 15 ||",
+    "te": "పరమం యో మహత్తేజః పరమం యో మహత్తపః ।\nపరమం యో మహద్బ్రహ్మ పరమం యః పరాయణమ్ ॥ 15 ॥"
+  },
+  "vs:purva:Pūrva Pīṭhikā 16": {
+    "deva": "पवित्राणां पवित्रं यो मङ्गलानां च मङ्गलम् ।\nदैवतं दैवतानां च भूतानां योऽव्ययः पिता ॥ १६॥",
+    "iast": "pavitrāṇāṃ pavitraṃ yo maṅgalānāṃ ca maṅgalam |\ndaivataṃ daivatānāṃ ca bhūtānāṃ yo 'vyayaḥ pitā || 16 ||",
+    "te": "పవిత్రాణాం పవిత్రం యో మంగళానాం చ మంగళమ్ ।\nదైవతం దైవతానాం చ భూతానాం యోఽవ్యయః పితా ॥ 16 ॥"
+  },
+  "vs:purva:Pūrva Pīṭhikā 17": {
+    "deva": "यतः सर्वाणि भूतानि भवन्त्यादियुगागमे ।\nयस्मिंश्च प्रलयं यान्ति पुनरेव युगक्षये ॥ १७॥",
+    "iast": "yataḥ sarvāṇi bhūtāni bhavanty ādi-yugāgame |\nyasmiṃś ca pralayaṃ yānti punar eva yuga-kṣaye || 17 ||",
+    "te": "యతః సర్వాణి భూతాని భవంత్యాది యుగాగమే ।\nయస్మింశ్చ ప్రలయం యాంతి పునరేవ యుగక్షయే ॥ 17 ॥"
+  },
+  "vs:purva:Pūrva Pīṭhikā 18": {
+    "deva": "तस्य लोकप्रधानस्य जगन्नाथस्य भूपते ।\nविष्णोर्नामसहस्रं मे शृणु पापभयापहम् ॥ १८॥",
+    "iast": "tasya loka-pradhānasya jagannāthasya bhūpate |\nviṣṇor nāma-sahasraṃ me śṛṇu pāpa-bhayāpaham || 18 ||",
+    "te": "తస్య లోక ప్రధానస్య జగన్నాథస్య భూపతే ।\nవిష్ణోర్నామ సహస్రం మే శృణు పాప భయాపహమ్ ॥ 18 ॥"
+  },
+  "vs:purva:Pūrva Pīṭhikā 20": {
+    "deva": "ऋषिर्नाम्नां सहस्रस्य वेदव्यासो महामुनिः ।\nछन्दोऽनुष्टुप् तथा देवो भगवान् देवकीसुतः ॥ २०॥",
+    "iast": "ṛṣir nāmnāṃ sahasrasya veda-vyāso mahā-muniḥ |\nchando 'nuṣṭup tathā devo bhagavān devakī-sutaḥ || 20 ||",
+    "te": "ఋషిర్నామ్నాం సహస్రస్య వేదవ్యాసో మహామునిః ।\nఛందోఽనుష్టుప్ తథా దేవో భగవాన్ దేవకీసుతః ॥ 20 ॥"
+  },
+  "vs:purva:Pūrva Pīṭhikā 21": {
+    "deva": "अमृतांशूद्भवो बीजं शक्तिर्देवकीनन्दनः ।\nत्रिसामा हृदयं तस्य शान्त्यर्थे विनियोज्यते ॥ २१॥",
+    "iast": "amṛtāṃśūdbhavo bījaṃ śaktir devakī-nandanaḥ |\ntrisāmā hṛdayaṃ tasya śānty-arthe viniyojyate || 21 ||",
+    "te": "అమృతాం శూద్భవో బీజం శక్తిర్దేవకీనందనః ।\nత్రిసామా హృదయం తస్య శాంత్యర్థే వినియోజ్యతే ॥ 21 ॥"
+  },
+  "vs:purva:Pūrva Pīṭhikā 22": {
+    "deva": "विष्णुं जिष्णुं महाविष्णुं प्रभविष्णुं महेश्वरम् ।\nअनेकरूपदैत्यान्तं नमामि पुरुषोत्तमम् ॥ २२॥",
+    "iast": "viṣṇuṃ jiṣṇuṃ mahā-viṣṇuṃ prabhaviṣṇuṃ maheśvaram |\naneka-rūpa-daityāntaṃ namāmi puruṣottamam || 22 ||",
+    "te": "విష్ణుం జిష్ణుం మహావిష్ణుం ప్రభవిష్ణుం మహేశ్వరమ్ ।\nఅనేకరూప దైత్యాంతం నమామి పురుషోత్తమమ్ ॥ 22 ॥"
+  },
+  "vs:purva:Pūrva Pīṭhikā 3": {
+    "deva": "व्यासं वसिष्ठनप्तारं शक्तेः पौत्रमकल्मषम् ।\nपराशरात्मजं वन्दे शुकतातं तपोनिधिम् ॥ ३॥",
+    "iast": "vyāsaṃ vasiṣṭha-naptāraṃ śakteḥ pautram akalmaṣam |\nparāśarātmajaṃ vande śuka-tātaṃ tapo-nidhim || 3 ||",
+    "te": "వ్యాసం వసిష్ఠ నప్తారం శక్తేః పౌత్రమకల్మషమ్ ।\nపరాశరాత్మజం వందే శుకతాతం తపోనిధిమ్ ॥ 3 ॥"
+  },
+  "vs:purva:Pūrva Pīṭhikā 4": {
+    "deva": "व्यासाय विष्णुरूपाय व्यासरूपाय विष्णवे ।\nनमो वै ब्रह्मनिधये वासिष्ठाय नमो नमः ॥ ४॥",
+    "iast": "vyāsāya viṣṇu-rūpāya vyāsa-rūpāya viṣṇave |\nnamo vai brahma-nidhaye vāsiṣṭhāya namo namaḥ || 4 ||",
+    "te": "వ్యాసాయ విష్ణు రూపాయ వ్యాసరూపాయ విష్ణవే ।\nనమో వై బ్రహ్మనిధయే వాసిష్ఠాయ నమో నమః ॥ 4 ॥"
+  },
+  "vs:purva:Pūrva Pīṭhikā 5": {
+    "deva": "अविकाराय शुद्धाय नित्याय परमात्मने ।\nसदैकरूपरूपाय विष्णवे सर्वजिष्णवे ॥ ५॥",
+    "iast": "avikārāya śuddhāya nityāya paramātmane |\nsadaika-rūpa-rūpāya viṣṇave sarva-jiṣṇave || 5 ||",
+    "te": "అవికారాయ శుద్ధాయ నిత్యాయ పరమాత్మనే ।\nసదైక రూప రూపాయ విష్ణవే సర్వజిష్ణవే ॥ 5 ॥"
+  },
+  "vs:purva:Pūrva Pīṭhikā 6": {
+    "deva": "यस्य स्मरणमात्रेण जन्मसंसारबन्धनात् ।\nविमुच्यते नमस्तस्मै विष्णवे प्रभविष्णवे ॥ ६॥",
+    "iast": "yasya smaraṇa-mātreṇa janma-saṃsāra-bandhanāt |\nvimucyate namas tasmai viṣṇave prabhaviṣṇave || 6 ||",
+    "te": "యస్య స్మరణమాత్రేణ జన్మసంసారబంధనాత్ ।\nవిముచ్యతే నమస్తస్మై విష్ణవే ప్రభవిష్ణవే ॥ 6 ॥"
+  },
+  "vs:purva:Pūrva Pīṭhikā 7": {
+    "deva": "श्रुत्वा धर्मानशेषेण पावनानि च सर्वशः ।\nयुधिष्ठिरः शान्तनवं पुनरेवाभ्यभाषत ॥ ७॥",
+    "iast": "śrutvā dharmān aśeṣeṇa pāvanāni ca sarvaśaḥ |\nyudhiṣṭhiraḥ śāntanavaṃ punar evābhyabhāṣata || 7 ||",
+    "te": "శ్రుత్వా ధర్మా నశేషేణ పావనాని చ సర్వశః ।\nయుధిష్ఠిరః శాంతనవం పునరేవాభ్య భాషత ॥ 7 ॥"
+  },
+  "vs:purva:Pūrva Pīṭhikā 8": {
+    "deva": "किमेकं दैवतं लोके किं वाप्येकं परायणम् ।\nस्तुवन्तः कं कमर्चन्तः प्राप्नुयुर्मानवाः शुभम् ॥ ८॥",
+    "iast": "kim ekaṃ daivataṃ loke kiṃ vāpy ekaṃ parāyaṇam |\nstuvantaḥ kaṃ kam arcantaḥ prāpnuyur mānavāḥ śubham || 8 ||",
+    "te": "కిమేకం దైవతం లోకే కిం వాప్యేకం పరాయణమ్ ।\nస్తువంతః కం కమర్చంతః ప్రాప్నుయుర్మానవాః శుభమ్ ॥ 8 ॥"
+  },
+  "vs:purva:Pūrva Pīṭhikā 9": {
+    "deva": "को धर्मः सर्वधर्माणां भवतः परमो मतः ।\nकिं जपन्मुच्यते जन्तुर्जन्मसंसारबन्धनात् ॥ ९॥",
+    "iast": "ko dharmaḥ sarva-dharmāṇāṃ bhavataḥ paramo mataḥ |\nkiṃ japan mucyate jantur janma-saṃsāra-bandhanāt || 9 ||",
+    "te": "కో ధర్మః సర్వధర్మాణాం భవతః పరమో మతః ।\nకిం జపన్ముచ్యతే జంతుర్జన్మసంసార బంధనాత్ ॥ 9 ॥"
   }
 }
