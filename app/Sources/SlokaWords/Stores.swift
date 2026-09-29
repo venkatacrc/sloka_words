@@ -48,6 +48,10 @@ final class DeckStore: ObservableObject {
         panel.allowedContentTypes = [.json]
         panel.allowsMultipleSelection = false
         guard panel.runModal() == .OK, let url = panel.url else { return }
+        importDeck(from: url)
+    }
+
+    func importDeck(from url: URL) {
         do {
             let data = try Data(contentsOf: url)
             _ = try JSONDecoder().decode(Deck.self, from: data)
@@ -158,6 +162,18 @@ final class ProgressStore: ObservableObject {
             review.insert(id)
             known.remove(id)
         }
+        save()
+    }
+
+    func markKnown(_ id: String) {
+        known.insert(id)
+        review.remove(id)
+        save()
+    }
+
+    func markReview(_ id: String) {
+        review.insert(id)
+        known.remove(id)
         save()
     }
 

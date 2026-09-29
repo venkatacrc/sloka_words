@@ -54,6 +54,19 @@ struct FilterView: View {
             }
         }
         .listStyle(.sidebar)
+        .safeAreaInset(edge: .top) {
+            HStack(spacing: 10) {
+                Text("ॐ")
+                    .font(.system(size: 34, weight: .semibold))
+                    .foregroundStyle(LinearGradient(
+                        colors: [Color(red: 1.0, green: 0.62, blue: 0.2), Color(red: 0.85, green: 0.33, blue: 0.08)],
+                        startPoint: .top, endPoint: .bottom))
+                Text("Sloka Words").font(.title3.weight(.semibold))
+                Spacer()
+            }
+            .padding(.horizontal, 16)
+            .padding(.vertical, 8)
+        }
         .safeAreaInset(edge: .bottom) {
             Text("\(cardCount) \(cardNoun) selected")
                 .font(.callout.weight(.medium))

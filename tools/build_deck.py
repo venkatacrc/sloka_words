@@ -300,11 +300,12 @@ def verse_lines(raw, kind):
 
 
 def verse_blocks(text):
-    """Yield (h2_id, verse_label, fields) for each verse; short speaker lines are skipped."""
+    """Yield (h2_id, verse_label, fields, block) for each verse, where block is the index of its
+    `<div class="scripts">` in the page; short speaker lines are skipped."""
     heads = [(m.start(), m.group(1) or strip_tags(m.group(2))) for m in H2_RE.finditer(text)]
     boxes = [(m.start(), verse_label(m.group(1))) for m in MAIN_BOX_RE.finditer(text)]
     starts = [m.start() for m in SCRIPTS_RE.finditer(text)] + [len(text)]
-    for pos, end in zip(starts, starts[1:]):
+    for block, (pos, end) in enumerate(zip(starts, starts[1:])):
         seg = text[pos:end]
         deva = first_div(seg, 'sanskrit')
         if not re.search('[।॥]', deva) and len(strip_tags(deva)) < 40:
@@ -318,7 +319,7 @@ def verse_blocks(text):
             'te_meaning': clean_meaning(first_div(seg, 'telugu-meaning')),
             'en_meaning': clean_meaning(first_div(seg, 'full-meaning')),
             'words': clean_meaning(first_div(seg, 'word-meaning')),
-        }
+        }, block
 
 
 def blocks(text):
@@ -389,7 +390,7 @@ def build(repo, sources):
                         w['refs'].append(ref)
             if not found and (not include or by != 'file'):
                 warnings.append(f"{os.path.basename(path)}: no Words: entries found")
-            for h2, vlabel, fields in verse_blocks(text):
+            for h2, vlabel, fields, block in verse_blocks(text):
                 gid, glabel = file_groups.get(h2) or file_groups.get('*') or (None, None)
                 if gid is None or (include and gid not in include):
                     continue
@@ -408,7 +409,8 @@ def build(repo, sources):
                     fields['iast'] = [itrans_to_iast(l) for l in fields['iast']]
                     fields['words'] = itrans_outside_parens(fields['words'])
                 verses.append({'id': vid, 'src': src['id'], 'group': gid, 'label': ref_label,
-                               **fields, 'edited': False})
+                               **fields, 'edited': False,
+                               'file': os.path.relpath(path, repo), 'block': block})
         deck_sources.append({'id': src['id'], 'title': src['title'], 'lang': src.get('lang', 'sanskrit'), 'groups': groups})
 
     raw_count = len(words)
