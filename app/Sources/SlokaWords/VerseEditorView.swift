@@ -28,7 +28,7 @@ struct VerseEditorView: View {
         VStack(alignment: .leading, spacing: 14) {
             Text("Edit \(original.label)")
                 .font(.title2.weight(.semibold))
-            Text("Rewrite the lines the way the verse is chanted, one line per row. The edit is saved in the app; use File → Export Verse Edits… to keep it when the deck is rebuilt.")
+            Text("Rewrite the lines the way the verse is chanted, one line per row. The edit is saved in the app; use File → Push Verse Edits to Repos… to write it into the bhakti pages and the deck.")
                 .font(.callout)
                 .foregroundStyle(.secondary)
                 .fixedSize(horizontal: false, vertical: true)
