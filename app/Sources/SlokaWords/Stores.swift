@@ -18,16 +18,18 @@ final class DeckStore: ObservableObject {
     init() { load() }
 
     /// Prefers an imported deck in Application Support, then the copy inside the .app,
-    /// then the SwiftPM resource bundle (used by `swift run`).
+    /// then the SwiftPM resource bundle (used by `swift run`). An imported deck older than
+    /// the built-in one is skipped, so a rebuilt app isn't hidden by a stale import.
     func load() {
         var candidates: [(URL, String)] = []
-        if FileManager.default.fileExists(atPath: Self.userDeckURL.path) {
+        let builtIn = Bundle.main.url(forResource: "words", withExtension: "json")
+            ?? Bundle.module.url(forResource: "words", withExtension: "json")
+        if FileManager.default.fileExists(atPath: Self.userDeckURL.path),
+           builtIn.map({ modified(Self.userDeckURL) >= modified($0) }) ?? true {
             candidates.append((Self.userDeckURL, "Imported deck"))
         }
-        if let url = Bundle.main.url(forResource: "words", withExtension: "json") {
-            candidates.append((url, "Built-in deck"))
-        } else if let url = Bundle.module.url(forResource: "words", withExtension: "json") {
-            candidates.append((url, "Built-in deck"))
+        if let builtIn {
+            candidates.append((builtIn, "Built-in deck"))
         }
         for (url, name) in candidates {
             do {
@@ -40,6 +42,10 @@ final class DeckStore: ObservableObject {
                 errorMessage = "Could not read \(url.lastPathComponent): \(error.localizedDescription)"
             }
         }
+    }
+
+    private func modified(_ url: URL) -> Date {
+        (try? url.resourceValues(forKeys: [.contentModificationDateKey]))?.contentModificationDate ?? .distantPast
     }
 
     func importDeck() {
