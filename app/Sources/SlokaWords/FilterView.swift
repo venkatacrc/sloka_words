@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct FilterView: View {
-    let deck: Deck
+    let sources: [Source]
     @Binding var selected: Set<String>
     @Binding var excludedLangs: Set<String>
     @Binding var collapsed: Set<String>
@@ -9,7 +9,7 @@ struct FilterView: View {
     let cardNoun: String
 
     private var languages: [String] {
-        Array(Set(deck.sources.map(\.lang))).sorted()
+        Array(Set(sources.map(\.lang))).sorted()
     }
 
     var body: some View {
@@ -28,7 +28,7 @@ struct FilterView: View {
             }
 
             Section("Practice these") {
-                ForEach(deck.sources) { source in
+                ForEach(sources) { source in
                     DisclosureGroup(isExpanded: Binding(
                         get: { !collapsed.contains(source.id) },
                         set: { open in

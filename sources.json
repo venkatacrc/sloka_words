@@ -32,6 +32,8 @@
      {"id": "chaturdasha", "label": "Caturdaśa-mañjarikā (Verses 14–27)", "headings": ["chaturdasha"]},
      {"id": "final", "label": "Concluding verses (28–31)", "headings": ["final"]}
    ]},
+  {"id": "grammar", "title": "Sanskrit via Telugu — Grammar", "short": "Grammar", "lang": "sanskrit", "enabled": true,
+   "type": "lessons", "files": "Study/sanskrit_via_telugu_starter.html"},
   {"id": "suprabhatam", "title": "Sri Venkateswara Suprabhatam", "short": "Suprabhatam", "lang": "sanskrit", "enabled": false, "files": "Venkateswara/sri_venkateswara_suprabhatam.html", "group_by": "none"},
   {"id": "kanakadhara", "title": "Kanakadhara Stotram", "short": "Kanakadhara", "lang": "sanskrit", "enabled": false, "files": "Lakshmi/kanakadhara_stotram.html", "group_by": "none"},
   {"id": "mahishasura_mardini", "title": "Mahishasura Mardini Stotram", "short": "Mahishasura Mardini", "lang": "sanskrit", "enabled": false, "files": "Durga/mahishasura_mardini_stotram.html", "group_by": "none"},
