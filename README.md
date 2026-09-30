@@ -37,9 +37,18 @@ For development you can also run `swift run --package-path app`.
 
 ## Using the app
 
-- **Words / Verses** (top left of the toolbar): practice single words, or whole verses. There
-  are 913 verse cards: 701 from the Gita, 181 from the Vishnu Sahasranamam and 31 from
-  Bhaja Govindam.
+- **Words / Verses / Grammar** (top left of the toolbar): practice single words, whole verses,
+  or grammar lessons. There are 913 verse cards: 701 from the Gita, 181 from the Vishnu
+  Sahasranamam and 31 from Bhaja Govindam. Gita verses show who is speaking (*arjuna uvāca*,
+  *śrī-bhagavān uvāca*, …) above the verse in each script, on the card and in printouts.
+  - There are 417 grammar cards from the *Sanskrit via Telugu* primer
+    (`Study/sanskrit_via_telugu_starter.html`), one set for each of its 25 lessons:
+    pronouns, cases, sandhi, samāsa, verb forms, particles, numbers, stotra formulas, metre,
+    everyday sentences, dialogues and the cognate glossary. Each table row is a card. Its
+    front is the row's first column (a case name, a sandhi rule, a Sanskrit sentence or
+    word), and its back is the rest of the row under its column headings. Drills and dialogue
+    lines go from Sanskrit to Telugu. Devanagari always comes with a Telugu-script reading,
+    and **Lesson** opens the full lesson on the bhakti site.
   - A verse card shows only the first line. Recite the rest, then press **Space** to check
     against the full verse in Telugu, Hindi (Devanagari) and IAST. The back also shows the
     Telugu meaning (where available), the English meaning and the word-by-word meanings.
@@ -177,6 +186,7 @@ separated by `\n`:
 app/                 Swift package (SwiftUI app)
   Sources/SlokaWords/Resources/words.json   generated deck bundled into the app
 tools/build_deck.py  deck builder
+tools/lessons.py     grammar cards from the study page (a "type": "lessons" entry in sources.json)
 tools/push_edits.py  writes verse edits into the bhakti pages and verse_edits.json, commits and pushes
 sources.json         source registry
 te_meanings/         Telugu meanings, one JSON file per batch or stotra

@@ -74,9 +74,13 @@ enum VersePrinter {
                 .font: font, .foregroundColor: color, .paragraphStyle: style,
             ]))
         }
-        func lines(_ lines: [String], _ font: NSFont, _ color: NSColor = ink) {
+        func lines(_ lines: [String], _ font: NSFont, _ color: NSColor = ink, speaker: String? = nil) {
+            if let speaker {
+                add(speaker, NSFontManager.shared.convert(font, toSize: font.pointSize * 0.85), accent,
+                    before: 6, after: 1)
+            }
             for (i, line) in lines.enumerated() {
-                add(line, font, color, before: i == 0 ? 6 : 0)
+                add(line, font, color, before: i == 0 && speaker == nil ? 6 : 0)
             }
         }
         func meaning(_ head: String, _ text: String, size: CGFloat = 11) {
@@ -98,9 +102,9 @@ enum VersePrinter {
                 lastHeading = h
             }
             add(verse.label, .systemFont(ofSize: 10, weight: .semibold), muted, before: 14, after: 0, center: false)
-            if options.te { lines(verse.te, telugu) }
-            if options.deva { lines(verse.deva, .systemFont(ofSize: 14)) }
-            if options.iast { lines(verse.iast, italic, muted) }
+            if options.te { lines(verse.te, telugu, speaker: verse.speaker?.te) }
+            if options.deva { lines(verse.deva, .systemFont(ofSize: 14), speaker: verse.speaker?.deva) }
+            if options.iast { lines(verse.iast, italic, muted, speaker: verse.speaker?.iast) }
             if options.teMeaning { meaning("తెలుగు భావం", verse.teMeaning, size: 12) }
             if options.enMeaning { meaning("MEANING", verse.enMeaning) }
             if options.words { meaning("WORD BY WORD", verse.words, size: 10) }

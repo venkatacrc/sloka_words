@@ -41,9 +41,9 @@ struct VerseCardView: View {
 
     private var firstLine: some View {
         VStack(spacing: 16) {
-            VerseLines(label: "తెలుగు", lines: Array(verse.te.prefix(1)), size: 32, weight: .semibold)
-            VerseLines(label: "हिन्दी", lines: Array(verse.deva.prefix(1)), size: 26)
-            VerseLines(label: "IAST", lines: Array(verse.iast.prefix(1)), size: 17, italic: true)
+            VerseLines(label: "తెలుగు", speaker: verse.speaker?.te, lines: Array(verse.te.prefix(1)), size: 32, weight: .semibold)
+            VerseLines(label: "हिन्दी", speaker: verse.speaker?.deva, lines: Array(verse.deva.prefix(1)), size: 26)
+            VerseLines(label: "IAST", speaker: verse.speaker?.iast, lines: Array(verse.iast.prefix(1)), size: 17, italic: true)
             Text(verse.te.count > 1
                  ? "Recite the rest of the verse, then click the card or press Space to check"
                  : "Click the card or press Space to see the meaning")
@@ -55,9 +55,9 @@ struct VerseCardView: View {
 
     private var fullVerse: some View {
         VStack(spacing: 16) {
-            VerseLines(label: "తెలుగు", lines: verse.te, size: 26, weight: .semibold)
-            VerseLines(label: "हिन्दी", lines: verse.deva, size: 22)
-            VerseLines(label: "IAST", lines: verse.iast, size: 15, italic: true)
+            VerseLines(label: "తెలుగు", speaker: verse.speaker?.te, lines: verse.te, size: 26, weight: .semibold)
+            VerseLines(label: "हिन्दी", speaker: verse.speaker?.deva, lines: verse.deva, size: 22)
+            VerseLines(label: "IAST", speaker: verse.speaker?.iast, lines: verse.iast, size: 15, italic: true)
         }
     }
 
@@ -91,6 +91,7 @@ struct VerseCardView: View {
 
 private struct VerseLines: View {
     let label: String
+    var speaker: String?
     let lines: [String]
     let size: CGFloat
     var weight: Font.Weight = .regular
@@ -101,6 +102,12 @@ private struct VerseLines: View {
             Text(label)
                 .font(.caption2.weight(.medium))
                 .foregroundStyle(.tertiary)
+            if let speaker {
+                Text(speaker)
+                    .font(.system(size: size * 0.7, weight: .medium))
+                    .italic(italic)
+                    .foregroundStyle(Color.accentColor)
+            }
             ForEach(Array(lines.enumerated()), id: \.offset) { _, line in
                 Text(line)
                     .font(.system(size: size, weight: weight))

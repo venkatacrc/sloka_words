@@ -41,6 +41,7 @@ struct ContentView: View {
 
     private var words: [Word] { store.deck.words }
     private var verses: [Verse] { store.deck.verses }
+    private var grammar: [GrammarCard] { store.deck.grammar }
     private var selectedKind: CardKind { CardKind(rawValue: kindRaw) ?? .words }
     /// The kind `session.order` was built for; lags `selectedKind` until `rebuild()` runs.
     private var kind: CardKind { session.kind }
@@ -70,7 +71,11 @@ struct ContentView: View {
     }
 
     private var currentIndex: Int? {
-        let count = kind == .words ? words.count : verses.count
+        let count = switch kind {
+        case .words: words.count
+        case .verses: verses.count
+        case .grammar: grammar.count
+        }
         guard order.indices.contains(position), order.allSatisfy({ $0 < count }) else { return nil }
         return order[position]
     }
@@ -80,7 +85,11 @@ struct ContentView: View {
     }
 
     private func cardID(at index: Int) -> String {
-        kind == .words ? words[index].id : verses[index].id
+        switch kind {
+        case .words: words[index].id
+        case .verses: verses[index].id
+        case .grammar: grammar[index].id
+        }
     }
 
     private func isIncluded(_ key: String, _ src: String) -> Bool {
@@ -107,12 +116,12 @@ struct ContentView: View {
     var body: some View {
         NavigationSplitView {
             FilterView(
-                deck: store.deck,
+                sources: store.deck.sources(for: kind),
                 selected: selected,
                 excludedLangs: excludedLangs,
                 collapsed: $session.collapsedSources,
                 cardCount: order.count,
-                cardNoun: kind == .words ? "word cards" : "verse cards")
+                cardNoun: "\(kind == .words ? "word" : kind == .verses ? "verse" : "grammar") cards")
             .navigationSplitViewColumnWidth(min: 240, ideal: 290)
         } detail: {
             detail
@@ -177,15 +186,22 @@ struct ContentView: View {
             VStack(spacing: 18) {
                 header
                 Group {
-                    if kind == .words {
+                    switch kind {
+                    case .words:
                         CardView(
                             word: words[index],
                             flipped: flipped,
                             isKnown: progress.known.contains(id),
                             isReview: progress.review.contains(id))
-                    } else {
+                    case .verses:
                         VerseCardView(
                             verse: verse(at: index),
+                            flipped: flipped,
+                            isKnown: progress.known.contains(id),
+                            isReview: progress.review.contains(id))
+                    case .grammar:
+                        GrammarCardView(
+                            card: grammar[index],
                             flipped: flipped,
                             isKnown: progress.known.contains(id),
                             isReview: progress.review.contains(id))
@@ -275,7 +291,7 @@ struct ContentView: View {
                         .buttonStyle(.borderedProminent)
                 } else {
                     Button { session.flipped = true } label: {
-                        Label(kind == .words ? "Show answer" : "Show verse", systemImage: "eye")
+                        Label(kind == .verses ? "Show verse" : "Show answer", systemImage: "eye")
                     }
                     .keyboardShortcut(.space, modifiers: [])
                     .buttonStyle(.borderedProminent)
@@ -374,6 +390,8 @@ struct ContentView: View {
             picked = words.indices.filter { i in words[i].refs.contains { included($0.key, $0.src) } }
         case .verses:
             picked = verses.indices.filter { included(verses[$0].key, verses[$0].src) }
+        case .grammar:
+            picked = grammar.indices.filter { included(grammar[$0].key, grammar[$0].src) }
         }
         switch mode {
         case .all: break

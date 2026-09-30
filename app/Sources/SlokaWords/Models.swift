@@ -4,13 +4,15 @@ struct Deck: Codable {
     var sources: [Source]
     var words: [Word]
     var verses: [Verse]
+    var grammar: [GrammarCard]
 
-    static let empty = Deck(sources: [], words: [], verses: [])
+    static let empty = Deck(sources: [], words: [], verses: [], grammar: [])
 
-    init(sources: [Source], words: [Word], verses: [Verse]) {
+    init(sources: [Source], words: [Word], verses: [Verse], grammar: [GrammarCard]) {
         self.sources = sources
         self.words = words
         self.verses = verses
+        self.grammar = grammar
     }
 
     init(from decoder: Decoder) throws {
@@ -18,6 +20,32 @@ struct Deck: Codable {
         sources = try c.decode([Source].self, forKey: .sources)
         words = try c.decode([Word].self, forKey: .words)
         verses = try c.decodeIfPresent([Verse].self, forKey: .verses) ?? []
+        grammar = try c.decodeIfPresent([GrammarCard].self, forKey: .grammar) ?? []
+    }
+
+    func sources(for kind: CardKind) -> [Source] {
+        sources.filter { ($0.kind == "grammar") == (kind == .grammar) }
+    }
+}
+
+/// A grammar lesson card: one table row, drill or dialogue line from a study page.
+struct GrammarCard: Codable, Identifiable, Hashable {
+    let id: String
+    let src: String
+    let group: String
+    let label: String
+    let context: String
+    let prompt: Cell
+    let answer: [Cell]
+    let link: String?
+
+    var key: String { GroupKey.make(src, group) }
+
+    struct Cell: Codable, Hashable {
+        let head: String
+        let text: String
+        /// Telugu-script reading, present when the text contains Devanagari.
+        let te: String?
     }
 }
 
@@ -26,6 +54,8 @@ struct Verse: Codable, Identifiable, Hashable {
     let src: String
     let group: String
     let label: String
+    /// "arjuna uvāca" and similar, shown above the verse; not part of chanting-style edits.
+    let speaker: Speaker?
     var deva: [String]
     var te: [String]
     var iast: [String]
@@ -37,7 +67,7 @@ struct Verse: Codable, Identifiable, Hashable {
     var key: String { GroupKey.make(src, group) }
 
     enum CodingKeys: String, CodingKey {
-        case id, src, group, label, deva, te, iast, words, edited
+        case id, src, group, label, speaker, deva, te, iast, words, edited
         case teMeaning = "te_meaning"
         case enMeaning = "en_meaning"
     }
@@ -51,6 +81,12 @@ struct Verse: Codable, Identifiable, Hashable {
         v.edited = true
         return v
     }
+}
+
+struct Speaker: Codable, Hashable {
+    let deva: String
+    let te: String
+    let iast: String
 }
 
 /// A chanting-style rewrite of a verse; each field holds the verse lines separated by newlines.
@@ -67,16 +103,25 @@ extension String {
 }
 
 enum CardKind: String, CaseIterable, Identifiable {
-    case words, verses
+    case words, verses, grammar
 
     var id: String { rawValue }
-    var title: String { self == .words ? "Words" : "Verses" }
+
+    var title: String {
+        switch self {
+        case .words: "Words"
+        case .verses: "Verses"
+        case .grammar: "Grammar"
+        }
+    }
 }
 
 struct Source: Codable, Identifiable, Hashable {
     let id: String
     let title: String
     let lang: String
+    /// `grammar` for lesson sources; nil for texts with word and verse cards.
+    let kind: String?
     let groups: [SourceGroup]
 }
 

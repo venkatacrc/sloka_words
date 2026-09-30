@@ -20,6 +20,8 @@ import re
 import sys
 import unicodedata
 
+from lessons import build_lessons
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # ---------------------------------------------------------------- transliteration
@@ -299,6 +301,18 @@ def verse_lines(raw, kind):
     return [strip_tags(l) for l in lines if strip_tags(l)]
 
 
+SPEAKER_RE = re.compile(r'<div class="(?:speaker|author-note)"[^>]*>([^<]*·\s*[^<]*uvāc[^<]*)</div>')
+
+
+def speaker_line(window):
+    """The "arjuna uvāca" line (`deva · iast`) shown above a verse, if any."""
+    found = SPEAKER_RE.findall(window)
+    if not found:
+        return None
+    deva, iast = (p.strip() for p in found[-1].split('·', 1))
+    return {'deva': deva, 'te': deva_to_telugu(deva), 'iast': iast}
+
+
 def verse_blocks(text):
     """Yield (h2_id, verse_label, fields, block) for each verse, where block is the index of its
     `<div class="scripts">` in the page; short speaker lines are skipped."""
@@ -312,7 +326,10 @@ def verse_blocks(text):
             continue
         h2 = next((h for p, h in reversed(heads) if p < pos), '')
         label = next((b for p, b in reversed(boxes) if p < pos), '')
+        box_start = next((p for p, _ in reversed(boxes) if p < pos), 0)
+        prev = starts[block - 1] if block else 0
         yield h2, label, {
+            'speaker': speaker_line(text[max(box_start, prev):pos]),
             'deva': verse_lines(deva, 'deva'),
             'te': verse_lines(first_div(seg, 'telugu'), 'te'),
             'iast': verse_lines(first_div(seg, 'english'), 'iast'),
@@ -339,7 +356,7 @@ def build(repo, sources):
     deck_sources, words, warnings = [], {}, []
     verses, verse_ids = [], set()
     for src in sources:
-        if not src.get('enabled'):
+        if not src.get('enabled') or src.get('type') == 'lessons':
             continue
         paths = sorted(glob.glob(os.path.join(repo, src['files'])))
         if not paths:
@@ -460,7 +477,15 @@ def main():
     args = ap.parse_args()
 
     sources = json.load(open(os.path.join(ROOT, 'sources.json'), encoding='utf-8'))
-    deck_sources, words, verses, warnings = build(os.path.expanduser(args.repo), sources)
+    repo = os.path.expanduser(args.repo)
+    deck_sources, words, verses, warnings = build(repo, sources)
+    grammar = []
+    for src in sources:
+        if src.get('enabled') and src.get('type') == 'lessons':
+            source, cards = build_lessons(repo, src, deva_to_telugu)
+            deck_sources.append(source)
+            grammar += cards
+            print(f"{src['title']}: {len(cards)} grammar cards in {len(source['groups'])} lesson(s)")
     edited = apply_verse_edits(verses)
     glosses = load_glosses()
 
@@ -474,13 +499,16 @@ def main():
 
     os.makedirs(os.path.dirname(args.out), exist_ok=True)
     with open(args.out, 'w', encoding='utf-8') as f:
-        json.dump({'sources': deck_sources, 'words': ordered, 'verses': verses}, f, ensure_ascii=False, indent=1)
+        json.dump({'sources': deck_sources, 'words': ordered, 'verses': verses, 'grammar': grammar},
+                  f, ensure_ascii=False, indent=1)
     with open(os.path.join(ROOT, 'missing_te.json'), 'w', encoding='utf-8') as f:
         json.dump(missing, f, ensure_ascii=False, indent=1)
 
     for w in warnings:
         print('warning:', w, file=sys.stderr)
     for s in deck_sources:
+        if s.get('kind') == 'grammar':
+            continue
         n = sum(1 for w in ordered if any(r['src'] == s['id'] for r in w['refs']))
         print(f"{s['title']}: {n} words in {len(s['groups'])} group(s)")
     print(f"unique words: {len(ordered)}, missing Telugu gloss: {len(missing)}")
