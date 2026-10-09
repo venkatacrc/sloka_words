@@ -1403,17 +1403,6 @@
    "Gita 1.26"
   ]
  },
- "pārthaḥ": {
-  "en": [
-   "Pārtha",
-   "Arjun, the son of Pritha"
-  ],
-  "refs": [
-   "Gita 1.26",
-   "Gita 18.78",
-   "VS · Phala Śruti 29"
-  ]
- },
  "pitṝn": {
   "en": [
    "fathers / elders"
@@ -2541,40 +2530,6 @@
    "Gita 1.47"
   ]
  },
- "tam": {
-  "en": [
-   "to him (Arjun)",
-   "to him",
-   "him",
-   "that",
-   "to that",
-   "that person",
-   "unto him",
-   "Him alone"
-  ],
-  "refs": [
-   "Gita 2.1",
-   "Gita 2.10",
-   "Gita 4.19",
-   "Gita 6.2",
-   "Gita 6.23",
-   "Gita 6.43",
-   "Gita 8.6",
-   "Gita 8.10",
-   "Gita 8.21",
-   "Gita 8.23",
-   "Gita 9.21",
-   "Gita 10.10",
-   "Gita 13.2",
-   "Gita 15.1",
-   "Gita 15.4",
-   "Gita 17.12",
-   "Gita 18.46",
-   "Gita 18.62",
-   "VS · Pūrva Pīṭhikā 11",
-   "Gita 7.20"
-  ]
- },
  "kṛpayā": {
   "en": [
    "with pity"
@@ -2799,171 +2754,6 @@
   ],
   "refs": [
    "Gita 2.3"
-  ]
- },
- "na": {
-  "en": [
-   "not",
-   "never",
-   "nor",
-   "no",
-   "neither",
-   "does not",
-   "do not",
-   "none",
-   "no one"
-  ],
-  "refs": [
-   "Gita 2.3",
-   "Gita 2.6",
-   "Gita 2.8",
-   "Gita 2.11",
-   "Gita 2.12",
-   "Gita 2.15",
-   "Gita 2.16",
-   "Gita 2.19",
-   "Gita 2.20",
-   "Gita 2.23",
-   "Gita 2.25",
-   "Gita 2.26",
-   "Gita 2.27",
-   "Gita 2.29",
-   "Gita 2.30",
-   "Gita 2.31",
-   "Gita 2.33",
-   "Gita 2.38",
-   "Gita 2.40",
-   "Gita 2.44",
-   "Gita 2.57",
-   "Gita 2.66",
-   "Gita 2.70",
-   "Gita 2.72",
-   "Gita 3.4",
-   "Gita 3.5",
-   "Gita 3.16",
-   "Gita 3.17",
-   "Gita 3.18",
-   "Gita 3.22",
-   "Gita 3.23",
-   "Gita 3.24",
-   "Gita 3.26",
-   "Gita 3.28",
-   "Gita 3.32",
-   "Gita 3.34",
-   "Gita 4.5",
-   "Gita 4.9",
-   "Gita 4.14",
-   "Gita 4.20",
-   "Gita 4.21",
-   "Gita 4.22",
-   "Gita 4.31",
-   "Gita 4.35",
-   "Gita 4.38",
-   "Gita 4.40",
-   "Gita 4.41",
-   "Gita 5.3",
-   "Gita 5.4",
-   "Gita 5.7",
-   "Gita 5.8",
-   "Gita 5.10",
-   "Gita 5.13",
-   "Gita 5.14",
-   "Gita 5.15",
-   "Gita 5.20",
-   "Gita 5.22",
-   "Gita 6.1",
-   "Gita 6.2",
-   "Gita 6.4",
-   "Gita 6.5",
-   "Gita 6.11",
-   "Gita 6.16",
-   "Gita 6.19",
-   "Gita 6.21",
-   "Gita 6.22",
-   "Gita 6.25",
-   "Gita 6.30",
-   "Gita 6.33",
-   "Gita 6.38",
-   "Gita 6.39",
-   "Gita 6.40",
-   "Gita 7.2",
-   "Gita 7.7",
-   "Gita 7.12",
-   "Gita 7.13",
-   "Gita 7.15",
-   "Gita 7.25",
-   "Gita 8.5",
-   "Gita 8.15",
-   "Gita 8.16",
-   "Gita 8.20",
-   "Gita 8.21",
-   "Gita 8.27",
-   "Gita 9.4",
-   "Gita 9.5",
-   "Gita 9.9",
-   "Gita 9.24",
-   "Gita 9.29",
-   "Gita 9.31",
-   "Gita 10.2",
-   "Gita 10.7",
-   "Gita 10.14",
-   "Gita 10.18",
-   "Gita 10.19",
-   "Gita 10.39",
-   "Gita 10.40",
-   "Gita 11.8",
-   "Gita 11.16",
-   "Gita 11.24",
-   "Gita 11.25",
-   "Gita 11.31",
-   "Gita 11.43",
-   "Gita 11.48",
-   "Gita 11.53",
-   "Gita 13.13",
-   "Gita 13.24",
-   "Gita 13.29",
-   "Gita 13.32",
-   "Gita 13.33",
-   "Gita 14.2",
-   "Gita 14.19",
-   "Gita 14.22",
-   "Gita 14.23",
-   "Gita 15.3",
-   "Gita 15.4",
-   "Gita 15.6",
-   "Gita 15.10",
-   "Gita 15.11",
-   "Gita 16.3",
-   "Gita 16.7",
-   "Gita 16.23",
-   "Gita 17.28",
-   "Gita 18.3",
-   "Gita 18.5",
-   "Gita 18.7",
-   "Gita 18.8",
-   "Gita 18.10",
-   "Gita 18.11",
-   "Gita 18.12",
-   "Gita 18.16",
-   "Gita 18.17",
-   "Gita 18.35",
-   "Gita 18.40",
-   "Gita 18.54",
-   "Gita 18.60",
-   "Gita 18.67",
-   "Gita 18.69",
-   "Gita 1.35",
-   "Gita 1.38",
-   "Gita 2.13",
-   "Gita 2.17",
-   "Gita 2.42",
-   "Gita 7.26",
-   "Gita 12.17",
-   "Gita 18.47",
-   "Gita 18.48",
-   "VS · Phala Śruti 2",
-   "VS · Phala Śruti 7",
-   "VS · Phala Śruti 11"
   ]
  },
  "etat": {
@@ -4120,20 +3910,6 @@
    "Gita 1.27"
   ]
  },
- "madhye": {
-  "en": [
-   "in the midst of",
-   "between",
-   "in the middle"
-  ],
-  "refs": [
-   "Gita 2.10",
-   "Gita 8.10",
-   "Gita 14.18",
-   "Gita 1.21",
-   "Gita 1.24"
-  ]
- },
  "vacaḥ": {
   "en": [
    "words",
@@ -4626,21 +4402,6 @@
    "Gita 2.14"
   ]
  },
- "yam": {
-  "en": [
-   "whom",
-   "what",
-   "which"
-  ],
-  "refs": [
-   "Gita 2.15",
-   "Gita 2.70",
-   "Gita 6.2",
-   "Gita 6.22",
-   "Gita 8.21",
-   "Gita 8.6"
-  ]
- },
  "vyathayanti": {
   "en": [
    "distressed"
@@ -4901,23 +4662,6 @@
    "Gita 17.12",
    "Gita 18.20",
    "Gita 18.21"
-  ]
- },
- "yena": {
-  "en": [
-   "by whom",
-   "by which",
-   "by this"
-  ],
-  "refs": [
-   "Gita 2.17",
-   "Gita 3.2",
-   "Gita 4.35",
-   "Gita 6.6",
-   "Gita 8.22",
-   "Gita 10.10",
-   "Gita 18.20",
-   "Gita 18.46"
   ]
  },
  "sarvam": {
@@ -7504,20 +7248,6 @@
    "Gita 2.62"
   ]
  },
- "astu": {
-  "en": [
-   "must be",
-   "shall be",
-   "let there be"
-  ],
-  "refs": [
-   "Gita 2.47",
-   "Gita 3.10",
-   "Gita 11.39",
-   "Gita 11.31",
-   "Gita 11.40"
-  ]
- },
  "akarmaṇi": {
   "en": [
    "in inaction",
@@ -9009,25 +8739,6 @@
    "Gita 2.69"
   ]
  },
- "sā": {
-  "en": [
-   "that",
-   "this",
-   "which"
-  ],
-  "refs": [
-   "Gita 2.69",
-   "Gita 6.19",
-   "Gita 11.12",
-   "Gita 17.2",
-   "Gita 18.30",
-   "Gita 18.31",
-   "Gita 18.32",
-   "Gita 18.33",
-   "Gita 18.34",
-   "Gita 18.35"
-  ]
- },
  "paśyataḥ": {
   "en": [
    "see"
@@ -9639,23 +9350,6 @@
   "refs": [
    "Gita 3.6",
    "Gita 5.13"
-  ]
- },
- "manasā": {
-  "en": [
-   "in the mind",
-   "by the mind",
-   "with the mind",
-   "through the mind",
-   "mind"
-  ],
-  "refs": [
-   "Gita 3.6",
-   "Gita 3.7",
-   "Gita 5.11",
-   "Gita 5.13",
-   "Gita 6.24",
-   "Gita 8.10"
   ]
  },
  "smaran": {
@@ -11971,26 +11665,6 @@
    "Gita 9.33"
   ]
  },
- "viduḥ": {
-  "en": [
-   "understood",
-   "know",
-   "can understand",
-   "comprehend",
-   "to understand"
-  ],
-  "refs": [
-   "Gita 4.2",
-   "Gita 7.29",
-   "Gita 7.30",
-   "Gita 8.17",
-   "Gita 10.2",
-   "Gita 10.14",
-   "Gita 13.35",
-   "Gita 16.7",
-   "Gita 18.2"
-  ]
- },
  "kālena": {
   "en": [
    "with the long passage of time",
@@ -13016,20 +12690,6 @@
    "VS · Phala Śruti 2"
   ]
  },
- "karoti": {
-  "en": [
-   "do",
-   "performs",
-   "perform",
-   "acts"
-  ],
-  "refs": [
-   "Gita 4.20",
-   "Gita 5.10",
-   "Gita 6.1",
-   "Gita 13.32"
-  ]
- },
  "yata": {
   "en": [
    "controlled",
@@ -13344,24 +13004,6 @@
    "Gita 4.25",
    "Gita 17.12",
    "Gita 17.13"
-  ]
- },
- "yoginaḥ": {
-  "en": [
-   "spiritual practioners",
-   "the yogis",
-   "of a yogi",
-   "of the yogis",
-   "a yogi",
-   "yogis"
-  ],
-  "refs": [
-   "Gita 4.25",
-   "Gita 5.11",
-   "Gita 6.19",
-   "Gita 8.14",
-   "Gita 8.23",
-   "Gita 15.11"
   ]
  },
  "yajñena": {
@@ -14053,18 +13695,6 @@
   "refs": [
    "Gita 4.38",
    "Gita 5.16"
-  ]
- },
- "svayam": {
-  "en": [
-   "oneself",
-   "personally",
-   "himself"
-  ],
-  "refs": [
-   "Gita 4.38",
-   "Gita 10.13",
-   "Gita 18.75"
   ]
  },
  "yoga": {
@@ -17273,18 +16903,6 @@
    "Gita 18.9",
    "Gita 11.18",
    "VS · Pūrva Pīṭhikā 9"
-  ]
- },
- "tvayā": {
-  "en": [
-   "by you"
-  ],
-  "refs": [
-   "Gita 6.33",
-   "Gita 11.1",
-   "Gita 11.20",
-   "Gita 11.38",
-   "Gita 18.72"
   ]
  },
  "sāmyena": {
@@ -24578,14 +24196,6 @@
    "Gita 11.50"
   ]
  },
- "pārthāya": {
-  "en": [
-   "to Arjun"
-  ],
-  "refs": [
-   "Gita 11.9"
-  ]
- },
  "vaktra": {
   "en": [
    "faces",
@@ -24702,16 +24312,6 @@
   ],
   "refs": [
    "Gita 11.11"
-  ]
- },
- "devam": {
-  "en": [
-   "Lord",
-   "the Lord"
-  ],
-  "refs": [
-   "Gita 11.11",
-   "Gita 11.14"
   ]
  },
  "viśwataḥ": {
@@ -24979,14 +24579,6 @@
  "ananta-rūpam": {
   "en": [
    "inifinite forms"
-  ],
-  "refs": [
-   "Gita 11.16"
-  ]
- },
- "na antam": {
-  "en": [
-   "without end"
   ],
   "refs": [
    "Gita 11.16"
@@ -25414,17 +25006,6 @@
   ],
   "refs": [
    "Gita 11.22"
-  ]
- },
- "mahat": {
-  "en": [
-   "magnificent"
-  ],
-  "refs": [
-   "Gita 11.23",
-   "Gita 1.45",
-   "Gita 14.3",
-   "VS · Pūrva Pīṭhikā 15"
   ]
  },
  "bahu": {
@@ -26307,14 +25888,6 @@
    "Gita 1.21"
   ]
  },
- "kṛṣṇam": {
-  "en": [
-   "to Shree Krishna"
-  ],
-  "refs": [
-   "Gita 11.35"
-  ]
- },
  "sa-gadgadam": {
   "en": [
    "in a faltering voice"
@@ -27115,16 +26688,6 @@
   ],
   "refs": [
    "Gita 11.52"
-  ]
- },
- "vedaiḥ": {
-  "en": [
-   "by study of the Vedas",
-   "by the Vedas"
-  ],
-  "refs": [
-   "Gita 11.53",
-   "Gita 15.15"
   ]
  },
  "dānena": {
@@ -28175,20 +27738,6 @@
   ],
   "refs": [
    "Gita 13.25"
-  ]
- },
- "paśyanti": {
-  "en": [
-   "percieve",
-   "behold",
-   "see",
-   "cognize"
-  ],
-  "refs": [
-   "Gita 13.25",
-   "Gita 15.10",
-   "Gita 15.11",
-   "Gita 1.38"
   ]
  },
  "sānkhyena": {

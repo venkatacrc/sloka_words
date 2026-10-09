@@ -6,6 +6,10 @@
    "lang": "sanskrit",
    "groups": [
     {
+     "id": "0",
+     "label": "Chapter 0: Gītā Dhyānam"
+    },
+    {
      "id": "1",
      "label": "Chapter 1: Arjuna Viṣāda Yoga"
     },
@@ -231,6 +235,3545 @@
   }
  ],
  "words": [
+  {
+   "id": "om",
+   "iast": "oṃ",
+   "deva": "ओं",
+   "te": "ఓం",
+   "en": [
+    "the sacred syllable Om",
+    "sacred syllable representing the formless aspect of God",
+    "sacred syllable om",
+    "the sacred syllable"
+   ],
+   "te_meaning": "ఓం (పవిత్ర ప్రణవం)",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.1"
+    },
+    {
+     "src": "gita",
+     "group": "8",
+     "label": "Gita 8.13"
+    },
+    {
+     "src": "gita",
+     "group": "17",
+     "label": "Gita 17.24"
+    },
+    {
+     "src": "vs",
+     "group": "purva",
+     "label": "VS · Pūrva Pīṭhikā"
+    },
+    {
+     "src": "gita",
+     "group": "17",
+     "label": "Gita 17.23"
+    }
+   ]
+  },
+  {
+   "id": "pārthāya",
+   "iast": "pārthāya",
+   "deva": "पार्थाय",
+   "te": "పార్థాయ",
+   "en": [
+    "to Pārtha, Arjuna",
+    "to Arjun"
+   ],
+   "te_meaning": "అర్జునునికి",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.1"
+    },
+    {
+     "src": "gita",
+     "group": "11",
+     "label": "Gita 11.9"
+    }
+   ]
+  },
+  {
+   "id": "pratibodhitām",
+   "iast": "pratibodhitām",
+   "deva": "प्रतिबोधिताम्",
+   "te": "ప్రతిబోధితామ్",
+   "en": [
+    "taught, awakened"
+   ],
+   "te_meaning": "ఉపదేశించబడినదానిని, బోధించబడినదానిని",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.1"
+    }
+   ]
+  },
+  {
+   "id": "bhagavatā",
+   "iast": "bhagavatā",
+   "deva": "भगवता",
+   "te": "భగవతా",
+   "en": [
+    "by the Lord"
+   ],
+   "te_meaning": "భగవంతుని చేత",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.1"
+    }
+   ]
+  },
+  {
+   "id": "nārāyaṇena",
+   "iast": "nārāyaṇena",
+   "deva": "नारायणेन",
+   "te": "నారాయణేన",
+   "en": [
+    "by Nārāyaṇa"
+   ],
+   "te_meaning": "నారాయణుని చేత",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.1"
+    }
+   ]
+  },
+  {
+   "id": "svayam",
+   "iast": "svayam",
+   "deva": "स्वयम्",
+   "te": "స్వయమ్",
+   "en": [
+    "Himself",
+    "oneself",
+    "personally",
+    "himself"
+   ],
+   "te_meaning": "స్వయంగా",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.1"
+    },
+    {
+     "src": "gita",
+     "group": "4",
+     "label": "Gita 4.38"
+    },
+    {
+     "src": "gita",
+     "group": "10",
+     "label": "Gita 10.13"
+    },
+    {
+     "src": "gita",
+     "group": "18",
+     "label": "Gita 18.75"
+    }
+   ]
+  },
+  {
+   "id": "vyāsena",
+   "iast": "vyāsena",
+   "deva": "व्यासेन",
+   "te": "వ్యాసేన",
+   "en": [
+    "by Vyāsa"
+   ],
+   "te_meaning": "వ్యాసుని చేత",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.1"
+    }
+   ]
+  },
+  {
+   "id": "grathitām",
+   "iast": "grathitām",
+   "deva": "ग्रथिताम्",
+   "te": "గ్రథితామ్",
+   "en": [
+    "woven, composed"
+   ],
+   "te_meaning": "కూర్చబడినదానిని, రచించబడినదానిని",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.1"
+    }
+   ]
+  },
+  {
+   "id": "purāṇamuninā",
+   "iast": "purāṇa-muninā",
+   "deva": "पुराण-मुनिना",
+   "te": "పురాణ-మునినా",
+   "en": [
+    "by the ancient sage"
+   ],
+   "te_meaning": "పురాతన ముని చేత",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.1"
+    }
+   ]
+  },
+  {
+   "id": "madhye",
+   "iast": "madhye",
+   "deva": "मध्ये",
+   "te": "మధ్యే",
+   "en": [
+    "in the middle",
+    "in the midst of",
+    "between"
+   ],
+   "te_meaning": "మధ్యలో",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.1"
+    },
+    {
+     "src": "gita",
+     "group": "2",
+     "label": "Gita 2.10"
+    },
+    {
+     "src": "gita",
+     "group": "8",
+     "label": "Gita 8.10"
+    },
+    {
+     "src": "gita",
+     "group": "14",
+     "label": "Gita 14.18"
+    },
+    {
+     "src": "gita",
+     "group": "1",
+     "label": "Gita 1.21"
+    },
+    {
+     "src": "gita",
+     "group": "1",
+     "label": "Gita 1.24"
+    }
+   ]
+  },
+  {
+   "id": "mahābhārate",
+   "iast": "mahābhārate",
+   "deva": "महाभारते",
+   "te": "మహాభారతే",
+   "en": [
+    "of the Mahābhārata"
+   ],
+   "te_meaning": "మహాభారతంలో",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.1"
+    }
+   ]
+  },
+  {
+   "id": "advaitaamṛtavarṣiṇīm",
+   "iast": "advaita-amṛta-varṣiṇīm",
+   "deva": "अद्वैत-अमृत-वर्षिणीम्",
+   "te": "అద్వైత-అమృత-వర్షిణీమ్",
+   "en": [
+    "showering the nectar of non-duality"
+   ],
+   "te_meaning": "అద్వైతమనే అమృతాన్ని కురిపించేదానిని",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.1"
+    }
+   ]
+  },
+  {
+   "id": "bhagavatīm",
+   "iast": "bhagavatīm",
+   "deva": "भगवतीम्",
+   "te": "భగవతీమ్",
+   "en": [
+    "the divine one"
+   ],
+   "te_meaning": "దివ్యమైనదానిని, దేవతను",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.1"
+    }
+   ]
+  },
+  {
+   "id": "aṣṭādaśaadhyāyinīm",
+   "iast": "aṣṭādaśa-adhyāyinīm",
+   "deva": "अष्टादश-अध्यायिनीम्",
+   "te": "అష్టాదశ-అధ్యాయినీమ్",
+   "en": [
+    "of eighteen chapters"
+   ],
+   "te_meaning": "పద్దెనిమిది అధ్యాయాలు గలదానిని",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.1"
+    }
+   ]
+  },
+  {
+   "id": "amba",
+   "iast": "amba",
+   "deva": "अम्ब",
+   "te": "అంబ",
+   "en": [
+    "O Mother"
+   ],
+   "te_meaning": "ఓ అమ్మా",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.1"
+    }
+   ]
+  },
+  {
+   "id": "tvām",
+   "iast": "tvām",
+   "deva": "त्वाम्",
+   "te": "త్వామ్",
+   "en": [
+    "on You",
+    "to you",
+    "unto you",
+    "you",
+    "from you",
+    "your",
+    "You"
+   ],
+   "te_meaning": "నిన్ను",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.1"
+    },
+    {
+     "src": "gita",
+     "group": "2",
+     "label": "Gita 2.7"
+    },
+    {
+     "src": "gita",
+     "group": "2",
+     "label": "Gita 2.35"
+    },
+    {
+     "src": "gita",
+     "group": "10",
+     "label": "Gita 10.13"
+    },
+    {
+     "src": "gita",
+     "group": "10",
+     "label": "Gita 10.17"
+    },
+    {
+     "src": "gita",
+     "group": "11",
+     "label": "Gita 11.16"
+    },
+    {
+     "src": "gita",
+     "group": "11",
+     "label": "Gita 11.17"
+    },
+    {
+     "src": "gita",
+     "group": "11",
+     "label": "Gita 11.21"
+    },
+    {
+     "src": "gita",
+     "group": "11",
+     "label": "Gita 11.22"
+    },
+    {
+     "src": "gita",
+     "group": "11",
+     "label": "Gita 11.24"
+    },
+    {
+     "src": "gita",
+     "group": "11",
+     "label": "Gita 11.26"
+    },
+    {
+     "src": "gita",
+     "group": "11",
+     "label": "Gita 11.32"
+    },
+    {
+     "src": "gita",
+     "group": "11",
+     "label": "Gita 11.42"
+    },
+    {
+     "src": "gita",
+     "group": "11",
+     "label": "Gita 11.44"
+    },
+    {
+     "src": "gita",
+     "group": "11",
+     "label": "Gita 11.46"
+    },
+    {
+     "src": "gita",
+     "group": "12",
+     "label": "Gita 12.1"
+    },
+    {
+     "src": "gita",
+     "group": "18",
+     "label": "Gita 18.59"
+    },
+    {
+     "src": "gita",
+     "group": "18",
+     "label": "Gita 18.66"
+    }
+   ]
+  },
+  {
+   "id": "anusandadhāmi",
+   "iast": "anusandadhāmi",
+   "deva": "अनुसन्दधामि",
+   "te": "అనుసందధామి",
+   "en": [
+    "I meditate constantly"
+   ],
+   "te_meaning": "నిరంతరం ధ్యానిస్తాను",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.1"
+    }
+   ]
+  },
+  {
+   "id": "bhagavadgīte",
+   "iast": "bhagavad-gīte",
+   "deva": "भगवद्-गीते",
+   "te": "భగవద్-గీతే",
+   "en": [
+    "O Bhagavad Gītā"
+   ],
+   "te_meaning": "ఓ భగవద్గీతా",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.1"
+    }
+   ]
+  },
+  {
+   "id": "bhavadveṣiṇīm",
+   "iast": "bhava-dveṣiṇīm",
+   "deva": "भव-द्वेषिणीम्",
+   "te": "భవ-ద్వేషిణీమ్",
+   "en": [
+    "destroyer of rebirth"
+   ],
+   "te_meaning": "సంసార బంధాన్ని నశింపజేసేదానిని",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.1"
+    }
+   ]
+  },
+  {
+   "id": "namaḥ",
+   "iast": "namaḥ",
+   "deva": "नमः",
+   "te": "నమః",
+   "en": [
+    "salutation",
+    "salutations",
+    "my salutations",
+    "(offering) my salutations",
+    "offering salutations"
+   ],
+   "te_meaning": "నమస్కారం",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.2"
+    },
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.3"
+    },
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.9"
+    },
+    {
+     "src": "gita",
+     "group": "11",
+     "label": "Gita 11.39"
+    },
+    {
+     "src": "gita",
+     "group": "11",
+     "label": "Gita 11.40"
+    },
+    {
+     "src": "vs",
+     "group": "purva",
+     "label": "VS · Pūrva Pīṭhikā 4"
+    },
+    {
+     "src": "vs",
+     "group": "purva",
+     "label": "VS · Pūrva Pīṭhikā"
+    },
+    {
+     "src": "vs",
+     "group": "purva",
+     "label": "VS · Dhyānam 5"
+    },
+    {
+     "src": "gita",
+     "group": "11",
+     "label": "Gita 11.31"
+    },
+    {
+     "src": "vs",
+     "group": "purva",
+     "label": "VS · Pūrva Pīṭhikā 6"
+    }
+   ]
+  },
+  {
+   "id": "astu",
+   "iast": "astu",
+   "deva": "अस्तु",
+   "te": "అస్తు",
+   "en": [
+    "be",
+    "must be",
+    "shall be",
+    "let there be"
+   ],
+   "te_meaning": "అగుగాక",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.2"
+    },
+    {
+     "src": "gita",
+     "group": "2",
+     "label": "Gita 2.47"
+    },
+    {
+     "src": "gita",
+     "group": "3",
+     "label": "Gita 3.10"
+    },
+    {
+     "src": "gita",
+     "group": "11",
+     "label": "Gita 11.39"
+    },
+    {
+     "src": "gita",
+     "group": "11",
+     "label": "Gita 11.31"
+    },
+    {
+     "src": "gita",
+     "group": "11",
+     "label": "Gita 11.40"
+    }
+   ]
+  },
+  {
+   "id": "te",
+   "iast": "te",
+   "deva": "ते",
+   "te": "తే",
+   "en": [
+    "to you",
+    "they",
+    "your",
+    "of your",
+    "by you",
+    "those",
+    "unto you",
+    "they are",
+    "such persons",
+    "Your",
+    "you",
+    "for your",
+    "even they"
+   ],
+   "te_meaning": "వారు",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.2"
+    },
+    {
+     "src": "gita",
+     "group": "2",
+     "label": "Gita 2.6"
+    },
+    {
+     "src": "gita",
+     "group": "2",
+     "label": "Gita 2.7"
+    },
+    {
+     "src": "gita",
+     "group": "2",
+     "label": "Gita 2.34"
+    },
+    {
+     "src": "gita",
+     "group": "2",
+     "label": "Gita 2.39"
+    },
+    {
+     "src": "gita",
+     "group": "2",
+     "label": "Gita 2.47"
+    },
+    {
+     "src": "gita",
+     "group": "2",
+     "label": "Gita 2.52"
+    },
+    {
+     "src": "gita",
+     "group": "2",
+     "label": "Gita 2.53"
+    },
+    {
+     "src": "gita",
+     "group": "3",
+     "label": "Gita 3.1"
+    },
+    {
+     "src": "gita",
+     "group": "3",
+     "label": "Gita 3.8"
+    },
+    {
+     "src": "gita",
+     "group": "3",
+     "label": "Gita 3.11"
+    },
+    {
+     "src": "gita",
+     "group": "3",
+     "label": "Gita 3.13"
+    },
+    {
+     "src": "gita",
+     "group": "3",
+     "label": "Gita 3.31"
+    },
+    {
+     "src": "gita",
+     "group": "4",
+     "label": "Gita 4.3"
+    },
+    {
+     "src": "gita",
+     "group": "4",
+     "label": "Gita 4.16"
+    },
+    {
+     "src": "gita",
+     "group": "4",
+     "label": "Gita 4.34"
+    },
+    {
+     "src": "gita",
+     "group": "5",
+     "label": "Gita 5.19"
+    },
+    {
+     "src": "gita",
+     "group": "5",
+     "label": "Gita 5.22"
+    },
+    {
+     "src": "gita",
+     "group": "7",
+     "label": "Gita 7.2"
+    },
+    {
+     "src": "gita",
+     "group": "7",
+     "label": "Gita 7.12"
+    },
+    {
+     "src": "gita",
+     "group": "7",
+     "label": "Gita 7.14"
+    },
+    {
+     "src": "gita",
+     "group": "7",
+     "label": "Gita 7.28"
+    },
+    {
+     "src": "gita",
+     "group": "7",
+     "label": "Gita 7.29"
+    },
+    {
+     "src": "gita",
+     "group": "7",
+     "label": "Gita 7.30"
+    },
+    {
+     "src": "gita",
+     "group": "8",
+     "label": "Gita 8.11"
+    },
+    {
+     "src": "gita",
+     "group": "8",
+     "label": "Gita 8.17"
+    },
+    {
+     "src": "gita",
+     "group": "9",
+     "label": "Gita 9.1"
+    },
+    {
+     "src": "gita",
+     "group": "9",
+     "label": "Gita 9.20"
+    },
+    {
+     "src": "gita",
+     "group": "9",
+     "label": "Gita 9.21"
+    },
+    {
+     "src": "gita",
+     "group": "9",
+     "label": "Gita 9.23"
+    },
+    {
+     "src": "gita",
+     "group": "9",
+     "label": "Gita 9.24"
+    },
+    {
+     "src": "gita",
+     "group": "9",
+     "label": "Gita 9.29"
+    },
+    {
+     "src": "gita",
+     "group": "10",
+     "label": "Gita 10.1"
+    },
+    {
+     "src": "gita",
+     "group": "10",
+     "label": "Gita 10.10"
+    },
+    {
+     "src": "gita",
+     "group": "10",
+     "label": "Gita 10.14"
+    },
+    {
+     "src": "gita",
+     "group": "10",
+     "label": "Gita 10.19"
+    },
+    {
+     "src": "gita",
+     "group": "11",
+     "label": "Gita 11.3"
+    },
+    {
+     "src": "gita",
+     "group": "11",
+     "label": "Gita 11.8"
+    },
+    {
+     "src": "gita",
+     "group": "11",
+     "label": "Gita 11.23"
+    },
+    {
+     "src": "gita",
+     "group": "11",
+     "label": "Gita 11.25"
+    },
+    {
+     "src": "gita",
+     "group": "11",
+     "label": "Gita 11.26"
+    },
+    {
+     "src": "gita",
+     "group": "11",
+     "label": "Gita 11.27"
+    },
+    {
+     "src": "gita",
+     "group": "11",
+     "label": "Gita 11.31"
+    },
+    {
+     "src": "gita",
+     "group": "11",
+     "label": "Gita 11.37"
+    },
+    {
+     "src": "gita",
+     "group": "11",
+     "label": "Gita 11.39"
+    },
+    {
+     "src": "gita",
+     "group": "11",
+     "label": "Gita 11.40"
+    },
+    {
+     "src": "gita",
+     "group": "12",
+     "label": "Gita 12.2"
+    },
+    {
+     "src": "gita",
+     "group": "12",
+     "label": "Gita 12.4"
+    },
+    {
+     "src": "gita",
+     "group": "13",
+     "label": "Gita 13.26"
+    },
+    {
+     "src": "gita",
+     "group": "13",
+     "label": "Gita 13.35"
+    },
+    {
+     "src": "gita",
+     "group": "16",
+     "label": "Gita 16.8"
+    },
+    {
+     "src": "gita",
+     "group": "16",
+     "label": "Gita 16.17"
+    },
+    {
+     "src": "gita",
+     "group": "16",
+     "label": "Gita 16.24"
+    },
+    {
+     "src": "gita",
+     "group": "18",
+     "label": "Gita 18.59"
+    },
+    {
+     "src": "gita",
+     "group": "18",
+     "label": "Gita 18.63"
+    },
+    {
+     "src": "gita",
+     "group": "18",
+     "label": "Gita 18.64"
+    },
+    {
+     "src": "gita",
+     "group": "18",
+     "label": "Gita 18.65"
+    },
+    {
+     "src": "gita",
+     "group": "18",
+     "label": "Gita 18.67"
+    },
+    {
+     "src": "gita",
+     "group": "18",
+     "label": "Gita 18.72"
+    },
+    {
+     "src": "gita",
+     "group": "9",
+     "label": "Gita 9.32"
+    },
+    {
+     "src": "gita",
+     "group": "1",
+     "label": "Gita 1.33"
+    },
+    {
+     "src": "gita",
+     "group": "11",
+     "label": "Gita 11.49"
+    },
+    {
+     "src": "gita",
+     "group": "12",
+     "label": "Gita 12.20"
+    }
+   ]
+  },
+  {
+   "id": "vyāsa",
+   "iast": "vyāsa",
+   "deva": "व्यास",
+   "te": "వ్యాస",
+   "en": [
+    "O Vyāsa"
+   ],
+   "te_meaning": "ఓ వ్యాసా",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.2"
+    }
+   ]
+  },
+  {
+   "id": "viśālabuddhe",
+   "iast": "viśāla-buddhe",
+   "deva": "विशाल-बुद्धे",
+   "te": "విశాల-బుద్ధే",
+   "en": [
+    "O one of vast intellect"
+   ],
+   "te_meaning": "విశాలమైన బుద్ధి గలవాడా",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.2"
+    }
+   ]
+  },
+  {
+   "id": "phullaaravindaāyatapatranetra",
+   "iast": "phulla-aravinda-āyata-patra-netra",
+   "deva": "फुल्ल-अरविन्द-आयत-पत्र-नेत्र",
+   "te": "ఫుల్ల-అరవింద-ఆయత-పత్ర-నేత్ర",
+   "en": [
+    "O one with eyes long like the petals of a full-blown lotus"
+   ],
+   "te_meaning": "వికసించిన తామర రేకుల వంటి విశాల నేత్రాలు గలవాడా",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.2"
+    }
+   ]
+  },
+  {
+   "id": "yena",
+   "iast": "yena",
+   "deva": "येन",
+   "te": "యేన",
+   "en": [
+    "by whom",
+    "by which",
+    "by this"
+   ],
+   "te_meaning": "ఎవరి చేత",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.2"
+    },
+    {
+     "src": "gita",
+     "group": "2",
+     "label": "Gita 2.17"
+    },
+    {
+     "src": "gita",
+     "group": "3",
+     "label": "Gita 3.2"
+    },
+    {
+     "src": "gita",
+     "group": "4",
+     "label": "Gita 4.35"
+    },
+    {
+     "src": "gita",
+     "group": "6",
+     "label": "Gita 6.6"
+    },
+    {
+     "src": "gita",
+     "group": "8",
+     "label": "Gita 8.22"
+    },
+    {
+     "src": "gita",
+     "group": "10",
+     "label": "Gita 10.10"
+    },
+    {
+     "src": "gita",
+     "group": "18",
+     "label": "Gita 18.20"
+    },
+    {
+     "src": "gita",
+     "group": "18",
+     "label": "Gita 18.46"
+    }
+   ]
+  },
+  {
+   "id": "tvayā",
+   "iast": "tvayā",
+   "deva": "त्वया",
+   "te": "త్వయా",
+   "en": [
+    "by you"
+   ],
+   "te_meaning": "నీ చేత",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.2"
+    },
+    {
+     "src": "gita",
+     "group": "6",
+     "label": "Gita 6.33"
+    },
+    {
+     "src": "gita",
+     "group": "11",
+     "label": "Gita 11.1"
+    },
+    {
+     "src": "gita",
+     "group": "11",
+     "label": "Gita 11.20"
+    },
+    {
+     "src": "gita",
+     "group": "11",
+     "label": "Gita 11.38"
+    },
+    {
+     "src": "gita",
+     "group": "18",
+     "label": "Gita 18.72"
+    }
+   ]
+  },
+  {
+   "id": "bhāratatailapūrṇaḥ",
+   "iast": "bhārata-taila-pūrṇaḥ",
+   "deva": "भारत-तैल-पूर्णः",
+   "te": "భారత-తైల-పూర్ణః",
+   "en": [
+    "filled with the oil of the Mahābhārata"
+   ],
+   "te_meaning": "మహాభారతమనే నూనెతో నిండిన",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.2"
+    }
+   ]
+  },
+  {
+   "id": "prajvālitaḥ",
+   "iast": "prajvālitaḥ",
+   "deva": "प्रज्वालितः",
+   "te": "ప్రజ్వాలితః",
+   "en": [
+    "was lit"
+   ],
+   "te_meaning": "వెలిగించబడింది",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.2"
+    }
+   ]
+  },
+  {
+   "id": "jñānamayaḥ",
+   "iast": "jñānamayaḥ",
+   "deva": "ज्ञानमयः",
+   "te": "జ్ఞానమయః",
+   "en": [
+    "made of knowledge"
+   ],
+   "te_meaning": "జ్ఞానమయమైన",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.2"
+    }
+   ]
+  },
+  {
+   "id": "pradīpaḥ",
+   "iast": "pradīpaḥ",
+   "deva": "प्रदीपः",
+   "te": "ప్రదీపః",
+   "en": [
+    "lamp"
+   ],
+   "te_meaning": "దీపం",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.2"
+    }
+   ]
+  },
+  {
+   "id": "prapannapārijātāya",
+   "iast": "prapanna-pārijātāya",
+   "deva": "प्रपन्न-पारिजाताय",
+   "te": "ప్రపన్న-పారిజాతాయ",
+   "en": [
+    "to the wish-fulfilling tree for those who surrender"
+   ],
+   "te_meaning": "శరణు కోరినవారికి పారిజాత వృక్షం వంటివానికి",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.3"
+    }
+   ]
+  },
+  {
+   "id": "totravetraekapāṇaye",
+   "iast": "totra-vetra-eka-pāṇaye",
+   "deva": "तोत्र-वेत्र-एक-पाणये",
+   "te": "తోత్ర-వేత్ర-ఏక-పాణయే",
+   "en": [
+    "who holds the cattle-goad in one hand"
+   ],
+   "te_meaning": "ఒక చేతిలో పశువులను తోలే కర్ర గలవానికి",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.3"
+    }
+   ]
+  },
+  {
+   "id": "jñānamudrāya",
+   "iast": "jñāna-mudrāya",
+   "deva": "ज्ञान-मुद्राय",
+   "te": "జ్ఞాన-ముద్రాయ",
+   "en": [
+    "who shows the gesture of knowledge"
+   ],
+   "te_meaning": "జ్ఞానముద్ర ధరించినవానికి",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.3"
+    }
+   ]
+  },
+  {
+   "id": "kṛṣṇāya",
+   "iast": "kṛṣṇāya",
+   "deva": "कृष्णाय",
+   "te": "కృష్ణాయ",
+   "en": [
+    "to Kṛṣṇa"
+   ],
+   "te_meaning": "శ్రీకృష్ణునికి",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.3"
+    }
+   ]
+  },
+  {
+   "id": "gītāamṛtaduhe",
+   "iast": "gītā-amṛta-duhe",
+   "deva": "गीता-अमृत-दुहे",
+   "te": "గీతా-అమృత-దుహే",
+   "en": [
+    "who milks the nectar of the Gītā"
+   ],
+   "te_meaning": "గీతామృతాన్ని పితికినవానికి",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.3"
+    }
+   ]
+  },
+  {
+   "id": "sarvaupaniṣadaḥ",
+   "iast": "sarva-upaniṣadaḥ",
+   "deva": "सर्व-उपनिषदः",
+   "te": "సర్వ-ఉపనిషదః",
+   "en": [
+    "all the Upaniṣads"
+   ],
+   "te_meaning": "ఉపనిషత్తులన్నీ",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.4"
+    }
+   ]
+  },
+  {
+   "id": "gāvaḥ",
+   "iast": "gāvaḥ",
+   "deva": "गावः",
+   "te": "గావః",
+   "en": [
+    "are the cows"
+   ],
+   "te_meaning": "ఆవులు",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.4"
+    }
+   ]
+  },
+  {
+   "id": "dogdhā",
+   "iast": "dogdhā",
+   "deva": "दोग्धा",
+   "te": "దోగ్ధా",
+   "en": [
+    "the milker"
+   ],
+   "te_meaning": "పాలు పితికేవాడు",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.4"
+    }
+   ]
+  },
+  {
+   "id": "gopālanandanaḥ",
+   "iast": "gopāla-nandanaḥ",
+   "deva": "गोपाल-नन्दनः",
+   "te": "గోపాల-నందనః",
+   "en": [
+    "Kṛṣṇa, son of the cowherd"
+   ],
+   "te_meaning": "గోపాలుని కుమారుడు (శ్రీకృష్ణుడు)",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.4"
+    }
+   ]
+  },
+  {
+   "id": "pārthaḥ",
+   "iast": "pārthaḥ",
+   "deva": "पार्थः",
+   "te": "పార్థః",
+   "en": [
+    "Arjuna",
+    "Pārtha",
+    "Arjun, the son of Pritha"
+   ],
+   "te_meaning": "అర్జునుడు",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.4"
+    },
+    {
+     "src": "gita",
+     "group": "1",
+     "label": "Gita 1.26"
+    },
+    {
+     "src": "gita",
+     "group": "18",
+     "label": "Gita 18.78"
+    },
+    {
+     "src": "vs",
+     "group": "uttara",
+     "label": "VS · Phala Śruti 29"
+    }
+   ]
+  },
+  {
+   "id": "vatsaḥ",
+   "iast": "vatsaḥ",
+   "deva": "वत्सः",
+   "te": "వత్సః",
+   "en": [
+    "is the calf"
+   ],
+   "te_meaning": "దూడ",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.4"
+    }
+   ]
+  },
+  {
+   "id": "sudhīḥ",
+   "iast": "sudhīḥ",
+   "deva": "सुधीः",
+   "te": "సుధీః",
+   "en": [
+    "the wise"
+   ],
+   "te_meaning": "బుద్ధిమంతుడు",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.4"
+    }
+   ]
+  },
+  {
+   "id": "bhoktā",
+   "iast": "bhoktā",
+   "deva": "भोक्ता",
+   "te": "భోక్తా",
+   "en": [
+    "is the enjoyer",
+    "the enjoyer",
+    "the transcendental enjoyer",
+    "The supreme enjoyer of all sacrificial offerings and the experiencer within the heart",
+    "The supreme Enjoyer of all devotion and the protector who delights in His devotees' spiritual welfare",
+    "The supreme Enjoyer of all devotional service and the sovereign Master of nature"
+   ],
+   "te_meaning": "నైవేద్యాలను స్వీకరించేవాడు",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.4"
+    },
+    {
+     "src": "gita",
+     "group": "9",
+     "label": "Gita 9.24"
+    },
+    {
+     "src": "gita",
+     "group": "13",
+     "label": "Gita 13.23"
+    },
+    {
+     "src": "vs",
+     "group": "stotram",
+     "label": "VS · Shloka 16"
+    },
+    {
+     "src": "vs",
+     "group": "stotram",
+     "label": "VS · Shloka 53"
+    },
+    {
+     "src": "vs",
+     "group": "stotram",
+     "label": "VS · Shloka 95"
+    }
+   ]
+  },
+  {
+   "id": "dugdham",
+   "iast": "dugdham",
+   "deva": "दुग्धम्",
+   "te": "దుగ్ధమ్",
+   "en": [
+    "the milk"
+   ],
+   "te_meaning": "పాలు",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.4"
+    }
+   ]
+  },
+  {
+   "id": "gītāamṛtam",
+   "iast": "gītā-amṛtam",
+   "deva": "गीता-अमृतम्",
+   "te": "గీతా-అమృతమ్",
+   "en": [
+    "the nectar of the Gītā"
+   ],
+   "te_meaning": "గీతామృతం",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.4"
+    }
+   ]
+  },
+  {
+   "id": "mahat",
+   "iast": "mahat",
+   "deva": "महत्",
+   "te": "మహత్",
+   "en": [
+    "great",
+    "magnificent"
+   ],
+   "te_meaning": "గొప్ప",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.4"
+    },
+    {
+     "src": "gita",
+     "group": "11",
+     "label": "Gita 11.23"
+    },
+    {
+     "src": "gita",
+     "group": "1",
+     "label": "Gita 1.45"
+    },
+    {
+     "src": "gita",
+     "group": "14",
+     "label": "Gita 14.3"
+    },
+    {
+     "src": "vs",
+     "group": "purva",
+     "label": "VS · Pūrva Pīṭhikā 15"
+    }
+   ]
+  },
+  {
+   "id": "vasudevasutam",
+   "iast": "vasudeva-sutam",
+   "deva": "वसुदेव-सुतम्",
+   "te": "వసుదేవ-సుతమ్",
+   "en": [
+    "son of Vasudeva"
+   ],
+   "te_meaning": "వసుదేవుని కుమారుని",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.5"
+    }
+   ]
+  },
+  {
+   "id": "devam",
+   "iast": "devam",
+   "deva": "देवम्",
+   "te": "దేవమ్",
+   "en": [
+    "the divine one",
+    "Lord",
+    "the Lord"
+   ],
+   "te_meaning": "దేవుని",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.5"
+    },
+    {
+     "src": "gita",
+     "group": "11",
+     "label": "Gita 11.11"
+    },
+    {
+     "src": "gita",
+     "group": "11",
+     "label": "Gita 11.14"
+    }
+   ]
+  },
+  {
+   "id": "kaṃsacāṇūramardanam",
+   "iast": "kaṃsa-cāṇūra-mardanam",
+   "deva": "कंस-चाणूर-मर्दनम्",
+   "te": "కంస-చాణూర-మర్దనమ్",
+   "en": [
+    "destroyer of Kaṃsa and Cāṇūra"
+   ],
+   "te_meaning": "కంసుని, చాణూరుని సంహరించినవాని",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.5"
+    }
+   ]
+  },
+  {
+   "id": "devakīparamaānandam",
+   "iast": "devakī-parama-ānandam",
+   "deva": "देवकी-परम-आनन्दम्",
+   "te": "దేవకీ-పరమ-ఆనందమ్",
+   "en": [
+    "supreme joy of Devakī"
+   ],
+   "te_meaning": "దేవకికి పరమానందం కలిగించినవాని",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.5"
+    }
+   ]
+  },
+  {
+   "id": "kṛṣṇam",
+   "iast": "kṛṣṇam",
+   "deva": "कृष्णम्",
+   "te": "కృష్ణమ్",
+   "en": [
+    "Kṛṣṇa",
+    "to Shree Krishna"
+   ],
+   "te_meaning": "శ్రీకృష్ణుని",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.5"
+    },
+    {
+     "src": "gita",
+     "group": "11",
+     "label": "Gita 11.35"
+    }
+   ]
+  },
+  {
+   "id": "vande",
+   "iast": "vande",
+   "deva": "वन्दे",
+   "te": "వందే",
+   "en": [
+    "I bow to",
+    "bow to",
+    "I bow"
+   ],
+   "te_meaning": "నమస్కరిస్తాను",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.5"
+    },
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.8"
+    },
+    {
+     "src": "vs",
+     "group": "purva",
+     "label": "VS · Pūrva Pīṭhikā 3"
+    },
+    {
+     "src": "vs",
+     "group": "purva",
+     "label": "VS · Dhyānam 3"
+    },
+    {
+     "src": "vs",
+     "group": "purva",
+     "label": "VS · Dhyānam 4"
+    }
+   ]
+  },
+  {
+   "id": "jagatgurum",
+   "iast": "jagat-gurum",
+   "deva": "जगत्-गुरुम्",
+   "te": "జగత్-గురుమ్",
+   "en": [
+    "teacher of the world"
+   ],
+   "te_meaning": "లోకానికి గురువైనవాని",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.5"
+    }
+   ]
+  },
+  {
+   "id": "bhīṣmadroṇataṭā",
+   "iast": "bhīṣma-droṇa-taṭā",
+   "deva": "भीष्म-द्रोण-तटा",
+   "te": "భీష్మ-ద్రోణ-తటా",
+   "en": [
+    "with Bhīṣma and Droṇa as its banks"
+   ],
+   "te_meaning": "భీష్మద్రోణులే గట్లుగా గల",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.6"
+    }
+   ]
+  },
+  {
+   "id": "jayadrathajalā",
+   "iast": "jayadratha-jalā",
+   "deva": "जयद्रथ-जला",
+   "te": "జయద్రథ-జలా",
+   "en": [
+    "with Jayadratha as its water"
+   ],
+   "te_meaning": "జయద్రథుడే నీరుగా గల",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.6"
+    }
+   ]
+  },
+  {
+   "id": "gāndhāranīlautpalā",
+   "iast": "gāndhāra-nīla-utpalā",
+   "deva": "गान्धार-नील-उत्पला",
+   "te": "గాంధార-నీల-ఉత్పలా",
+   "en": [
+    "with the king of Gāndhāra, Śakuni, as its blue water-lily"
+   ],
+   "te_meaning": "గాంధార రాజు (శకుని) నల్ల కలువగా గల",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.6"
+    }
+   ]
+  },
+  {
+   "id": "śalyagrāhavatī",
+   "iast": "śalya-grāhavatī",
+   "deva": "शल्य-ग्राहवती",
+   "te": "శల్య-గ్రాహవతీ",
+   "en": [
+    "with Śalya as its shark"
+   ],
+   "te_meaning": "శల్యుడే మొసలిగా గల",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.6"
+    }
+   ]
+  },
+  {
+   "id": "kṛpeṇa",
+   "iast": "kṛpeṇa",
+   "deva": "कृपेण",
+   "te": "కృపేణ",
+   "en": [
+    "with Kṛpa"
+   ],
+   "te_meaning": "కృపుని చేత",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.6"
+    }
+   ]
+  },
+  {
+   "id": "vahanī",
+   "iast": "vahanī",
+   "deva": "वहनी",
+   "te": "వహనీ",
+   "en": [
+    "as its current"
+   ],
+   "te_meaning": "ప్రవాహం గల",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.6"
+    }
+   ]
+  },
+  {
+   "id": "karṇena",
+   "iast": "karṇena",
+   "deva": "कर्णेन",
+   "te": "కర్ణేన",
+   "en": [
+    "with Karṇa"
+   ],
+   "te_meaning": "కర్ణుని చేత",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.6"
+    }
+   ]
+  },
+  {
+   "id": "velākulā",
+   "iast": "velākulā",
+   "deva": "वेलाकुला",
+   "te": "వేలాకులా",
+   "en": [
+    "as its breaking waves"
+   ],
+   "te_meaning": "అలలతో నిండిన",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.6"
+    }
+   ]
+  },
+  {
+   "id": "aśvatthāmavikarṇaghoramakarā",
+   "iast": "aśvatthāma-vikarṇa-ghora-makarā",
+   "deva": "अश्वत्थाम-विकर्ण-घोर-मकरा",
+   "te": "అశ్వత్థామ-వికర్ణ-ఘోర-మకరా",
+   "en": [
+    "with Aśvatthāmā and Vikarṇa as its terrible crocodiles"
+   ],
+   "te_meaning": "అశ్వత్థామ వికర్ణులే భయంకర మకరాలుగా గల",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.6"
+    }
+   ]
+  },
+  {
+   "id": "duryodhanaāvartinī",
+   "iast": "duryodhana-āvartinī",
+   "deva": "दुर्योधन-आवर्तिनी",
+   "te": "దుర్యోధన-ఆవర్తినీ",
+   "en": [
+    "with Duryodhana as its whirlpool"
+   ],
+   "te_meaning": "దుర్యోధనుడే సుడిగుండంగా గల",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.6"
+    }
+   ]
+  },
+  {
+   "id": "sā",
+   "iast": "sā",
+   "deva": "सा",
+   "te": "సా",
+   "en": [
+    "that",
+    "this",
+    "which"
+   ],
+   "te_meaning": "ఆ, ఆమె",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.6"
+    },
+    {
+     "src": "gita",
+     "group": "2",
+     "label": "Gita 2.69"
+    },
+    {
+     "src": "gita",
+     "group": "6",
+     "label": "Gita 6.19"
+    },
+    {
+     "src": "gita",
+     "group": "11",
+     "label": "Gita 11.12"
+    },
+    {
+     "src": "gita",
+     "group": "17",
+     "label": "Gita 17.2"
+    },
+    {
+     "src": "gita",
+     "group": "18",
+     "label": "Gita 18.30"
+    },
+    {
+     "src": "gita",
+     "group": "18",
+     "label": "Gita 18.31"
+    },
+    {
+     "src": "gita",
+     "group": "18",
+     "label": "Gita 18.32"
+    },
+    {
+     "src": "gita",
+     "group": "18",
+     "label": "Gita 18.33"
+    },
+    {
+     "src": "gita",
+     "group": "18",
+     "label": "Gita 18.34"
+    },
+    {
+     "src": "gita",
+     "group": "18",
+     "label": "Gita 18.35"
+    }
+   ]
+  },
+  {
+   "id": "uttīrṇā",
+   "iast": "uttīrṇā",
+   "deva": "उत्तीर्णा",
+   "te": "ఉత్తీర్ణా",
+   "en": [
+    "was crossed"
+   ],
+   "te_meaning": "దాటబడింది",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.6"
+    }
+   ]
+  },
+  {
+   "id": "khalu",
+   "iast": "khalu",
+   "deva": "खलु",
+   "te": "ఖలు",
+   "en": [
+    "indeed"
+   ],
+   "te_meaning": "నిజంగా",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.6"
+    }
+   ]
+  },
+  {
+   "id": "pāṇḍavaiḥ",
+   "iast": "pāṇḍavaiḥ",
+   "deva": "पाण्डवैः",
+   "te": "పాండవైః",
+   "en": [
+    "by the Pāṇḍavas"
+   ],
+   "te_meaning": "పాండవుల చేత",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.6"
+    }
+   ]
+  },
+  {
+   "id": "raṇanadī",
+   "iast": "raṇa-nadī",
+   "deva": "रण-नदी",
+   "te": "రణ-నదీ",
+   "en": [
+    "the river of battle"
+   ],
+   "te_meaning": "యుద్ధమనే నది",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.6"
+    }
+   ]
+  },
+  {
+   "id": "kaivartakaḥ",
+   "iast": "kaivartakaḥ",
+   "deva": "कैवर्तकः",
+   "te": "కైవర్తకః",
+   "en": [
+    "the ferryman"
+   ],
+   "te_meaning": "పడవ నడిపేవాడు",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.6"
+    }
+   ]
+  },
+  {
+   "id": "keśavaḥ",
+   "iast": "keśavaḥ",
+   "deva": "केशवः",
+   "te": "కేశవః",
+   "en": [
+    "Keśava, Kṛṣṇa",
+    "The supreme Master who commands Brahma (Ka) and Shiva/Vayu (Isha) (Ka + Isha + Va)",
+    "The Lord of Brahma and Rudra, radiating luminous rays and slayer of Keshi"
+   ],
+   "te_meaning": "అందమైన కేశాలు గలవాడు, బ్రహ్మ రుద్రులకు ప్రభువు",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.6"
+    },
+    {
+     "src": "vs",
+     "group": "stotram",
+     "label": "VS · Shloka 3"
+    },
+    {
+     "src": "vs",
+     "group": "stotram",
+     "label": "VS · Shloka 69"
+    }
+   ]
+  },
+  {
+   "id": "pārāśaryavacaḥ",
+   "iast": "pārāśarya-vacaḥ",
+   "deva": "पाराशर्य-वचः",
+   "te": "పారాశర్య-వచః",
+   "en": [
+    "the words of Vyāsa, son of Parāśara"
+   ],
+   "te_meaning": "పరాశరుని కుమారుడైన వ్యాసుని మాటలు",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.7"
+    }
+   ]
+  },
+  {
+   "id": "sarojam",
+   "iast": "sarojam",
+   "deva": "सरोजम्",
+   "te": "సరోజమ్",
+   "en": [
+    "lotus"
+   ],
+   "te_meaning": "తామర",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.7"
+    }
+   ]
+  },
+  {
+   "id": "amalam",
+   "iast": "amalam",
+   "deva": "अमलम्",
+   "te": "అమలమ్",
+   "en": [
+    "spotless"
+   ],
+   "te_meaning": "నిర్మలమైన",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.7"
+    }
+   ]
+  },
+  {
+   "id": "gītāarthagandhautkaṭam",
+   "iast": "gītā-artha-gandha-utkaṭam",
+   "deva": "गीता-अर्थ-गन्ध-उत्कटम्",
+   "te": "గీతా-అర్థ-గంధ-ఉత్కటమ్",
+   "en": [
+    "rich with the fragrance of the Gītā’s meaning"
+   ],
+   "te_meaning": "గీతార్థమనే సువాసనతో నిండిన",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.7"
+    }
+   ]
+  },
+  {
+   "id": "nānāākhyānakakeśaram",
+   "iast": "nānā-ākhyānaka-keśaram",
+   "deva": "नाना-आख्यानक-केशरम्",
+   "te": "నానా-ఆఖ్యానక-కేశరమ్",
+   "en": [
+    "with many stories as its filaments"
+   ],
+   "te_meaning": "అనేక కథలే కేసరాలుగా గల",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.7"
+    }
+   ]
+  },
+  {
+   "id": "harikathāsambodhanaābodhitam",
+   "iast": "hari-kathā-sambodhana-ābodhitam",
+   "deva": "हरि-कथा-सम्बोधन-आबोधितम्",
+   "te": "హరి-కథా-సంబోధన-ఆబోధితమ్",
+   "en": [
+    "opened by the telling of Hari’s stories"
+   ],
+   "te_meaning": "హరికథల వర్ణనతో వికసించిన",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.7"
+    }
+   ]
+  },
+  {
+   "id": "loke",
+   "iast": "loke",
+   "deva": "लोके",
+   "te": "లోకే",
+   "en": [
+    "in the world",
+    "within this world",
+    "in this world",
+    "in the universe",
+    "in creation"
+   ],
+   "te_meaning": "లోకంలో",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.7"
+    },
+    {
+     "src": "gita",
+     "group": "3",
+     "label": "Gita 3.3"
+    },
+    {
+     "src": "gita",
+     "group": "4",
+     "label": "Gita 4.12"
+    },
+    {
+     "src": "gita",
+     "group": "6",
+     "label": "Gita 6.42"
+    },
+    {
+     "src": "gita",
+     "group": "10",
+     "label": "Gita 10.6"
+    },
+    {
+     "src": "gita",
+     "group": "13",
+     "label": "Gita 13.14"
+    },
+    {
+     "src": "gita",
+     "group": "15",
+     "label": "Gita 15.16"
+    },
+    {
+     "src": "gita",
+     "group": "15",
+     "label": "Gita 15.18"
+    },
+    {
+     "src": "gita",
+     "group": "16",
+     "label": "Gita 16.6"
+    },
+    {
+     "src": "vs",
+     "group": "purva",
+     "label": "VS · Yudhiṣṭhira uvāca"
+    },
+    {
+     "src": "gita",
+     "group": "2",
+     "label": "Gita 2.5"
+    }
+   ]
+  },
+  {
+   "id": "sajjanaṣaṭpadaiḥ",
+   "iast": "sajjana-ṣaṭpadaiḥ",
+   "deva": "सज्जन-षट्पदैः",
+   "te": "సజ్జన-షట్పదైః",
+   "en": [
+    "by good people as bees"
+   ],
+   "te_meaning": "సజ్జనులనే తుమ్మెదల చేత",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.7"
+    }
+   ]
+  },
+  {
+   "id": "aharahaḥ",
+   "iast": "ahar ahaḥ",
+   "deva": "अहर् अहः",
+   "te": "అహర్ అహః",
+   "en": [
+    "day after day"
+   ],
+   "te_meaning": "ప్రతిరోజూ",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.7"
+    }
+   ]
+  },
+  {
+   "id": "pepīyamānam",
+   "iast": "pepīyamānam",
+   "deva": "पेपीयमानम्",
+   "te": "పేపీయమానమ్",
+   "en": [
+    "being drunk deeply"
+   ],
+   "te_meaning": "మళ్ళీ మళ్ళీ తాగబడుతున్న",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.7"
+    }
+   ]
+  },
+  {
+   "id": "mudā",
+   "iast": "mudā",
+   "deva": "मुदा",
+   "te": "ముదా",
+   "en": [
+    "with joy"
+   ],
+   "te_meaning": "ఆనందంతో",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.7"
+    }
+   ]
+  },
+  {
+   "id": "bhūyāt",
+   "iast": "bhūyāt",
+   "deva": "भूयात्",
+   "te": "భూయాత్",
+   "en": [
+    "may it be"
+   ],
+   "te_meaning": "అగుగాక",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.7"
+    }
+   ]
+  },
+  {
+   "id": "bhāratapaṅkajam",
+   "iast": "bhārata-paṅkajam",
+   "deva": "भारत-पङ्कजम्",
+   "te": "భారత-పంకజమ్",
+   "en": [
+    "the lotus of the Mahābhārata"
+   ],
+   "te_meaning": "మహాభారతమనే పద్మం",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.7"
+    }
+   ]
+  },
+  {
+   "id": "kalimalapradhvaṃsanam",
+   "iast": "kali-mala-pradhvaṃsanam",
+   "deva": "कलि-मल-प्रध्वंसनम्",
+   "te": "కలి-మల-ప్రధ్వంసనమ్",
+   "en": [
+    "destroying the impurities of Kali"
+   ],
+   "te_meaning": "కలి దోషాలను నశింపజేసే",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.7"
+    }
+   ]
+  },
+  {
+   "id": "śreyase",
+   "iast": "śreyase",
+   "deva": "श्रेयसे",
+   "te": "శ్రేయసే",
+   "en": [
+    "for the highest good"
+   ],
+   "te_meaning": "శ్రేయస్సు కొరకు",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.7"
+    }
+   ]
+  },
+  {
+   "id": "mūkam",
+   "iast": "mūkam",
+   "deva": "मूकम्",
+   "te": "మూకమ్",
+   "en": [
+    "the mute"
+   ],
+   "te_meaning": "మూగవానిని",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.8"
+    }
+   ]
+  },
+  {
+   "id": "karoti",
+   "iast": "karoti",
+   "deva": "करोति",
+   "te": "కరోతి",
+   "en": [
+    "makes",
+    "do",
+    "performs",
+    "perform",
+    "acts"
+   ],
+   "te_meaning": "చేస్తుంది, చేస్తాడు",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.8"
+    },
+    {
+     "src": "gita",
+     "group": "4",
+     "label": "Gita 4.20"
+    },
+    {
+     "src": "gita",
+     "group": "5",
+     "label": "Gita 5.10"
+    },
+    {
+     "src": "gita",
+     "group": "6",
+     "label": "Gita 6.1"
+    },
+    {
+     "src": "gita",
+     "group": "13",
+     "label": "Gita 13.32"
+    }
+   ]
+  },
+  {
+   "id": "vācālam",
+   "iast": "vācālam",
+   "deva": "वाचालम्",
+   "te": "వాచాలమ్",
+   "en": [
+    "eloquent"
+   ],
+   "te_meaning": "మాటకారిగా",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.8"
+    }
+   ]
+  },
+  {
+   "id": "paṅgum",
+   "iast": "paṅgum",
+   "deva": "पङ्गुम्",
+   "te": "పంగుమ్",
+   "en": [
+    "the lame"
+   ],
+   "te_meaning": "కుంటివానిని",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.8"
+    }
+   ]
+  },
+  {
+   "id": "laṅghayate",
+   "iast": "laṅghayate",
+   "deva": "लङ्घयते",
+   "te": "లంఘయతే",
+   "en": [
+    "makes to cross"
+   ],
+   "te_meaning": "దాటేలా చేస్తుంది",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.8"
+    }
+   ]
+  },
+  {
+   "id": "girim",
+   "iast": "girim",
+   "deva": "गिरिम्",
+   "te": "గిరిమ్",
+   "en": [
+    "a mountain"
+   ],
+   "te_meaning": "కొండను",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.8"
+    }
+   ]
+  },
+  {
+   "id": "yatkṛpā",
+   "iast": "yat-kṛpā",
+   "deva": "यत्-कृपा",
+   "te": "యత్-కృపా",
+   "en": [
+    "whose grace"
+   ],
+   "te_meaning": "ఎవరి కృప",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.8"
+    }
+   ]
+  },
+  {
+   "id": "tam",
+   "iast": "tam",
+   "deva": "तम्",
+   "te": "తమ్",
+   "en": [
+    "Him",
+    "to him (Arjun)",
+    "to him",
+    "him",
+    "that",
+    "to that",
+    "that person",
+    "unto him",
+    "Him alone"
+   ],
+   "te_meaning": "అతనిని, ఆయనను",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.8"
+    },
+    {
+     "src": "gita",
+     "group": "2",
+     "label": "Gita 2.1"
+    },
+    {
+     "src": "gita",
+     "group": "2",
+     "label": "Gita 2.10"
+    },
+    {
+     "src": "gita",
+     "group": "4",
+     "label": "Gita 4.19"
+    },
+    {
+     "src": "gita",
+     "group": "6",
+     "label": "Gita 6.2"
+    },
+    {
+     "src": "gita",
+     "group": "6",
+     "label": "Gita 6.23"
+    },
+    {
+     "src": "gita",
+     "group": "6",
+     "label": "Gita 6.43"
+    },
+    {
+     "src": "gita",
+     "group": "8",
+     "label": "Gita 8.6"
+    },
+    {
+     "src": "gita",
+     "group": "8",
+     "label": "Gita 8.10"
+    },
+    {
+     "src": "gita",
+     "group": "8",
+     "label": "Gita 8.21"
+    },
+    {
+     "src": "gita",
+     "group": "8",
+     "label": "Gita 8.23"
+    },
+    {
+     "src": "gita",
+     "group": "9",
+     "label": "Gita 9.21"
+    },
+    {
+     "src": "gita",
+     "group": "10",
+     "label": "Gita 10.10"
+    },
+    {
+     "src": "gita",
+     "group": "13",
+     "label": "Gita 13.2"
+    },
+    {
+     "src": "gita",
+     "group": "15",
+     "label": "Gita 15.1"
+    },
+    {
+     "src": "gita",
+     "group": "15",
+     "label": "Gita 15.4"
+    },
+    {
+     "src": "gita",
+     "group": "17",
+     "label": "Gita 17.12"
+    },
+    {
+     "src": "gita",
+     "group": "18",
+     "label": "Gita 18.46"
+    },
+    {
+     "src": "gita",
+     "group": "18",
+     "label": "Gita 18.62"
+    },
+    {
+     "src": "vs",
+     "group": "purva",
+     "label": "VS · Pūrva Pīṭhikā 11"
+    },
+    {
+     "src": "gita",
+     "group": "7",
+     "label": "Gita 7.20"
+    }
+   ]
+  },
+  {
+   "id": "aham",
+   "iast": "aham",
+   "deva": "अहम्",
+   "te": "అహమ్",
+   "en": [
+    "I",
+    "I am"
+   ],
+   "te_meaning": "నేను",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.8"
+    },
+    {
+     "src": "gita",
+     "group": "2",
+     "label": "Gita 2.4"
+    },
+    {
+     "src": "gita",
+     "group": "2",
+     "label": "Gita 2.7"
+    },
+    {
+     "src": "gita",
+     "group": "2",
+     "label": "Gita 2.12"
+    },
+    {
+     "src": "gita",
+     "group": "3",
+     "label": "Gita 3.2"
+    },
+    {
+     "src": "gita",
+     "group": "3",
+     "label": "Gita 3.23"
+    },
+    {
+     "src": "gita",
+     "group": "3",
+     "label": "Gita 3.24"
+    },
+    {
+     "src": "gita",
+     "group": "3",
+     "label": "Gita 3.27"
+    },
+    {
+     "src": "gita",
+     "group": "4",
+     "label": "Gita 4.1"
+    },
+    {
+     "src": "gita",
+     "group": "4",
+     "label": "Gita 4.5"
+    },
+    {
+     "src": "gita",
+     "group": "4",
+     "label": "Gita 4.7"
+    },
+    {
+     "src": "gita",
+     "group": "4",
+     "label": "Gita 4.11"
+    },
+    {
+     "src": "gita",
+     "group": "6",
+     "label": "Gita 6.30"
+    },
+    {
+     "src": "gita",
+     "group": "6",
+     "label": "Gita 6.33"
+    },
+    {
+     "src": "gita",
+     "group": "6",
+     "label": "Gita 6.34"
+    },
+    {
+     "src": "gita",
+     "group": "7",
+     "label": "Gita 7.2"
+    },
+    {
+     "src": "gita",
+     "group": "7",
+     "label": "Gita 7.6"
+    },
+    {
+     "src": "gita",
+     "group": "7",
+     "label": "Gita 7.8"
+    },
+    {
+     "src": "gita",
+     "group": "7",
+     "label": "Gita 7.10"
+    },
+    {
+     "src": "gita",
+     "group": "7",
+     "label": "Gita 7.11"
+    },
+    {
+     "src": "gita",
+     "group": "7",
+     "label": "Gita 7.12"
+    },
+    {
+     "src": "gita",
+     "group": "7",
+     "label": "Gita 7.17"
+    },
+    {
+     "src": "gita",
+     "group": "7",
+     "label": "Gita 7.21"
+    },
+    {
+     "src": "gita",
+     "group": "7",
+     "label": "Gita 7.25"
+    },
+    {
+     "src": "gita",
+     "group": "7",
+     "label": "Gita 7.26"
+    },
+    {
+     "src": "gita",
+     "group": "8",
+     "label": "Gita 8.4"
+    },
+    {
+     "src": "gita",
+     "group": "8",
+     "label": "Gita 8.14"
+    },
+    {
+     "src": "gita",
+     "group": "9",
+     "label": "Gita 9.4"
+    },
+    {
+     "src": "gita",
+     "group": "9",
+     "label": "Gita 9.7"
+    },
+    {
+     "src": "gita",
+     "group": "9",
+     "label": "Gita 9.16"
+    },
+    {
+     "src": "gita",
+     "group": "9",
+     "label": "Gita 9.17"
+    },
+    {
+     "src": "gita",
+     "group": "9",
+     "label": "Gita 9.19"
+    },
+    {
+     "src": "gita",
+     "group": "9",
+     "label": "Gita 9.22"
+    },
+    {
+     "src": "gita",
+     "group": "9",
+     "label": "Gita 9.24"
+    },
+    {
+     "src": "gita",
+     "group": "9",
+     "label": "Gita 9.26"
+    },
+    {
+     "src": "gita",
+     "group": "9",
+     "label": "Gita 9.29"
+    },
+    {
+     "src": "gita",
+     "group": "10",
+     "label": "Gita 10.1"
+    },
+    {
+     "src": "gita",
+     "group": "10",
+     "label": "Gita 10.2"
+    },
+    {
+     "src": "gita",
+     "group": "10",
+     "label": "Gita 10.8"
+    },
+    {
+     "src": "gita",
+     "group": "10",
+     "label": "Gita 10.11"
+    },
+    {
+     "src": "gita",
+     "group": "10",
+     "label": "Gita 10.20"
+    },
+    {
+     "src": "gita",
+     "group": "10",
+     "label": "Gita 10.21"
+    },
+    {
+     "src": "gita",
+     "group": "10",
+     "label": "Gita 10.23"
+    },
+    {
+     "src": "gita",
+     "group": "10",
+     "label": "Gita 10.24"
+    },
+    {
+     "src": "gita",
+     "group": "10",
+     "label": "Gita 10.25"
+    },
+    {
+     "src": "gita",
+     "group": "10",
+     "label": "Gita 10.28"
+    },
+    {
+     "src": "gita",
+     "group": "10",
+     "label": "Gita 10.29"
+    },
+    {
+     "src": "gita",
+     "group": "10",
+     "label": "Gita 10.30"
+    },
+    {
+     "src": "gita",
+     "group": "10",
+     "label": "Gita 10.31"
+    },
+    {
+     "src": "gita",
+     "group": "10",
+     "label": "Gita 10.32"
+    },
+    {
+     "src": "gita",
+     "group": "10",
+     "label": "Gita 10.33"
+    },
+    {
+     "src": "gita",
+     "group": "10",
+     "label": "Gita 10.34"
+    },
+    {
+     "src": "gita",
+     "group": "10",
+     "label": "Gita 10.35"
+    },
+    {
+     "src": "gita",
+     "group": "10",
+     "label": "Gita 10.36"
+    },
+    {
+     "src": "gita",
+     "group": "10",
+     "label": "Gita 10.37"
+    },
+    {
+     "src": "gita",
+     "group": "10",
+     "label": "Gita 10.38"
+    },
+    {
+     "src": "gita",
+     "group": "10",
+     "label": "Gita 10.39"
+    },
+    {
+     "src": "gita",
+     "group": "10",
+     "label": "Gita 10.42"
+    },
+    {
+     "src": "gita",
+     "group": "11",
+     "label": "Gita 11.23"
+    },
+    {
+     "src": "gita",
+     "group": "11",
+     "label": "Gita 11.42"
+    },
+    {
+     "src": "gita",
+     "group": "11",
+     "label": "Gita 11.44"
+    },
+    {
+     "src": "gita",
+     "group": "11",
+     "label": "Gita 11.46"
+    },
+    {
+     "src": "gita",
+     "group": "11",
+     "label": "Gita 11.48"
+    },
+    {
+     "src": "gita",
+     "group": "11",
+     "label": "Gita 11.53"
+    },
+    {
+     "src": "gita",
+     "group": "11",
+     "label": "Gita 11.54"
+    },
+    {
+     "src": "gita",
+     "group": "12",
+     "label": "Gita 12.7"
+    },
+    {
+     "src": "gita",
+     "group": "14",
+     "label": "Gita 14.3"
+    },
+    {
+     "src": "gita",
+     "group": "14",
+     "label": "Gita 14.4"
+    },
+    {
+     "src": "gita",
+     "group": "14",
+     "label": "Gita 14.27"
+    },
+    {
+     "src": "gita",
+     "group": "15",
+     "label": "Gita 15.13"
+    },
+    {
+     "src": "gita",
+     "group": "15",
+     "label": "Gita 15.14"
+    },
+    {
+     "src": "gita",
+     "group": "15",
+     "label": "Gita 15.15"
+    },
+    {
+     "src": "gita",
+     "group": "15",
+     "label": "Gita 15.18"
+    },
+    {
+     "src": "gita",
+     "group": "16",
+     "label": "Gita 16.14"
+    },
+    {
+     "src": "gita",
+     "group": "16",
+     "label": "Gita 16.19"
+    },
+    {
+     "src": "gita",
+     "group": "18",
+     "label": "Gita 18.66"
+    },
+    {
+     "src": "gita",
+     "group": "18",
+     "label": "Gita 18.70"
+    },
+    {
+     "src": "gita",
+     "group": "18",
+     "label": "Gita 18.74"
+    },
+    {
+     "src": "gita",
+     "group": "18",
+     "label": "Gita 18.75"
+    },
+    {
+     "src": "vs",
+     "group": "purva",
+     "label": "VS · Saṅkalpaḥ"
+    }
+   ]
+  },
+  {
+   "id": "paramaānandamādhavam",
+   "iast": "parama-ānanda-mādhavam",
+   "deva": "परम-आनन्द-माधवम्",
+   "te": "పరమ-ఆనంద-మాధవమ్",
+   "en": [
+    "Mādhava, the supreme bliss"
+   ],
+   "te_meaning": "పరమానంద స్వరూపుడైన మాధవుని",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.8"
+    }
+   ]
+  },
+  {
+   "id": "yam",
+   "iast": "yam",
+   "deva": "यम्",
+   "te": "యమ్",
+   "en": [
+    "whom",
+    "what",
+    "which"
+   ],
+   "te_meaning": "ఎవరిని",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.9"
+    },
+    {
+     "src": "gita",
+     "group": "2",
+     "label": "Gita 2.15"
+    },
+    {
+     "src": "gita",
+     "group": "2",
+     "label": "Gita 2.70"
+    },
+    {
+     "src": "gita",
+     "group": "6",
+     "label": "Gita 6.2"
+    },
+    {
+     "src": "gita",
+     "group": "6",
+     "label": "Gita 6.22"
+    },
+    {
+     "src": "gita",
+     "group": "8",
+     "label": "Gita 8.21"
+    },
+    {
+     "src": "gita",
+     "group": "8",
+     "label": "Gita 8.6"
+    }
+   ]
+  },
+  {
+   "id": "brahmā",
+   "iast": "brahmā",
+   "deva": "ब्रह्मा",
+   "te": "బ్రహ్మా",
+   "en": [
+    "Brahmā",
+    "The great and vast Supreme Being (Brihattvat Brahma) endowed with infinite perfection"
+   ],
+   "te_meaning": "విశాలమైన పరబ్రహ్మ",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.9"
+    },
+    {
+     "src": "vs",
+     "group": "stotram",
+     "label": "VS · Shloka 71"
+    }
+   ]
+  },
+  {
+   "id": "varuṇaindrarudramarutaḥ",
+   "iast": "varuṇa-indra-rudra-marutaḥ",
+   "deva": "वरुण-इन्द्र-रुद्र-मरुतः",
+   "te": "వరుణ-ఇంద్ర-రుద్ర-మరుతః",
+   "en": [
+    "Varuṇa, Indra, Rudra and the Maruts"
+   ],
+   "te_meaning": "వరుణుడు, ఇంద్రుడు, రుద్రుడు, మరుత్తులు",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.9"
+    }
+   ]
+  },
+  {
+   "id": "stunvanti",
+   "iast": "stunvanti",
+   "deva": "स्तुन्वन्ति",
+   "te": "స్తున్వంతి",
+   "en": [
+    "praise"
+   ],
+   "te_meaning": "స్తుతిస్తారు",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.9"
+    }
+   ]
+  },
+  {
+   "id": "divyaiḥ",
+   "iast": "divyaiḥ",
+   "deva": "दिव्यैः",
+   "te": "దివ్యైః",
+   "en": [
+    "with divine"
+   ],
+   "te_meaning": "దివ్యమైన",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.9"
+    }
+   ]
+  },
+  {
+   "id": "stavaiḥ",
+   "iast": "stavaiḥ",
+   "deva": "स्तवैः",
+   "te": "స్తవైః",
+   "en": [
+    "hymns"
+   ],
+   "te_meaning": "స్తోత్రాలతో",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.9"
+    }
+   ]
+  },
+  {
+   "id": "vedaiḥ",
+   "iast": "vedaiḥ",
+   "deva": "वेदैः",
+   "te": "వేదైః",
+   "en": [
+    "with the Vedas",
+    "by study of the Vedas",
+    "by the Vedas"
+   ],
+   "te_meaning": "వేదాలతో",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.9"
+    },
+    {
+     "src": "gita",
+     "group": "11",
+     "label": "Gita 11.53"
+    },
+    {
+     "src": "gita",
+     "group": "15",
+     "label": "Gita 15.15"
+    }
+   ]
+  },
+  {
+   "id": "saaṅgapadakramaupaniṣadaiḥ",
+   "iast": "sa-aṅga-pada-krama-upaniṣadaiḥ",
+   "deva": "स-अङ्ग-पद-क्रम-उपनिषदैः",
+   "te": "స-అంగ-పద-క్రమ-ఉపనిషదైః",
+   "en": [
+    "with their limbs, pada and krama recitations and Upaniṣads"
+   ],
+   "te_meaning": "అంగాలు, పద క్రమ పాఠాలు, ఉపనిషత్తులతో కూడిన",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.9"
+    }
+   ]
+  },
+  {
+   "id": "gāyanti",
+   "iast": "gāyanti",
+   "deva": "गायन्ति",
+   "te": "గాయంతి",
+   "en": [
+    "sing"
+   ],
+   "te_meaning": "గానం చేస్తారు",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.9"
+    }
+   ]
+  },
+  {
+   "id": "sāmagāḥ",
+   "iast": "sāmagāḥ",
+   "deva": "सामगाः",
+   "te": "సామగాః",
+   "en": [
+    "the singers of the Sāma Veda"
+   ],
+   "te_meaning": "సామవేదం పాడేవారు",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.9"
+    }
+   ]
+  },
+  {
+   "id": "dhyānaavasthitatatgatena",
+   "iast": "dhyāna-avasthita-tat-gatena",
+   "deva": "ध्यान-अवस्थित-तत्-गतेन",
+   "te": "ధ్యాన-అవస్థిత-తత్-గతేన",
+   "en": [
+    "absorbed in Him, settled in meditation"
+   ],
+   "te_meaning": "ధ్యానంలో నిలిచి ఆయనలో లీనమైన",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.9"
+    }
+   ]
+  },
+  {
+   "id": "manasā",
+   "iast": "manasā",
+   "deva": "मनसा",
+   "te": "మనసా",
+   "en": [
+    "with the mind",
+    "in the mind",
+    "by the mind",
+    "through the mind",
+    "mind"
+   ],
+   "te_meaning": "మనసుతో",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.9"
+    },
+    {
+     "src": "gita",
+     "group": "3",
+     "label": "Gita 3.6"
+    },
+    {
+     "src": "gita",
+     "group": "3",
+     "label": "Gita 3.7"
+    },
+    {
+     "src": "gita",
+     "group": "5",
+     "label": "Gita 5.11"
+    },
+    {
+     "src": "gita",
+     "group": "5",
+     "label": "Gita 5.13"
+    },
+    {
+     "src": "gita",
+     "group": "6",
+     "label": "Gita 6.24"
+    },
+    {
+     "src": "gita",
+     "group": "8",
+     "label": "Gita 8.10"
+    }
+   ]
+  },
+  {
+   "id": "paśyanti",
+   "iast": "paśyanti",
+   "deva": "पश्यन्ति",
+   "te": "పశ్యంతి",
+   "en": [
+    "see",
+    "percieve",
+    "behold",
+    "cognize"
+   ],
+   "te_meaning": "చూస్తారు, దర్శిస్తారు",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.9"
+    },
+    {
+     "src": "gita",
+     "group": "13",
+     "label": "Gita 13.25"
+    },
+    {
+     "src": "gita",
+     "group": "15",
+     "label": "Gita 15.10"
+    },
+    {
+     "src": "gita",
+     "group": "15",
+     "label": "Gita 15.11"
+    },
+    {
+     "src": "gita",
+     "group": "1",
+     "label": "Gita 1.38"
+    }
+   ]
+  },
+  {
+   "id": "yoginaḥ",
+   "iast": "yoginaḥ",
+   "deva": "योगिनः",
+   "te": "యోగినః",
+   "en": [
+    "the yogis",
+    "spiritual practioners",
+    "of a yogi",
+    "of the yogis",
+    "a yogi",
+    "yogis"
+   ],
+   "te_meaning": "యోగులు",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.9"
+    },
+    {
+     "src": "gita",
+     "group": "4",
+     "label": "Gita 4.25"
+    },
+    {
+     "src": "gita",
+     "group": "5",
+     "label": "Gita 5.11"
+    },
+    {
+     "src": "gita",
+     "group": "6",
+     "label": "Gita 6.19"
+    },
+    {
+     "src": "gita",
+     "group": "8",
+     "label": "Gita 8.14"
+    },
+    {
+     "src": "gita",
+     "group": "8",
+     "label": "Gita 8.23"
+    },
+    {
+     "src": "gita",
+     "group": "15",
+     "label": "Gita 15.11"
+    }
+   ]
+  },
+  {
+   "id": "yasya",
+   "iast": "yasya",
+   "deva": "यस्य",
+   "te": "యస్య",
+   "en": [
+    "whose",
+    "of whom",
+    "of which"
+   ],
+   "te_meaning": "ఎవరి యొక్క",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.9"
+    },
+    {
+     "src": "gita",
+     "group": "2",
+     "label": "Gita 2.61"
+    },
+    {
+     "src": "gita",
+     "group": "2",
+     "label": "Gita 2.68"
+    },
+    {
+     "src": "gita",
+     "group": "4",
+     "label": "Gita 4.19"
+    },
+    {
+     "src": "gita",
+     "group": "8",
+     "label": "Gita 8.22"
+    },
+    {
+     "src": "gita",
+     "group": "15",
+     "label": "Gita 15.1"
+    },
+    {
+     "src": "gita",
+     "group": "18",
+     "label": "Gita 18.17"
+    },
+    {
+     "src": "vs",
+     "group": "purva",
+     "label": "VS · Pūrva Pīṭhikā 2"
+    },
+    {
+     "src": "vs",
+     "group": "purva",
+     "label": "VS · Pūrva Pīṭhikā 6"
+    },
+    {
+     "src": "bhaja_govindam",
+     "group": "chaturdasha",
+     "label": "Bhaja Govindam · Verse 19"
+    }
+   ]
+  },
+  {
+   "id": "antam",
+   "iast": "antam",
+   "deva": "अन्तम्",
+   "te": "అంతమ్",
+   "en": [
+    "end"
+   ],
+   "te_meaning": "అంతాన్ని, చివరను",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.9"
+    },
+    {
+     "src": "gita",
+     "group": "11",
+     "label": "Gita 11.16"
+    }
+   ]
+  },
+  {
+   "id": "suraasuragaṇāḥ",
+   "iast": "sura-asura-gaṇāḥ",
+   "deva": "सुर-असुर-गणाः",
+   "te": "సుర-అసుర-గణాః",
+   "en": [
+    "the hosts of gods and demons"
+   ],
+   "te_meaning": "దేవతలు, రాక్షసుల సమూహాలు",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.9"
+    }
+   ]
+  },
+  {
+   "id": "devāya",
+   "iast": "devāya",
+   "deva": "देवाय",
+   "te": "దేవాయ",
+   "en": [
+    "to the Lord"
+   ],
+   "te_meaning": "దేవునికి",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.9"
+    }
+   ]
+  },
+  {
+   "id": "tasmai",
+   "iast": "tasmai",
+   "deva": "तस्मै",
+   "te": "తస్మై",
+   "en": [
+    "to Him"
+   ],
+   "te_meaning": "ఆయనకు",
+   "refs": [
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.9"
+    },
+    {
+     "src": "vs",
+     "group": "purva",
+     "label": "VS · Pūrva Pīṭhikā 6"
+    }
+   ]
+  },
   {
    "id": "dharmakṣetre",
    "iast": "dharma-kṣetre",
@@ -5109,34 +8652,6 @@
    ]
   },
   {
-   "id": "pārthaḥ",
-   "iast": "pārthaḥ",
-   "deva": "पार्थः",
-   "te": "పార్థః",
-   "en": [
-    "Pārtha",
-    "Arjun, the son of Pritha"
-   ],
-   "te_meaning": "",
-   "refs": [
-    {
-     "src": "gita",
-     "group": "1",
-     "label": "Gita 1.26"
-    },
-    {
-     "src": "gita",
-     "group": "18",
-     "label": "Gita 18.78"
-    },
-    {
-     "src": "vs",
-     "group": "uttara",
-     "label": "VS · Phala Śruti 29"
-    }
-   ]
-  },
-  {
    "id": "pitṝn",
    "iast": "pitṝn",
    "deva": "पितॄन्",
@@ -7857,125 +11372,6 @@
    ]
   },
   {
-   "id": "tam",
-   "iast": "tam",
-   "deva": "तम्",
-   "te": "తమ్",
-   "en": [
-    "to him (Arjun)",
-    "to him",
-    "him",
-    "that",
-    "to that",
-    "that person",
-    "unto him",
-    "Him alone"
-   ],
-   "te_meaning": "",
-   "refs": [
-    {
-     "src": "gita",
-     "group": "2",
-     "label": "Gita 2.1"
-    },
-    {
-     "src": "gita",
-     "group": "2",
-     "label": "Gita 2.10"
-    },
-    {
-     "src": "gita",
-     "group": "4",
-     "label": "Gita 4.19"
-    },
-    {
-     "src": "gita",
-     "group": "6",
-     "label": "Gita 6.2"
-    },
-    {
-     "src": "gita",
-     "group": "6",
-     "label": "Gita 6.23"
-    },
-    {
-     "src": "gita",
-     "group": "6",
-     "label": "Gita 6.43"
-    },
-    {
-     "src": "gita",
-     "group": "8",
-     "label": "Gita 8.6"
-    },
-    {
-     "src": "gita",
-     "group": "8",
-     "label": "Gita 8.10"
-    },
-    {
-     "src": "gita",
-     "group": "8",
-     "label": "Gita 8.21"
-    },
-    {
-     "src": "gita",
-     "group": "8",
-     "label": "Gita 8.23"
-    },
-    {
-     "src": "gita",
-     "group": "9",
-     "label": "Gita 9.21"
-    },
-    {
-     "src": "gita",
-     "group": "10",
-     "label": "Gita 10.10"
-    },
-    {
-     "src": "gita",
-     "group": "13",
-     "label": "Gita 13.2"
-    },
-    {
-     "src": "gita",
-     "group": "15",
-     "label": "Gita 15.1"
-    },
-    {
-     "src": "gita",
-     "group": "15",
-     "label": "Gita 15.4"
-    },
-    {
-     "src": "gita",
-     "group": "17",
-     "label": "Gita 17.12"
-    },
-    {
-     "src": "gita",
-     "group": "18",
-     "label": "Gita 18.46"
-    },
-    {
-     "src": "gita",
-     "group": "18",
-     "label": "Gita 18.62"
-    },
-    {
-     "src": "vs",
-     "group": "purva",
-     "label": "VS · Pūrva Pīṭhikā 11"
-    },
-    {
-     "src": "gita",
-     "group": "7",
-     "label": "Gita 7.20"
-    }
-   ]
-  },
-  {
    "id": "kṛpayā",
    "iast": "kṛpayā",
    "deva": "कृपया",
@@ -8660,7 +12056,7 @@
     "none",
     "no one"
    ],
-   "te_meaning": "",
+   "te_meaning": "కాదు, లేదు",
    "refs": [
     {
      "src": "gita",
@@ -9354,6 +12750,11 @@
     },
     {
      "src": "gita",
+     "group": "0",
+     "label": "Gita 0.9"
+    },
+    {
+     "src": "gita",
      "group": "1",
      "label": "Gita 1.35"
     },
@@ -9851,414 +13252,6 @@
      "src": "gita",
      "group": "11",
      "label": "Gita 11.34"
-    }
-   ]
-  },
-  {
-   "id": "aham",
-   "iast": "aham",
-   "deva": "अहम्",
-   "te": "అహమ్",
-   "en": [
-    "I",
-    "I am"
-   ],
-   "te_meaning": "నేను",
-   "refs": [
-    {
-     "src": "gita",
-     "group": "2",
-     "label": "Gita 2.4"
-    },
-    {
-     "src": "gita",
-     "group": "2",
-     "label": "Gita 2.7"
-    },
-    {
-     "src": "gita",
-     "group": "2",
-     "label": "Gita 2.12"
-    },
-    {
-     "src": "gita",
-     "group": "3",
-     "label": "Gita 3.2"
-    },
-    {
-     "src": "gita",
-     "group": "3",
-     "label": "Gita 3.23"
-    },
-    {
-     "src": "gita",
-     "group": "3",
-     "label": "Gita 3.24"
-    },
-    {
-     "src": "gita",
-     "group": "3",
-     "label": "Gita 3.27"
-    },
-    {
-     "src": "gita",
-     "group": "4",
-     "label": "Gita 4.1"
-    },
-    {
-     "src": "gita",
-     "group": "4",
-     "label": "Gita 4.5"
-    },
-    {
-     "src": "gita",
-     "group": "4",
-     "label": "Gita 4.7"
-    },
-    {
-     "src": "gita",
-     "group": "4",
-     "label": "Gita 4.11"
-    },
-    {
-     "src": "gita",
-     "group": "6",
-     "label": "Gita 6.30"
-    },
-    {
-     "src": "gita",
-     "group": "6",
-     "label": "Gita 6.33"
-    },
-    {
-     "src": "gita",
-     "group": "6",
-     "label": "Gita 6.34"
-    },
-    {
-     "src": "gita",
-     "group": "7",
-     "label": "Gita 7.2"
-    },
-    {
-     "src": "gita",
-     "group": "7",
-     "label": "Gita 7.6"
-    },
-    {
-     "src": "gita",
-     "group": "7",
-     "label": "Gita 7.8"
-    },
-    {
-     "src": "gita",
-     "group": "7",
-     "label": "Gita 7.10"
-    },
-    {
-     "src": "gita",
-     "group": "7",
-     "label": "Gita 7.11"
-    },
-    {
-     "src": "gita",
-     "group": "7",
-     "label": "Gita 7.12"
-    },
-    {
-     "src": "gita",
-     "group": "7",
-     "label": "Gita 7.17"
-    },
-    {
-     "src": "gita",
-     "group": "7",
-     "label": "Gita 7.21"
-    },
-    {
-     "src": "gita",
-     "group": "7",
-     "label": "Gita 7.25"
-    },
-    {
-     "src": "gita",
-     "group": "7",
-     "label": "Gita 7.26"
-    },
-    {
-     "src": "gita",
-     "group": "8",
-     "label": "Gita 8.4"
-    },
-    {
-     "src": "gita",
-     "group": "8",
-     "label": "Gita 8.14"
-    },
-    {
-     "src": "gita",
-     "group": "9",
-     "label": "Gita 9.4"
-    },
-    {
-     "src": "gita",
-     "group": "9",
-     "label": "Gita 9.7"
-    },
-    {
-     "src": "gita",
-     "group": "9",
-     "label": "Gita 9.16"
-    },
-    {
-     "src": "gita",
-     "group": "9",
-     "label": "Gita 9.17"
-    },
-    {
-     "src": "gita",
-     "group": "9",
-     "label": "Gita 9.19"
-    },
-    {
-     "src": "gita",
-     "group": "9",
-     "label": "Gita 9.22"
-    },
-    {
-     "src": "gita",
-     "group": "9",
-     "label": "Gita 9.24"
-    },
-    {
-     "src": "gita",
-     "group": "9",
-     "label": "Gita 9.26"
-    },
-    {
-     "src": "gita",
-     "group": "9",
-     "label": "Gita 9.29"
-    },
-    {
-     "src": "gita",
-     "group": "10",
-     "label": "Gita 10.1"
-    },
-    {
-     "src": "gita",
-     "group": "10",
-     "label": "Gita 10.2"
-    },
-    {
-     "src": "gita",
-     "group": "10",
-     "label": "Gita 10.8"
-    },
-    {
-     "src": "gita",
-     "group": "10",
-     "label": "Gita 10.11"
-    },
-    {
-     "src": "gita",
-     "group": "10",
-     "label": "Gita 10.20"
-    },
-    {
-     "src": "gita",
-     "group": "10",
-     "label": "Gita 10.21"
-    },
-    {
-     "src": "gita",
-     "group": "10",
-     "label": "Gita 10.23"
-    },
-    {
-     "src": "gita",
-     "group": "10",
-     "label": "Gita 10.24"
-    },
-    {
-     "src": "gita",
-     "group": "10",
-     "label": "Gita 10.25"
-    },
-    {
-     "src": "gita",
-     "group": "10",
-     "label": "Gita 10.28"
-    },
-    {
-     "src": "gita",
-     "group": "10",
-     "label": "Gita 10.29"
-    },
-    {
-     "src": "gita",
-     "group": "10",
-     "label": "Gita 10.30"
-    },
-    {
-     "src": "gita",
-     "group": "10",
-     "label": "Gita 10.31"
-    },
-    {
-     "src": "gita",
-     "group": "10",
-     "label": "Gita 10.32"
-    },
-    {
-     "src": "gita",
-     "group": "10",
-     "label": "Gita 10.33"
-    },
-    {
-     "src": "gita",
-     "group": "10",
-     "label": "Gita 10.34"
-    },
-    {
-     "src": "gita",
-     "group": "10",
-     "label": "Gita 10.35"
-    },
-    {
-     "src": "gita",
-     "group": "10",
-     "label": "Gita 10.36"
-    },
-    {
-     "src": "gita",
-     "group": "10",
-     "label": "Gita 10.37"
-    },
-    {
-     "src": "gita",
-     "group": "10",
-     "label": "Gita 10.38"
-    },
-    {
-     "src": "gita",
-     "group": "10",
-     "label": "Gita 10.39"
-    },
-    {
-     "src": "gita",
-     "group": "10",
-     "label": "Gita 10.42"
-    },
-    {
-     "src": "gita",
-     "group": "11",
-     "label": "Gita 11.23"
-    },
-    {
-     "src": "gita",
-     "group": "11",
-     "label": "Gita 11.42"
-    },
-    {
-     "src": "gita",
-     "group": "11",
-     "label": "Gita 11.44"
-    },
-    {
-     "src": "gita",
-     "group": "11",
-     "label": "Gita 11.46"
-    },
-    {
-     "src": "gita",
-     "group": "11",
-     "label": "Gita 11.48"
-    },
-    {
-     "src": "gita",
-     "group": "11",
-     "label": "Gita 11.53"
-    },
-    {
-     "src": "gita",
-     "group": "11",
-     "label": "Gita 11.54"
-    },
-    {
-     "src": "gita",
-     "group": "12",
-     "label": "Gita 12.7"
-    },
-    {
-     "src": "gita",
-     "group": "14",
-     "label": "Gita 14.3"
-    },
-    {
-     "src": "gita",
-     "group": "14",
-     "label": "Gita 14.4"
-    },
-    {
-     "src": "gita",
-     "group": "14",
-     "label": "Gita 14.27"
-    },
-    {
-     "src": "gita",
-     "group": "15",
-     "label": "Gita 15.13"
-    },
-    {
-     "src": "gita",
-     "group": "15",
-     "label": "Gita 15.14"
-    },
-    {
-     "src": "gita",
-     "group": "15",
-     "label": "Gita 15.15"
-    },
-    {
-     "src": "gita",
-     "group": "15",
-     "label": "Gita 15.18"
-    },
-    {
-     "src": "gita",
-     "group": "16",
-     "label": "Gita 16.14"
-    },
-    {
-     "src": "gita",
-     "group": "16",
-     "label": "Gita 16.19"
-    },
-    {
-     "src": "gita",
-     "group": "18",
-     "label": "Gita 18.66"
-    },
-    {
-     "src": "gita",
-     "group": "18",
-     "label": "Gita 18.70"
-    },
-    {
-     "src": "gita",
-     "group": "18",
-     "label": "Gita 18.74"
-    },
-    {
-     "src": "gita",
-     "group": "18",
-     "label": "Gita 18.75"
-    },
-    {
-     "src": "vs",
-     "group": "purva",
-     "label": "VS · Saṅkalpaḥ"
     }
    ]
   },
@@ -13651,340 +16644,6 @@
    ]
   },
   {
-   "id": "te",
-   "iast": "te",
-   "deva": "ते",
-   "te": "తే",
-   "en": [
-    "they",
-    "your",
-    "of your",
-    "to you",
-    "by you",
-    "those",
-    "unto you",
-    "they are",
-    "such persons",
-    "Your",
-    "you",
-    "for your",
-    "even they"
-   ],
-   "te_meaning": "వారు",
-   "refs": [
-    {
-     "src": "gita",
-     "group": "2",
-     "label": "Gita 2.6"
-    },
-    {
-     "src": "gita",
-     "group": "2",
-     "label": "Gita 2.7"
-    },
-    {
-     "src": "gita",
-     "group": "2",
-     "label": "Gita 2.34"
-    },
-    {
-     "src": "gita",
-     "group": "2",
-     "label": "Gita 2.39"
-    },
-    {
-     "src": "gita",
-     "group": "2",
-     "label": "Gita 2.47"
-    },
-    {
-     "src": "gita",
-     "group": "2",
-     "label": "Gita 2.52"
-    },
-    {
-     "src": "gita",
-     "group": "2",
-     "label": "Gita 2.53"
-    },
-    {
-     "src": "gita",
-     "group": "3",
-     "label": "Gita 3.1"
-    },
-    {
-     "src": "gita",
-     "group": "3",
-     "label": "Gita 3.8"
-    },
-    {
-     "src": "gita",
-     "group": "3",
-     "label": "Gita 3.11"
-    },
-    {
-     "src": "gita",
-     "group": "3",
-     "label": "Gita 3.13"
-    },
-    {
-     "src": "gita",
-     "group": "3",
-     "label": "Gita 3.31"
-    },
-    {
-     "src": "gita",
-     "group": "4",
-     "label": "Gita 4.3"
-    },
-    {
-     "src": "gita",
-     "group": "4",
-     "label": "Gita 4.16"
-    },
-    {
-     "src": "gita",
-     "group": "4",
-     "label": "Gita 4.34"
-    },
-    {
-     "src": "gita",
-     "group": "5",
-     "label": "Gita 5.19"
-    },
-    {
-     "src": "gita",
-     "group": "5",
-     "label": "Gita 5.22"
-    },
-    {
-     "src": "gita",
-     "group": "7",
-     "label": "Gita 7.2"
-    },
-    {
-     "src": "gita",
-     "group": "7",
-     "label": "Gita 7.12"
-    },
-    {
-     "src": "gita",
-     "group": "7",
-     "label": "Gita 7.14"
-    },
-    {
-     "src": "gita",
-     "group": "7",
-     "label": "Gita 7.28"
-    },
-    {
-     "src": "gita",
-     "group": "7",
-     "label": "Gita 7.29"
-    },
-    {
-     "src": "gita",
-     "group": "7",
-     "label": "Gita 7.30"
-    },
-    {
-     "src": "gita",
-     "group": "8",
-     "label": "Gita 8.11"
-    },
-    {
-     "src": "gita",
-     "group": "8",
-     "label": "Gita 8.17"
-    },
-    {
-     "src": "gita",
-     "group": "9",
-     "label": "Gita 9.1"
-    },
-    {
-     "src": "gita",
-     "group": "9",
-     "label": "Gita 9.20"
-    },
-    {
-     "src": "gita",
-     "group": "9",
-     "label": "Gita 9.21"
-    },
-    {
-     "src": "gita",
-     "group": "9",
-     "label": "Gita 9.23"
-    },
-    {
-     "src": "gita",
-     "group": "9",
-     "label": "Gita 9.24"
-    },
-    {
-     "src": "gita",
-     "group": "9",
-     "label": "Gita 9.29"
-    },
-    {
-     "src": "gita",
-     "group": "10",
-     "label": "Gita 10.1"
-    },
-    {
-     "src": "gita",
-     "group": "10",
-     "label": "Gita 10.10"
-    },
-    {
-     "src": "gita",
-     "group": "10",
-     "label": "Gita 10.14"
-    },
-    {
-     "src": "gita",
-     "group": "10",
-     "label": "Gita 10.19"
-    },
-    {
-     "src": "gita",
-     "group": "11",
-     "label": "Gita 11.3"
-    },
-    {
-     "src": "gita",
-     "group": "11",
-     "label": "Gita 11.8"
-    },
-    {
-     "src": "gita",
-     "group": "11",
-     "label": "Gita 11.23"
-    },
-    {
-     "src": "gita",
-     "group": "11",
-     "label": "Gita 11.25"
-    },
-    {
-     "src": "gita",
-     "group": "11",
-     "label": "Gita 11.26"
-    },
-    {
-     "src": "gita",
-     "group": "11",
-     "label": "Gita 11.27"
-    },
-    {
-     "src": "gita",
-     "group": "11",
-     "label": "Gita 11.31"
-    },
-    {
-     "src": "gita",
-     "group": "11",
-     "label": "Gita 11.37"
-    },
-    {
-     "src": "gita",
-     "group": "11",
-     "label": "Gita 11.39"
-    },
-    {
-     "src": "gita",
-     "group": "11",
-     "label": "Gita 11.40"
-    },
-    {
-     "src": "gita",
-     "group": "12",
-     "label": "Gita 12.2"
-    },
-    {
-     "src": "gita",
-     "group": "12",
-     "label": "Gita 12.4"
-    },
-    {
-     "src": "gita",
-     "group": "13",
-     "label": "Gita 13.26"
-    },
-    {
-     "src": "gita",
-     "group": "13",
-     "label": "Gita 13.35"
-    },
-    {
-     "src": "gita",
-     "group": "16",
-     "label": "Gita 16.8"
-    },
-    {
-     "src": "gita",
-     "group": "16",
-     "label": "Gita 16.17"
-    },
-    {
-     "src": "gita",
-     "group": "16",
-     "label": "Gita 16.24"
-    },
-    {
-     "src": "gita",
-     "group": "18",
-     "label": "Gita 18.59"
-    },
-    {
-     "src": "gita",
-     "group": "18",
-     "label": "Gita 18.63"
-    },
-    {
-     "src": "gita",
-     "group": "18",
-     "label": "Gita 18.64"
-    },
-    {
-     "src": "gita",
-     "group": "18",
-     "label": "Gita 18.65"
-    },
-    {
-     "src": "gita",
-     "group": "18",
-     "label": "Gita 18.67"
-    },
-    {
-     "src": "gita",
-     "group": "18",
-     "label": "Gita 18.72"
-    },
-    {
-     "src": "gita",
-     "group": "9",
-     "label": "Gita 9.32"
-    },
-    {
-     "src": "gita",
-     "group": "1",
-     "label": "Gita 1.33"
-    },
-    {
-     "src": "gita",
-     "group": "11",
-     "label": "Gita 11.49"
-    },
-    {
-     "src": "gita",
-     "group": "12",
-     "label": "Gita 12.20"
-    }
-   ]
-  },
-  {
    "id": "avasthitāḥ",
    "iast": "avasthitāḥ",
    "deva": "अवस्थिताः",
@@ -14100,108 +16759,6 @@
      "src": "gita",
      "group": "2",
      "label": "Gita 2.7"
-    }
-   ]
-  },
-  {
-   "id": "tvām",
-   "iast": "tvām",
-   "deva": "त्वाम्",
-   "te": "త్వామ్",
-   "en": [
-    "to you",
-    "unto you",
-    "you",
-    "from you",
-    "your",
-    "You"
-   ],
-   "te_meaning": "నిన్ను",
-   "refs": [
-    {
-     "src": "gita",
-     "group": "2",
-     "label": "Gita 2.7"
-    },
-    {
-     "src": "gita",
-     "group": "2",
-     "label": "Gita 2.35"
-    },
-    {
-     "src": "gita",
-     "group": "10",
-     "label": "Gita 10.13"
-    },
-    {
-     "src": "gita",
-     "group": "10",
-     "label": "Gita 10.17"
-    },
-    {
-     "src": "gita",
-     "group": "11",
-     "label": "Gita 11.16"
-    },
-    {
-     "src": "gita",
-     "group": "11",
-     "label": "Gita 11.17"
-    },
-    {
-     "src": "gita",
-     "group": "11",
-     "label": "Gita 11.21"
-    },
-    {
-     "src": "gita",
-     "group": "11",
-     "label": "Gita 11.22"
-    },
-    {
-     "src": "gita",
-     "group": "11",
-     "label": "Gita 11.24"
-    },
-    {
-     "src": "gita",
-     "group": "11",
-     "label": "Gita 11.26"
-    },
-    {
-     "src": "gita",
-     "group": "11",
-     "label": "Gita 11.32"
-    },
-    {
-     "src": "gita",
-     "group": "11",
-     "label": "Gita 11.42"
-    },
-    {
-     "src": "gita",
-     "group": "11",
-     "label": "Gita 11.44"
-    },
-    {
-     "src": "gita",
-     "group": "11",
-     "label": "Gita 11.46"
-    },
-    {
-     "src": "gita",
-     "group": "12",
-     "label": "Gita 12.1"
-    },
-    {
-     "src": "gita",
-     "group": "18",
-     "label": "Gita 18.59"
-    },
-    {
-     "src": "gita",
-     "group": "18",
-     "label": "Gita 18.66"
     }
    ]
   },
@@ -15992,45 +18549,6 @@
    ]
   },
   {
-   "id": "madhye",
-   "iast": "madhye",
-   "deva": "मध्ये",
-   "te": "మధ్యే",
-   "en": [
-    "in the midst of",
-    "between",
-    "in the middle"
-   ],
-   "te_meaning": "",
-   "refs": [
-    {
-     "src": "gita",
-     "group": "2",
-     "label": "Gita 2.10"
-    },
-    {
-     "src": "gita",
-     "group": "8",
-     "label": "Gita 8.10"
-    },
-    {
-     "src": "gita",
-     "group": "14",
-     "label": "Gita 14.18"
-    },
-    {
-     "src": "gita",
-     "group": "1",
-     "label": "Gita 1.21"
-    },
-    {
-     "src": "gita",
-     "group": "1",
-     "label": "Gita 1.24"
-    }
-   ]
-  },
-  {
    "id": "vacaḥ",
    "iast": "vacaḥ",
    "deva": "वचः",
@@ -17547,50 +20065,6 @@
    ]
   },
   {
-   "id": "yam",
-   "iast": "yam",
-   "deva": "यम्",
-   "te": "యమ్",
-   "en": [
-    "whom",
-    "what",
-    "which"
-   ],
-   "te_meaning": "",
-   "refs": [
-    {
-     "src": "gita",
-     "group": "2",
-     "label": "Gita 2.15"
-    },
-    {
-     "src": "gita",
-     "group": "2",
-     "label": "Gita 2.70"
-    },
-    {
-     "src": "gita",
-     "group": "6",
-     "label": "Gita 6.2"
-    },
-    {
-     "src": "gita",
-     "group": "6",
-     "label": "Gita 6.22"
-    },
-    {
-     "src": "gita",
-     "group": "8",
-     "label": "Gita 8.21"
-    },
-    {
-     "src": "gita",
-     "group": "8",
-     "label": "Gita 8.6"
-    }
-   ]
-  },
-  {
    "id": "vyathayanti",
    "iast": "vyathayanti",
    "deva": "व्यथयन्ति",
@@ -18726,60 +21200,6 @@
      "src": "gita",
      "group": "18",
      "label": "Gita 18.21"
-    }
-   ]
-  },
-  {
-   "id": "yena",
-   "iast": "yena",
-   "deva": "येन",
-   "te": "యేన",
-   "en": [
-    "by whom",
-    "by which",
-    "by this"
-   ],
-   "te_meaning": "",
-   "refs": [
-    {
-     "src": "gita",
-     "group": "2",
-     "label": "Gita 2.17"
-    },
-    {
-     "src": "gita",
-     "group": "3",
-     "label": "Gita 3.2"
-    },
-    {
-     "src": "gita",
-     "group": "4",
-     "label": "Gita 4.35"
-    },
-    {
-     "src": "gita",
-     "group": "6",
-     "label": "Gita 6.6"
-    },
-    {
-     "src": "gita",
-     "group": "8",
-     "label": "Gita 8.22"
-    },
-    {
-     "src": "gita",
-     "group": "10",
-     "label": "Gita 10.10"
-    },
-    {
-     "src": "gita",
-     "group": "18",
-     "label": "Gita 18.20"
-    },
-    {
-     "src": "gita",
-     "group": "18",
-     "label": "Gita 18.46"
     }
    ]
   },
@@ -26274,45 +28694,6 @@
    ]
   },
   {
-   "id": "astu",
-   "iast": "astu",
-   "deva": "अस्तु",
-   "te": "అస్తు",
-   "en": [
-    "must be",
-    "shall be",
-    "let there be"
-   ],
-   "te_meaning": "",
-   "refs": [
-    {
-     "src": "gita",
-     "group": "2",
-     "label": "Gita 2.47"
-    },
-    {
-     "src": "gita",
-     "group": "3",
-     "label": "Gita 3.10"
-    },
-    {
-     "src": "gita",
-     "group": "11",
-     "label": "Gita 11.39"
-    },
-    {
-     "src": "gita",
-     "group": "11",
-     "label": "Gita 11.31"
-    },
-    {
-     "src": "gita",
-     "group": "11",
-     "label": "Gita 11.40"
-    }
-   ]
-  },
-  {
    "id": "akarmaṇi",
    "iast": "akarmaṇi",
    "deva": "अकर्मणि",
@@ -29438,65 +31819,6 @@
    ]
   },
   {
-   "id": "yasya",
-   "iast": "yasya",
-   "deva": "यस्य",
-   "te": "యస్య",
-   "en": [
-    "whose",
-    "of whom",
-    "of which"
-   ],
-   "te_meaning": "ఎవరి యొక్క",
-   "refs": [
-    {
-     "src": "gita",
-     "group": "2",
-     "label": "Gita 2.61"
-    },
-    {
-     "src": "gita",
-     "group": "2",
-     "label": "Gita 2.68"
-    },
-    {
-     "src": "gita",
-     "group": "4",
-     "label": "Gita 4.19"
-    },
-    {
-     "src": "gita",
-     "group": "8",
-     "label": "Gita 8.22"
-    },
-    {
-     "src": "gita",
-     "group": "15",
-     "label": "Gita 15.1"
-    },
-    {
-     "src": "gita",
-     "group": "18",
-     "label": "Gita 18.17"
-    },
-    {
-     "src": "vs",
-     "group": "purva",
-     "label": "VS · Pūrva Pīṭhikā 2"
-    },
-    {
-     "src": "vs",
-     "group": "purva",
-     "label": "VS · Pūrva Pīṭhikā 6"
-    },
-    {
-     "src": "bhaja_govindam",
-     "group": "chaturdasha",
-     "label": "Bhaja Govindam · Verse 19"
-    }
-   ]
-  },
-  {
    "id": "dhyāyataḥ",
    "iast": "dhyāyataḥ",
    "deva": "ध्यायतः",
@@ -30918,70 +33240,6 @@
    ]
   },
   {
-   "id": "sā",
-   "iast": "sā",
-   "deva": "सा",
-   "te": "సా",
-   "en": [
-    "that",
-    "this",
-    "which"
-   ],
-   "te_meaning": "",
-   "refs": [
-    {
-     "src": "gita",
-     "group": "2",
-     "label": "Gita 2.69"
-    },
-    {
-     "src": "gita",
-     "group": "6",
-     "label": "Gita 6.19"
-    },
-    {
-     "src": "gita",
-     "group": "11",
-     "label": "Gita 11.12"
-    },
-    {
-     "src": "gita",
-     "group": "17",
-     "label": "Gita 17.2"
-    },
-    {
-     "src": "gita",
-     "group": "18",
-     "label": "Gita 18.30"
-    },
-    {
-     "src": "gita",
-     "group": "18",
-     "label": "Gita 18.31"
-    },
-    {
-     "src": "gita",
-     "group": "18",
-     "label": "Gita 18.32"
-    },
-    {
-     "src": "gita",
-     "group": "18",
-     "label": "Gita 18.33"
-    },
-    {
-     "src": "gita",
-     "group": "18",
-     "label": "Gita 18.34"
-    },
-    {
-     "src": "gita",
-     "group": "18",
-     "label": "Gita 18.35"
-    }
-   ]
-  },
-  {
    "id": "paśyataḥ",
    "iast": "paśyataḥ",
    "deva": "पश्यतः",
@@ -31869,72 +34127,6 @@
    ]
   },
   {
-   "id": "loke",
-   "iast": "loke",
-   "deva": "लोके",
-   "te": "లోకే",
-   "en": [
-    "in the world",
-    "within this world",
-    "in this world",
-    "in the universe",
-    "in creation"
-   ],
-   "te_meaning": "లోకంలో",
-   "refs": [
-    {
-     "src": "gita",
-     "group": "3",
-     "label": "Gita 3.3"
-    },
-    {
-     "src": "gita",
-     "group": "4",
-     "label": "Gita 4.12"
-    },
-    {
-     "src": "gita",
-     "group": "6",
-     "label": "Gita 6.42"
-    },
-    {
-     "src": "gita",
-     "group": "10",
-     "label": "Gita 10.6"
-    },
-    {
-     "src": "gita",
-     "group": "13",
-     "label": "Gita 13.14"
-    },
-    {
-     "src": "gita",
-     "group": "15",
-     "label": "Gita 15.16"
-    },
-    {
-     "src": "gita",
-     "group": "15",
-     "label": "Gita 15.18"
-    },
-    {
-     "src": "gita",
-     "group": "16",
-     "label": "Gita 16.6"
-    },
-    {
-     "src": "vs",
-     "group": "purva",
-     "label": "VS · Yudhiṣṭhira uvāca"
-    },
-    {
-     "src": "gita",
-     "group": "2",
-     "label": "Gita 2.5"
-    }
-   ]
-  },
-  {
    "id": "dvividhā",
    "iast": "dvi-vidhā",
    "deva": "द्वि-विधा",
@@ -32723,52 +34915,6 @@
      "src": "gita",
      "group": "5",
      "label": "Gita 5.13"
-    }
-   ]
-  },
-  {
-   "id": "manasā",
-   "iast": "manasā",
-   "deva": "मनसा",
-   "te": "మనసా",
-   "en": [
-    "in the mind",
-    "by the mind",
-    "with the mind",
-    "through the mind",
-    "mind"
-   ],
-   "te_meaning": "",
-   "refs": [
-    {
-     "src": "gita",
-     "group": "3",
-     "label": "Gita 3.6"
-    },
-    {
-     "src": "gita",
-     "group": "3",
-     "label": "Gita 3.7"
-    },
-    {
-     "src": "gita",
-     "group": "5",
-     "label": "Gita 5.11"
-    },
-    {
-     "src": "gita",
-     "group": "5",
-     "label": "Gita 5.13"
-    },
-    {
-     "src": "gita",
-     "group": "6",
-     "label": "Gita 6.24"
-    },
-    {
-     "src": "gita",
-     "group": "8",
-     "label": "Gita 8.10"
     }
    ]
   },
@@ -39256,7 +41402,7 @@
     "comprehend",
     "to understand"
    ],
-   "te_meaning": "",
+   "te_meaning": "(వారికి) తెలుసు",
    "refs": [
     {
      "src": "gita",
@@ -39302,6 +41448,11 @@
      "src": "gita",
      "group": "18",
      "label": "Gita 18.2"
+    },
+    {
+     "src": "gita",
+     "group": "0",
+     "label": "Gita 0.9"
     }
    ]
   },
@@ -41927,41 +44078,6 @@
    ]
   },
   {
-   "id": "karoti",
-   "iast": "karoti",
-   "deva": "करोति",
-   "te": "కరోతి",
-   "en": [
-    "do",
-    "performs",
-    "perform",
-    "acts"
-   ],
-   "te_meaning": "",
-   "refs": [
-    {
-     "src": "gita",
-     "group": "4",
-     "label": "Gita 4.20"
-    },
-    {
-     "src": "gita",
-     "group": "5",
-     "label": "Gita 5.10"
-    },
-    {
-     "src": "gita",
-     "group": "6",
-     "label": "Gita 6.1"
-    },
-    {
-     "src": "gita",
-     "group": "13",
-     "label": "Gita 13.32"
-    }
-   ]
-  },
-  {
    "id": "yata",
    "iast": "yata",
    "deva": "यत",
@@ -42769,53 +44885,6 @@
      "src": "gita",
      "group": "17",
      "label": "Gita 17.13"
-    }
-   ]
-  },
-  {
-   "id": "yoginaḥ",
-   "iast": "yoginaḥ",
-   "deva": "योगिनः",
-   "te": "యోగినః",
-   "en": [
-    "spiritual practioners",
-    "the yogis",
-    "of a yogi",
-    "of the yogis",
-    "a yogi",
-    "yogis"
-   ],
-   "te_meaning": "",
-   "refs": [
-    {
-     "src": "gita",
-     "group": "4",
-     "label": "Gita 4.25"
-    },
-    {
-     "src": "gita",
-     "group": "5",
-     "label": "Gita 5.11"
-    },
-    {
-     "src": "gita",
-     "group": "6",
-     "label": "Gita 6.19"
-    },
-    {
-     "src": "gita",
-     "group": "8",
-     "label": "Gita 8.14"
-    },
-    {
-     "src": "gita",
-     "group": "8",
-     "label": "Gita 8.23"
-    },
-    {
-     "src": "gita",
-     "group": "15",
-     "label": "Gita 15.11"
     }
    ]
   },
@@ -44525,35 +46594,6 @@
      "src": "vs",
      "group": "stotram",
      "label": "VS · Shloka 7"
-    }
-   ]
-  },
-  {
-   "id": "svayam",
-   "iast": "svayam",
-   "deva": "स्वयम्",
-   "te": "స్వయమ్",
-   "en": [
-    "oneself",
-    "personally",
-    "himself"
-   ],
-   "te_meaning": "",
-   "refs": [
-    {
-     "src": "gita",
-     "group": "4",
-     "label": "Gita 4.38"
-    },
-    {
-     "src": "gita",
-     "group": "10",
-     "label": "Gita 10.13"
-    },
-    {
-     "src": "gita",
-     "group": "18",
-     "label": "Gita 18.75"
     }
    ]
   },
@@ -52547,43 +54587,6 @@
    ]
   },
   {
-   "id": "tvayā",
-   "iast": "tvayā",
-   "deva": "त्वया",
-   "te": "త్వయా",
-   "en": [
-    "by you"
-   ],
-   "te_meaning": "",
-   "refs": [
-    {
-     "src": "gita",
-     "group": "6",
-     "label": "Gita 6.33"
-    },
-    {
-     "src": "gita",
-     "group": "11",
-     "label": "Gita 11.1"
-    },
-    {
-     "src": "gita",
-     "group": "11",
-     "label": "Gita 11.20"
-    },
-    {
-     "src": "gita",
-     "group": "11",
-     "label": "Gita 11.38"
-    },
-    {
-     "src": "gita",
-     "group": "18",
-     "label": "Gita 18.72"
-    }
-   ]
-  },
-  {
    "id": "sāmyena",
    "iast": "sāmyena",
    "deva": "साम्येन",
@@ -59776,40 +61779,6 @@
    ]
   },
   {
-   "id": "om",
-   "iast": "om",
-   "deva": "ओम्",
-   "te": "ఓమ్",
-   "en": [
-    "sacred syllable representing the formless aspect of God",
-    "sacred syllable om",
-    "the sacred syllable"
-   ],
-   "te_meaning": "ఓం (పవిత్ర ప్రణవం)",
-   "refs": [
-    {
-     "src": "gita",
-     "group": "8",
-     "label": "Gita 8.13"
-    },
-    {
-     "src": "gita",
-     "group": "17",
-     "label": "Gita 17.24"
-    },
-    {
-     "src": "vs",
-     "group": "purva",
-     "label": "VS · Pūrva Pīṭhikā"
-    },
-    {
-     "src": "gita",
-     "group": "17",
-     "label": "Gita 17.23"
-    }
-   ]
-  },
-  {
    "id": "ekaakṣaram",
    "iast": "eka-akṣaram",
    "deva": "एक-अक्षरम्",
@@ -63812,47 +65781,6 @@
      "src": "gita",
      "group": "10",
      "label": "Gita 10.25"
-    }
-   ]
-  },
-  {
-   "id": "bhoktā",
-   "iast": "bhoktā",
-   "deva": "भोक्ता",
-   "te": "భోక్తా",
-   "en": [
-    "the enjoyer",
-    "the transcendental enjoyer",
-    "The supreme enjoyer of all sacrificial offerings and the experiencer within the heart",
-    "The supreme Enjoyer of all devotion and the protector who delights in His devotees' spiritual welfare",
-    "The supreme Enjoyer of all devotional service and the sovereign Master of nature"
-   ],
-   "te_meaning": "నైవేద్యాలను స్వీకరించేవాడు",
-   "refs": [
-    {
-     "src": "gita",
-     "group": "9",
-     "label": "Gita 9.24"
-    },
-    {
-     "src": "gita",
-     "group": "13",
-     "label": "Gita 13.23"
-    },
-    {
-     "src": "vs",
-     "group": "stotram",
-     "label": "VS · Shloka 16"
-    },
-    {
-     "src": "vs",
-     "group": "stotram",
-     "label": "VS · Shloka 53"
-    },
-    {
-     "src": "vs",
-     "group": "stotram",
-     "label": "VS · Shloka 95"
     }
    ]
   },
@@ -70626,23 +72554,6 @@
    ]
   },
   {
-   "id": "pārthāya",
-   "iast": "pārthāya",
-   "deva": "पार्थाय",
-   "te": "పార్థాయ",
-   "en": [
-    "to Arjun"
-   ],
-   "te_meaning": "",
-   "refs": [
-    {
-     "src": "gita",
-     "group": "11",
-     "label": "Gita 11.9"
-    }
-   ]
-  },
-  {
    "id": "vaktra",
    "iast": "vaktra",
    "deva": "वक्त्र",
@@ -70899,29 +72810,6 @@
      "src": "gita",
      "group": "11",
      "label": "Gita 11.11"
-    }
-   ]
-  },
-  {
-   "id": "devam",
-   "iast": "devam",
-   "deva": "देवम्",
-   "te": "దేవమ్",
-   "en": [
-    "Lord",
-    "the Lord"
-   ],
-   "te_meaning": "",
-   "refs": [
-    {
-     "src": "gita",
-     "group": "11",
-     "label": "Gita 11.11"
-    },
-    {
-     "src": "gita",
-     "group": "11",
-     "label": "Gita 11.14"
     }
    ]
   },
@@ -71581,23 +73469,6 @@
    "te": "అనంత-రూపమ్",
    "en": [
     "inifinite forms"
-   ],
-   "te_meaning": "",
-   "refs": [
-    {
-     "src": "gita",
-     "group": "11",
-     "label": "Gita 11.16"
-    }
-   ]
-  },
-  {
-   "id": "naantam",
-   "iast": "na antam",
-   "deva": "न अन्तम्",
-   "te": "న అంతమ్",
-   "en": [
-    "without end"
    ],
    "te_meaning": "",
    "refs": [
@@ -72601,38 +74472,6 @@
      "src": "gita",
      "group": "11",
      "label": "Gita 11.22"
-    }
-   ]
-  },
-  {
-   "id": "mahat",
-   "iast": "mahat",
-   "deva": "महत्",
-   "te": "మహత్",
-   "en": [
-    "magnificent"
-   ],
-   "te_meaning": "",
-   "refs": [
-    {
-     "src": "gita",
-     "group": "11",
-     "label": "Gita 11.23"
-    },
-    {
-     "src": "gita",
-     "group": "1",
-     "label": "Gita 1.45"
-    },
-    {
-     "src": "gita",
-     "group": "14",
-     "label": "Gita 14.3"
-    },
-    {
-     "src": "vs",
-     "group": "purva",
-     "label": "VS · Pūrva Pīṭhikā 15"
     }
    ]
   },
@@ -74592,23 +76431,6 @@
    ]
   },
   {
-   "id": "kṛṣṇam",
-   "iast": "kṛṣṇam",
-   "deva": "कृष्णम्",
-   "te": "కృష్ణమ్",
-   "en": [
-    "to Shree Krishna"
-   ],
-   "te_meaning": "",
-   "refs": [
-    {
-     "src": "gita",
-     "group": "11",
-     "label": "Gita 11.35"
-    }
-   ]
-  },
-  {
    "id": "sagadgadam",
    "iast": "sa-gadgadam",
    "deva": "स-गद्गदम्",
@@ -75009,51 +76831,6 @@
      "src": "vs",
      "group": "stotram",
      "label": "VS · Shloka 104"
-    }
-   ]
-  },
-  {
-   "id": "namaḥ",
-   "iast": "namaḥ",
-   "deva": "नमः",
-   "te": "నమః",
-   "en": [
-    "my salutations",
-    "(offering) my salutations",
-    "offering salutations",
-    "salutations"
-   ],
-   "te_meaning": "నమస్కారం",
-   "refs": [
-    {
-     "src": "gita",
-     "group": "11",
-     "label": "Gita 11.39"
-    },
-    {
-     "src": "gita",
-     "group": "11",
-     "label": "Gita 11.40"
-    },
-    {
-     "src": "vs",
-     "group": "purva",
-     "label": "VS · Pūrva Pīṭhikā 4"
-    },
-    {
-     "src": "vs",
-     "group": "purva",
-     "label": "VS · Pūrva Pīṭhikā"
-    },
-    {
-     "src": "vs",
-     "group": "purva",
-     "label": "VS · Dhyānam 5"
-    },
-    {
-     "src": "gita",
-     "group": "11",
-     "label": "Gita 11.31"
     }
    ]
   },
@@ -76487,29 +78264,6 @@
      "src": "gita",
      "group": "11",
      "label": "Gita 11.52"
-    }
-   ]
-  },
-  {
-   "id": "vedaiḥ",
-   "iast": "vedaiḥ",
-   "deva": "वेदैः",
-   "te": "వేదైః",
-   "en": [
-    "by study of the Vedas",
-    "by the Vedas"
-   ],
-   "te_meaning": "",
-   "refs": [
-    {
-     "src": "gita",
-     "group": "11",
-     "label": "Gita 11.53"
-    },
-    {
-     "src": "gita",
-     "group": "15",
-     "label": "Gita 15.15"
     }
    ]
   },
@@ -80466,41 +82220,6 @@
      "src": "gita",
      "group": "13",
      "label": "Gita 13.25"
-    }
-   ]
-  },
-  {
-   "id": "paśyanti",
-   "iast": "paśyanti",
-   "deva": "पश्यन्ति",
-   "te": "పశ్యంతి",
-   "en": [
-    "percieve",
-    "behold",
-    "see",
-    "cognize"
-   ],
-   "te_meaning": "",
-   "refs": [
-    {
-     "src": "gita",
-     "group": "13",
-     "label": "Gita 13.25"
-    },
-    {
-     "src": "gita",
-     "group": "15",
-     "label": "Gita 15.10"
-    },
-    {
-     "src": "gita",
-     "group": "15",
-     "label": "Gita 15.11"
-    },
-    {
-     "src": "gita",
-     "group": "1",
-     "label": "Gita 1.38"
     }
    ]
   },
@@ -95467,33 +97186,6 @@
    ]
   },
   {
-   "id": "vande",
-   "iast": "vande",
-   "deva": "वन्दे",
-   "te": "వందే",
-   "en": [
-    "I bow"
-   ],
-   "te_meaning": "నమస్కరిస్తాను",
-   "refs": [
-    {
-     "src": "vs",
-     "group": "purva",
-     "label": "VS · Pūrva Pīṭhikā 3"
-    },
-    {
-     "src": "vs",
-     "group": "purva",
-     "label": "VS · Dhyānam 3"
-    },
-    {
-     "src": "vs",
-     "group": "purva",
-     "label": "VS · Dhyānam 4"
-    }
-   ]
-  },
-  {
    "id": "śukatātam",
    "iast": "śuka-tātam",
    "deva": "शुक-तातम्",
@@ -95812,23 +97504,6 @@
     "one is freed"
    ],
    "te_meaning": "విముక్తి పొందుతాడు",
-   "refs": [
-    {
-     "src": "vs",
-     "group": "purva",
-     "label": "VS · Pūrva Pīṭhikā 6"
-    }
-   ]
-  },
-  {
-   "id": "namaḥtasmai",
-   "iast": "namaḥ tasmai",
-   "deva": "नमः तस्मै",
-   "te": "నమః తస్మై",
-   "en": [
-    "salutations to Him"
-   ],
-   "te_meaning": "ఆయనకు నమస్కారం",
    "refs": [
     {
      "src": "vs",
@@ -98500,29 +100175,6 @@
      "src": "vs",
      "group": "stotram",
      "label": "VS · Shloka 108"
-    }
-   ]
-  },
-  {
-   "id": "keśavaḥ",
-   "iast": "keśavaḥ",
-   "deva": "केशवः",
-   "te": "కేశవః",
-   "en": [
-    "The supreme Master who commands Brahma (Ka) and Shiva/Vayu (Isha) (Ka + Isha + Va)",
-    "The Lord of Brahma and Rudra, radiating luminous rays and slayer of Keshi"
-   ],
-   "te_meaning": "అందమైన కేశాలు గలవాడు, బ్రహ్మ రుద్రులకు ప్రభువు",
-   "refs": [
-    {
-     "src": "vs",
-     "group": "stotram",
-     "label": "VS · Shloka 3"
-    },
-    {
-     "src": "vs",
-     "group": "stotram",
-     "label": "VS · Shloka 69"
     }
    ]
   },
@@ -107259,23 +108911,6 @@
     "The creator of the Vedas, spiritual tapas, and cosmic knowledge"
    ],
    "te_meaning": "వేదాలను సృష్టించినవాడు",
-   "refs": [
-    {
-     "src": "vs",
-     "group": "stotram",
-     "label": "VS · Shloka 71"
-    }
-   ]
-  },
-  {
-   "id": "brahmā",
-   "iast": "brahmā",
-   "deva": "ब्रह्मा",
-   "te": "బ్రహ్మా",
-   "en": [
-    "The great and vast Supreme Being (Brihattvat Brahma) endowed with infinite perfection"
-   ],
-   "te_meaning": "విశాలమైన పరబ్రహ్మ",
    "refs": [
     {
      "src": "vs",
@@ -116382,6 +118017,285 @@
   }
  ],
  "verses": [
+  {
+   "id": "gita:0:1",
+   "src": "gita",
+   "group": "0",
+   "label": "Gita 0.1",
+   "speaker": null,
+   "deva": [
+    "ॐ पार्थाय प्रतिबोधितां भगवता नारायणेन स्वयं",
+    "व्यासेन ग्रथितां पुराणमुनिना मध्ये महाभारते ।",
+    "अद्वैतामृतवर्षिणीं भगवतीमष्टादशाध्यायिनीं",
+    "अम्ब त्वामनुसन्दधामि भगवद्गीते भवद्वेषिणीम् ॥ १॥"
+   ],
+   "te": [
+    "ఓం పార్థాయ ప్రతిబోధితాం భగవతా నారాయణేన స్వయం",
+    "వ్యాసేన గ్రథితాం పురాణమునినా మధ్యే మహాభారతే ।",
+    "అద్వైతామృతవర్షిణీం భగవతీమష్టాదశాధ్యాయినీం",
+    "అంబ త్వామనుసందధామి భగవద్గీతే భవద్వేషిణీమ్ ॥ 1 ॥"
+   ],
+   "iast": [
+    "oṃ pārthāya pratibodhitāṃ bhagavatā nārāyaṇena svayaṃ",
+    "vyāsena grathitāṃ purāṇa-muninā madhye mahābhārate |",
+    "advaitāmṛta-varṣiṇīṃ bhagavatīm aṣṭādaśādhyāyinīṃ",
+    "amba tvām anusandadhāmi bhagavad-gīte bhava-dveṣiṇīm || 1 ||"
+   ],
+   "te_meaning": "ఓ అమ్మా భగవద్గీతా! స్వయంగా భగవంతుడైన నారాయణుడు అర్జునునికి ఉపదేశించినదానివి, పురాణ ముని వ్యాసుడు మహాభారతం మధ్యలో కూర్చినదానివి, అద్వైతమనే అమృతాన్ని కురిపించేదానివి, పద్దెనిమిది అధ్యాయాల దేవతవు, సంసార బంధాన్ని నశింపజేసేదానివి అయిన నిన్ను నేను నిరంతరం ధ్యానిస్తాను.",
+   "en_meaning": "Om. O Mother Bhagavad Gītā — taught to Pārtha by Lord Nārāyaṇa Himself, woven into the Mahābhārata by the ancient sage Vyāsa, showering the nectar of non-duality, the divine one of eighteen chapters, destroyer of rebirth — upon You I meditate constantly.",
+   "words": "oṃ (the sacred syllable Om), pārthāya (to Pārtha, Arjuna), pratibodhitām (taught, awakened), bhagavatā (by the Lord), nārāyaṇena (by Nārāyaṇa), svayam (Himself), vyāsena (by Vyāsa), grathitām (woven, composed), purāṇa-muninā (by the ancient sage), madhye (in the middle), mahābhārate (of the Mahābhārata), advaita-amṛta-varṣiṇīm (showering the nectar of non-duality), bhagavatīm (the divine one), aṣṭādaśa-adhyāyinīm (of eighteen chapters), amba (O Mother), tvām (on You), anusandadhāmi (I meditate constantly), bhagavad-gīte (O Bhagavad Gītā), bhava-dveṣiṇīm (destroyer of rebirth)",
+   "edited": false,
+   "file": "BhagavadGita/chapter_00_gita_dhyanam.html",
+   "block": 0
+  },
+  {
+   "id": "gita:0:2",
+   "src": "gita",
+   "group": "0",
+   "label": "Gita 0.2",
+   "speaker": null,
+   "deva": [
+    "नमोऽस्तु ते व्यास विशालबुद्धे",
+    "फुल्लारविन्दायतपत्रनेत्र ।",
+    "येन त्वया भारततैलपूर्णः",
+    "प्रज्वालितो ज्ञानमयः प्रदीपः ॥ २॥"
+   ],
+   "te": [
+    "నమోఽస్తు తే వ్యాస విశాలబుద్ధే",
+    "ఫుల్లారవిందాయతపత్రనేత్ర ।",
+    "యేన త్వయా భారతతైలపూర్ణః",
+    "ప్రజ్వాలితో జ్ఞానమయః ప్రదీపః ॥ 2 ॥"
+   ],
+   "iast": [
+    "namo ’stu te vyāsa viśāla-buddhe",
+    "phullāravindāyata-patra-netra |",
+    "yena tvayā bhārata-taila-pūrṇaḥ",
+    "prajvālito jñānamayaḥ pradīpaḥ || 2 ||"
+   ],
+   "te_meaning": "విశాలమైన బుద్ధి గలవాడా, వికసించిన తామర రేకుల వంటి విశాలమైన కన్నులు గలవాడా, ఓ వ్యాసా! నీకు నమస్కారం. మహాభారతమనే నూనెతో నింపిన జ్ఞానమనే దీపాన్ని వెలిగించినవాడివి నువ్వే.",
+   "en_meaning": "Salutations to you, O Vyāsa of vast intellect, with eyes long like the petals of a full-blown lotus — by you was lit the lamp of knowledge, filled with the oil of the Mahābhārata.",
+   "words": "namaḥ (salutation), astu (be), te (to you), vyāsa (O Vyāsa), viśāla-buddhe (O one of vast intellect), phulla-aravinda-āyata-patra-netra (O one with eyes long like the petals of a full-blown lotus), yena (by whom), tvayā (by you), bhārata-taila-pūrṇaḥ (filled with the oil of the Mahābhārata), prajvālitaḥ (was lit), jñānamayaḥ (made of knowledge), pradīpaḥ (lamp)",
+   "edited": false,
+   "file": "BhagavadGita/chapter_00_gita_dhyanam.html",
+   "block": 1
+  },
+  {
+   "id": "gita:0:3",
+   "src": "gita",
+   "group": "0",
+   "label": "Gita 0.3",
+   "speaker": null,
+   "deva": [
+    "प्रपन्नपारिजाताय",
+    "तोत्रवेत्रैकपाणये ।",
+    "ज्ञानमुद्राय कृष्णाय",
+    "गीतामृतदुहे नमः ॥ ३॥"
+   ],
+   "te": [
+    "ప్రపన్నపారిజాతాయ",
+    "తోత్రవేత్రైకపాణయే ।",
+    "జ్ఞానముద్రాయ కృష్ణాయ",
+    "గీతామృతదుహే నమః ॥ 3 ॥"
+   ],
+   "iast": [
+    "prapanna-pārijātāya",
+    "totra-vetraika-pāṇaye |",
+    "jñāna-mudrāya kṛṣṇāya",
+    "gītāmṛta-duhe namaḥ || 3 ||"
+   ],
+   "te_meaning": "శరణు కోరినవారికి కోరికలు తీర్చే పారిజాత వృక్షం వంటివాడు, ఒక చేతిలో పశువులను తోలే కర్ర పట్టినవాడు, మరో చేతితో జ్ఞానముద్ర చూపేవాడు, గీత అనే అమృతాన్ని పితికినవాడు అయిన శ్రీకృష్ణునికి నమస్కారం.",
+   "en_meaning": "Salutations to Kṛṣṇa — the wish-fulfilling tree for those who surrender, who holds the cattle-goad in one hand and shows the gesture of knowledge with the other, who milks the nectar of the Gītā.",
+   "words": "prapanna-pārijātāya (to the wish-fulfilling tree for those who surrender), totra-vetra-eka-pāṇaye (who holds the cattle-goad in one hand), jñāna-mudrāya (who shows the gesture of knowledge), kṛṣṇāya (to Kṛṣṇa), gītā-amṛta-duhe (who milks the nectar of the Gītā), namaḥ (salutations)",
+   "edited": false,
+   "file": "BhagavadGita/chapter_00_gita_dhyanam.html",
+   "block": 2
+  },
+  {
+   "id": "gita:0:4",
+   "src": "gita",
+   "group": "0",
+   "label": "Gita 0.4",
+   "speaker": null,
+   "deva": [
+    "सर्वोपनिषदो गावो",
+    "दोग्धा गोपालनन्दनः ।",
+    "पार्थो वत्सः सुधीर्भोक्ता",
+    "दुग्धं गीतामृतं महत् ॥ ४॥"
+   ],
+   "te": [
+    "సర్వోపనిషదో గావో",
+    "దోగ్ధా గోపాలనందనః ।",
+    "పార్థో వత్సః సుధీర్భోక్తా",
+    "దుగ్ధం గీతామృతం మహత్ ॥ 4 ॥"
+   ],
+   "iast": [
+    "sarvopaniṣado gāvo",
+    "dogdhā gopāla-nandanaḥ |",
+    "pārtho vatsaḥ sudhīr bhoktā",
+    "dugdhaṃ gītāmṛtaṃ mahat || 4 ||"
+   ],
+   "te_meaning": "ఉపనిషత్తులన్నీ ఆవులు; వాటిని పితికేవాడు గోపాలనందనుడైన శ్రీకృష్ణుడు; అర్జునుడు దూడ; బుద్ధిమంతులు ఆ పాలను తాగేవారు; గొప్ప గీతామృతమే ఆ పాలు.",
+   "en_meaning": "All the Upaniṣads are the cows; the milker is Kṛṣṇa, the cowherd’s son; Pārtha is the calf; the wise are the enjoyers; and the milk is the great nectar of the Gītā.",
+   "words": "sarva-upaniṣadaḥ (all the Upaniṣads), gāvaḥ (are the cows), dogdhā (the milker), gopāla-nandanaḥ (Kṛṣṇa, son of the cowherd), pārthaḥ (Arjuna), vatsaḥ (is the calf), sudhīḥ (the wise), bhoktā (is the enjoyer), dugdham (the milk), gītā-amṛtam (the nectar of the Gītā), mahat (great)",
+   "edited": false,
+   "file": "BhagavadGita/chapter_00_gita_dhyanam.html",
+   "block": 3
+  },
+  {
+   "id": "gita:0:5",
+   "src": "gita",
+   "group": "0",
+   "label": "Gita 0.5",
+   "speaker": null,
+   "deva": [
+    "वसुदेवसुतं देवं",
+    "कंसचाणूरमर्दनम् ।",
+    "देवकीपरमानन्दं",
+    "कृष्णं वन्दे जगद्गुरुम् ॥ ५॥"
+   ],
+   "te": [
+    "వసుదేవసుతం దేవం",
+    "కంసచాణూరమర్దనమ్ ।",
+    "దేవకీపరమానందం",
+    "కృష్ణం వందే జగద్గురుమ్ ॥ 5 ॥"
+   ],
+   "iast": [
+    "vasudeva-sutaṃ devaṃ",
+    "kaṃsa-cāṇūra-mardanam |",
+    "devakī-paramānandaṃ",
+    "kṛṣṇaṃ vande jagad-gurum || 5 ||"
+   ],
+   "te_meaning": "వసుదేవుని కుమారుడు, దేవుడు, కంసుని చాణూరుని సంహరించినవాడు, దేవకీదేవికి పరమానందం కలిగించినవాడు, లోకానికి గురువు అయిన శ్రీకృష్ణునికి నమస్కరిస్తున్నాను.",
+   "en_meaning": "I bow to Kṛṣṇa, the teacher of the world — the divine son of Vasudeva, destroyer of Kaṃsa and Cāṇūra, the supreme joy of Devakī.",
+   "words": "vasudeva-sutam (son of Vasudeva), devam (the divine one), kaṃsa-cāṇūra-mardanam (destroyer of Kaṃsa and Cāṇūra), devakī-parama-ānandam (supreme joy of Devakī), kṛṣṇam (Kṛṣṇa), vande (I bow to), jagat-gurum (teacher of the world)",
+   "edited": false,
+   "file": "BhagavadGita/chapter_00_gita_dhyanam.html",
+   "block": 4
+  },
+  {
+   "id": "gita:0:6",
+   "src": "gita",
+   "group": "0",
+   "label": "Gita 0.6",
+   "speaker": null,
+   "deva": [
+    "भीष्मद्रोणतटा जयद्रथजला गान्धारनीलोत्पला",
+    "शल्यग्राहवती कृपेण वहनी कर्णेन वेलाकुला ।",
+    "अश्वत्थामविकर्णघोरमकरा दुर्योधनावर्तिनी",
+    "सोत्तीर्णा खलु पाण्डवै रणनदी कैवर्तकः केशवः ॥ ६॥"
+   ],
+   "te": [
+    "భీష్మద్రోణతటా జయద్రథజలా గాంధారనీలోత్పలా",
+    "శల్యగ్రాహవతీ కృపేణ వహనీ కర్ణేన వేలాకులా ।",
+    "అశ్వత్థామవికర్ణఘోరమకరా దుర్యోధనావర్తినీ",
+    "సోత్తీర్ణా ఖలు పాండవై రణనదీ కైవర్తకః కేశవః ॥ 6 ॥"
+   ],
+   "iast": [
+    "bhīṣma-droṇa-taṭā jayadratha-jalā gāndhāra-nīlotpalā",
+    "śalya-grāhavatī kṛpeṇa vahanī karṇena velākulā |",
+    "aśvatthāma-vikarṇa-ghora-makarā duryodhanāvartinī",
+    "sottīrṇā khalu pāṇḍavai raṇa-nadī kaivartakaḥ keśavaḥ || 6 ||"
+   ],
+   "te_meaning": "భీష్మద్రోణులు గట్లుగా, జయద్రథుడు నీరుగా, శకుని నల్ల కలువగా, శల్యుడు మొసలిగా, కృపుడు ప్రవాహంగా, కర్ణుడు అలలుగా, అశ్వత్థామ వికర్ణులు భయంకరమైన మకరాలుగా, దుర్యోధనుడు సుడిగుండంగా ఉన్న ఆ యుద్ధమనే నదిని పాండవులు దాటగలిగారు — ఎందుకంటే వారి పడవ నడిపేవాడు కేశవుడే.",
+   "en_meaning": "The river of battle — with Bhīṣma and Droṇa as its banks, Jayadratha as its water, the king of Gāndhāra as its blue lily, Śalya as its shark, Kṛpa as its current, Karṇa as its breaking waves, Aśvatthāmā and Vikarṇa as its dreadful crocodiles, and Duryodhana as its whirlpool — was indeed crossed by the Pāṇḍavas, for their ferryman was Keśava.",
+   "words": "bhīṣma-droṇa-taṭā (with Bhīṣma and Droṇa as its banks), jayadratha-jalā (with Jayadratha as its water), gāndhāra-nīla-utpalā (with the king of Gāndhāra, Śakuni, as its blue water-lily), śalya-grāhavatī (with Śalya as its shark), kṛpeṇa (with Kṛpa), vahanī (as its current), karṇena (with Karṇa), velākulā (as its breaking waves), aśvatthāma-vikarṇa-ghora-makarā (with Aśvatthāmā and Vikarṇa as its terrible crocodiles), duryodhana-āvartinī (with Duryodhana as its whirlpool), sā (that), uttīrṇā (was crossed), khalu (indeed), pāṇḍavaiḥ (by the Pāṇḍavas), raṇa-nadī (the river of battle), kaivartakaḥ (the ferryman), keśavaḥ (Keśava, Kṛṣṇa)",
+   "edited": false,
+   "file": "BhagavadGita/chapter_00_gita_dhyanam.html",
+   "block": 5
+  },
+  {
+   "id": "gita:0:7",
+   "src": "gita",
+   "group": "0",
+   "label": "Gita 0.7",
+   "speaker": null,
+   "deva": [
+    "पाराशर्यवचः सरोजममलं गीतार्थगन्धोत्कटं",
+    "नानाख्यानककेशरं हरिकथासम्बोधनाबोधितम् ।",
+    "लोके सज्जनषट्पदैरहरहः पेपीयमानं मुदा",
+    "भूयाद्भारतपङ्कजं कलिमलप्रध्वंसनं श्रेयसे ॥ ७॥"
+   ],
+   "te": [
+    "పారాశర్యవచః సరోజమమలం గీతార్థగంధోత్కటం",
+    "నానాఖ్యానకకేశరం హరికథాసంబోధనాబోధితమ్ ।",
+    "లోకే సజ్జనషట్పదైరహరహః పేపీయమానం ముదా",
+    "భూయాద్భారతపంకజం కలిమలప్రధ్వంసనం శ్రేయసే ॥ 7 ॥"
+   ],
+   "iast": [
+    "pārāśarya-vacaḥ sarojam amalaṃ gītārtha-gandhotkaṭaṃ",
+    "nānākhyānaka-keśaraṃ hari-kathā-sambodhanābodhitam |",
+    "loke sajjana-ṣaṭpadair ahar ahaḥ pepīyamānaṃ mudā",
+    "bhūyād bhārata-paṅkajaṃ kali-mala-pradhvaṃsanaṃ śreyase || 7 ||"
+   ],
+   "te_meaning": "వ్యాసుని వాక్కులనే సరస్సులో పుట్టిన నిర్మలమైన తామర ఇది; గీతార్థమనే సువాసనతో నిండినది; అనేక కథలే దాని కేసరాలు; హరికథల వర్ణనతో వికసించినది; లోకంలో సజ్జనులనే తుమ్మెదలు ప్రతిరోజూ ఆనందంగా దాని మకరందాన్ని తాగుతారు. కలి దోషాలను నశింపజేసే ఆ మహాభారతమనే పద్మం మాకు శ్రేయస్సును కలిగించుగాక.",
+   "en_meaning": "May the spotless lotus of the Mahābhārata — born of Vyāsa’s words, rich with the fragrance of the Gītā’s meaning, with many stories as its filaments, opened by the telling of Hari’s deeds, and joyfully drunk day after day by the good as bees in this world — destroy the impurities of Kali and bring us the highest good.",
+   "words": "pārāśarya-vacaḥ (the words of Vyāsa, son of Parāśara), sarojam (lotus), amalam (spotless), gītā-artha-gandha-utkaṭam (rich with the fragrance of the Gītā’s meaning), nānā-ākhyānaka-keśaram (with many stories as its filaments), hari-kathā-sambodhana-ābodhitam (opened by the telling of Hari’s stories), loke (in the world), sajjana-ṣaṭpadaiḥ (by good people as bees), ahar ahaḥ (day after day), pepīyamānam (being drunk deeply), mudā (with joy), bhūyāt (may it be), bhārata-paṅkajam (the lotus of the Mahābhārata), kali-mala-pradhvaṃsanam (destroying the impurities of Kali), śreyase (for the highest good)",
+   "edited": false,
+   "file": "BhagavadGita/chapter_00_gita_dhyanam.html",
+   "block": 6
+  },
+  {
+   "id": "gita:0:8",
+   "src": "gita",
+   "group": "0",
+   "label": "Gita 0.8",
+   "speaker": null,
+   "deva": [
+    "मूकं करोति वाचालं",
+    "पङ्गुं लङ्घयते गिरिम् ।",
+    "यत्कृपा तमहं वन्दे",
+    "परमानन्दमाधवम् ॥ ८॥"
+   ],
+   "te": [
+    "మూకం కరోతి వాచాలం",
+    "పంగుం లంఘయతే గిరిమ్ ।",
+    "యత్కృపా తమహం వందే",
+    "పరమానందమాధవమ్ ॥ 8 ॥"
+   ],
+   "iast": [
+    "mūkaṃ karoti vācālaṃ",
+    "paṅguṃ laṅghayate girim |",
+    "yat-kṛpā tam ahaṃ vande",
+    "paramānanda-mādhavam || 8 ||"
+   ],
+   "te_meaning": "ఎవరి కృప మూగవాణ్ణి మాటకారిగా చేస్తుందో, కుంటివాణ్ణి కొండను దాటేలా చేస్తుందో, పరమానంద స్వరూపుడైన ఆ మాధవునికి నేను నమస్కరిస్తున్నాను.",
+   "en_meaning": "I bow to Mādhava, the supreme bliss, whose grace makes the mute eloquent and the lame cross mountains.",
+   "words": "mūkam (the mute), karoti (makes), vācālam (eloquent), paṅgum (the lame), laṅghayate (makes to cross), girim (a mountain), yat-kṛpā (whose grace), tam (Him), aham (I), vande (bow to), parama-ānanda-mādhavam (Mādhava, the supreme bliss)",
+   "edited": false,
+   "file": "BhagavadGita/chapter_00_gita_dhyanam.html",
+   "block": 7
+  },
+  {
+   "id": "gita:0:9",
+   "src": "gita",
+   "group": "0",
+   "label": "Gita 0.9",
+   "speaker": null,
+   "deva": [
+    "यं ब्रह्मा वरुणेन्द्ररुद्रमरुतः स्तुन्वन्ति दिव्यैः स्तवैर्",
+    "वेदैः साङ्गपदक्रमोपनिषदैर्गायन्ति यं सामगाः ।",
+    "ध्यानावस्थिततद्गतेन मनसा पश्यन्ति यं योगिनो",
+    "यस्यान्तं न विदुः सुरासुरगणा देवाय तस्मै नमः ॥ ९॥"
+   ],
+   "te": [
+    "యం బ్రహ్మా వరుణేంద్రరుద్రమరుతః స్తున్వంతి దివ్యైః స్తవైర్",
+    "వేదైః సాంగపదక్రమోపనిషదైర్గాయంతి యం సామగాః ।",
+    "ధ్యానావస్థితతద్గతేన మనసా పశ్యంతి యం యోగినో",
+    "యస్యాంతం న విదుః సురాసురగణా దేవాయ తస్మై నమః ॥ 9 ॥"
+   ],
+   "iast": [
+    "yaṃ brahmā varuṇendra-rudra-marutaḥ stunvanti divyaiḥ stavair",
+    "vedaiḥ sāṅga-pada-kramopaniṣadair gāyanti yaṃ sāmagāḥ |",
+    "dhyānāvasthita-tad-gatena manasā paśyanti yaṃ yogino",
+    "yasyāntaṃ na viduḥ surāsura-gaṇā devāya tasmai namaḥ || 9 ||"
+   ],
+   "te_meaning": "బ్రహ్మ, వరుణుడు, ఇంద్రుడు, రుద్రుడు, మరుత్తులు దివ్య స్తోత్రాలతో ఎవరిని స్తుతిస్తారో, సామగానం చేసేవారు అంగాలు, పద క్రమ పాఠాలు, ఉపనిషత్తులతో కూడిన వేదాలతో ఎవరిని గానం చేస్తారో, యోగులు ధ్యానంలో నిలిచి ఆయనలో లీనమైన మనసుతో ఎవరిని దర్శిస్తారో, దేవతలు రాక్షసులు కూడా ఎవరి అంతాన్ని తెలుసుకోలేరో — ఆ దేవునికి నమస్కారం.",
+   "en_meaning": "Salutations to that Lord whom Brahmā, Varuṇa, Indra, Rudra and the Maruts praise with divine hymns; whom the Sāma singers chant with the Vedas, their limbs, pada and krama recitations and Upaniṣads; whom yogis see with minds absorbed in Him through meditation; and whose end neither gods nor demons know.",
+   "words": "yam (whom), brahmā (Brahmā), varuṇa-indra-rudra-marutaḥ (Varuṇa, Indra, Rudra and the Maruts), stunvanti (praise), divyaiḥ (with divine), stavaiḥ (hymns), vedaiḥ (with the Vedas), sa-aṅga-pada-krama-upaniṣadaiḥ (with their limbs, pada and krama recitations and Upaniṣads), gāyanti (sing), sāmagāḥ (the singers of the Sāma Veda), dhyāna-avasthita-tat-gatena (absorbed in Him, settled in meditation), manasā (with the mind), paśyanti (see), yoginaḥ (the yogis), yasya (whose), antam (end), na viduḥ (do not know), sura-asura-gaṇāḥ (the hosts of gods and demons), devāya (to the Lord), tasmai (to Him), namaḥ (salutations)",
+   "edited": false,
+   "file": "BhagavadGita/chapter_00_gita_dhyanam.html",
+   "block": 8
+  },
   {
    "id": "gita:1:1",
    "src": "gita",
