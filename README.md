@@ -8,16 +8,16 @@ The deck covers:
 
 | Source | Groups | Words |
 | --- | --- | --- |
-| Bhagavad Gita | Chapters 1–18 | 3,984 |
+| Bhagavad Gita | Chapters 0–18 (0 = Gītā Dhyānam) | 4,072 |
 | Vishnu Sahasranamam | Pūrva-bhāga, Stotram (the thousand names), Uttara-bhāga | 1,295 |
 | Bhaja Govindam | Refrain, Dvādaśa-mañjarikā, Caturdaśa-mañjarikā, concluding verses | 170 |
 
-That is 5,194 unique cards. Each word appears once, however many chapters or verses it
+That is 5,278 unique cards. Each word appears once, however many chapters or verses it
 occurs in, and its card lists all of those verses. Spelling variants such as `vedavid` and
 `veda-vit` are merged. Phrases that only add a particle (`drupadaḥ ca`) are merged into
 the word. A phrase whose words all have cards of their own (`mām eva`) is dropped.
 
-1,128 cards have a Telugu meaning so far, including every Bhaja Govindam word. The rest show the English meaning, and the words
+1,233 cards have a Telugu meaning so far, including every Bhaja Govindam word. The rest show the English meaning, and the words
 still needing a Telugu meaning are listed in `missing_te.json`.
 
 The words come from the `Words:` lists in the
@@ -38,7 +38,7 @@ For development you can also run `swift run --package-path app`.
 ## Using the app
 
 - **Words / Verses / Grammar** (top left of the toolbar): practice single words, whole verses,
-  or grammar lessons. There are 913 verse cards: 701 from the Gita, 181 from the Vishnu
+  or grammar lessons. There are 922 verse cards: 710 from the Gita, 181 from the Vishnu
   Sahasranamam and 31 from Bhaja Govindam. Gita verses show who is speaking (*arjuna uvāca*,
   *śrī-bhagavān uvāca*, …) above the verse in each script, on the card and in printouts.
   - There are 417 grammar cards from the *Sanskrit via Telugu* primer
