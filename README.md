@@ -17,7 +17,7 @@ occurs in, and its card lists all of those verses. Spelling variants such as `ve
 `veda-vit` are merged. Phrases that only add a particle (`drupadaḥ ca`) are merged into
 the word. A phrase whose words all have cards of their own (`mām eva`) is dropped.
 
-1,233 cards have a Telugu meaning so far, including every Bhaja Govindam word. The rest show the English meaning, and the words
+1,586 cards have a Telugu meaning so far, including every Bhaja Govindam word. The rest show the English meaning, and the words
 still needing a Telugu meaning are listed in `missing_te.json`.
 
 The words come from the `Words:` lists in the
