@@ -302,23 +302,44 @@ def verse_lines(raw, kind):
 
 
 SPEAKER_RE = re.compile(r'<div class="(?:speaker|author-note)"[^>]*>([^<]*·\s*[^<]*uvāc[^<]*)</div>')
+# Vishnu Sahasranamam (and similar): nested speaker-box with scripts + english.
+SPEAKER_BOX_RE = re.compile(
+    r'<div class="scripts">\s*'
+    r'<div class="sanskrit">(.*?)</div>\s*'
+    r'<div class="telugu">(.*?)</div>\s*'
+    r'</div>\s*'
+    r'<div class="english">([^<]*(?:uvāca|ovāca)[^<]*)</div>',  # … uvāca / brahmovāca
+    re.S | re.I,
+)
 
 
 def speaker_line(window):
-    """The "arjuna uvāca" line (`deva · iast`) shown above a verse, if any."""
+    """Dialogue cue shown above a verse: Gita `deva · iast`, or VS speaker-box."""
     found = SPEAKER_RE.findall(window)
-    if not found:
+    if found:
+        deva, iast = (p.strip() for p in found[-1].split('·', 1))
+        return {'deva': deva, 'te': deva_to_telugu(deva), 'iast': iast}
+    matched = list(SPEAKER_BOX_RE.finditer(window))
+    if not matched:
         return None
-    deva, iast = (p.strip() for p in found[-1].split('·', 1))
-    return {'deva': deva, 'te': deva_to_telugu(deva), 'iast': iast}
+    m = matched[-1]
+    deva = strip_tags(m.group(1)).strip()
+    te = strip_tags(m.group(2)).strip()
+    iast = strip_tags(m.group(3)).strip()
+    return {'deva': deva, 'te': te or deva_to_telugu(deva), 'iast': iast}
 
 
 def verse_blocks(text):
     """Yield (h2_id, verse_label, fields, block) for each verse, where block is the index of its
-    `<div class="scripts">` in the page; short speaker lines are skipped."""
+    `<div class="scripts">` in the page; short speaker lines are skipped.
+
+    The current speaker sticks to following verses until a new uvāca line appears, so long
+    replies (e.g. Bhīṣma in the Sahasranamam) stay labelled.
+    """
     heads = [(m.start(), m.group(1) or strip_tags(m.group(2))) for m in H2_RE.finditer(text)]
     boxes = [(m.start(), verse_label(m.group(1))) for m in MAIN_BOX_RE.finditer(text)]
     starts = [m.start() for m in SCRIPTS_RE.finditer(text)] + [len(text)]
+    current_speaker = None
     for block, (pos, end) in enumerate(zip(starts, starts[1:])):
         seg = text[pos:end]
         deva = first_div(seg, 'sanskrit')
@@ -328,8 +349,13 @@ def verse_blocks(text):
         label = next((b for p, b in reversed(boxes) if p < pos), '')
         box_start = next((p for p, _ in reversed(boxes) if p < pos), 0)
         prev = starts[block - 1] if block else 0
+        # Prefer the current verse-box (nested VS speaker-boxes); also check the gap after
+        # the previous scripts block (Gita inline speaker divs).
+        sp = speaker_line(text[box_start:pos]) or speaker_line(text[prev:pos])
+        if sp:
+            current_speaker = sp
         yield h2, label, {
-            'speaker': speaker_line(text[max(box_start, prev):pos]),
+            'speaker': current_speaker,
             'deva': verse_lines(deva, 'deva'),
             'te': verse_lines(first_div(seg, 'telugu'), 'te'),
             'iast': verse_lines(first_div(seg, 'english'), 'iast'),
