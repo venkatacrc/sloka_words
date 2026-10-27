@@ -2,6 +2,11 @@ import SwiftUI
 
 struct VerseCardView: View {
     let verse: Verse
+    let words: [VerseWord]
+    let onStudy: () -> Void
+    let onReveal: () -> Void
+    let openWordID: String?
+    let setOpenWordID: (String?) -> Void
     let flipped: Bool
     let isKnown: Bool
     let isReview: Bool
@@ -16,12 +21,18 @@ struct VerseCardView: View {
                     if isReview { CardBadge(text: "Review", color: .orange) }
                     Spacer()
                 }
+                .contentShape(Rectangle())
+                .onTapGesture(perform: onReveal)
                 if flipped {
                     fullVerse
+                        .contentShape(Rectangle())
+                        .onTapGesture(perform: onReveal)
                     Divider().padding(.horizontal, 40)
                     meanings
                 } else {
                     firstLine
+                        .contentShape(Rectangle())
+                        .onTapGesture(perform: onReveal)
                 }
             }
             .padding(32)
@@ -69,14 +80,77 @@ struct VerseCardView: View {
             if !verse.enMeaning.isEmpty {
                 block("English meaning") { Text(verse.enMeaning).font(.system(size: 16)) }
             }
-            if !verse.words.isEmpty {
+            if !words.isEmpty {
+                wordList
+            } else if !verse.words.isEmpty {
                 block("Word by word") {
                     Text(verse.words).font(.callout).foregroundStyle(.secondary)
                 }
             }
         }
         .frame(maxWidth: 680, alignment: .leading)
-        .textSelection(.enabled)
+    }
+
+    private var wordList: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack {
+                Text("Words")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(Color.accentColor)
+                Spacer()
+                if words.contains(where: { $0.cardID != nil }) {
+                    Button("Study these words", action: onStudy)
+                        .buttonStyle(.borderless)
+                        .font(.caption.weight(.semibold))
+                }
+            }
+            Text("Click a word to see its meaning.")
+                .font(.caption)
+                .foregroundStyle(.secondary)
+            ForEach(words) { entry in
+                wordRow(entry)
+            }
+        }
+    }
+
+    private func wordRow(_ entry: VerseWord) -> some View {
+        let open = openWordID == entry.id
+        return VStack(alignment: .leading, spacing: 6) {
+            Button {
+                setOpenWordID(open ? nil : entry.id)
+            } label: {
+                HStack(alignment: .firstTextBaseline, spacing: 10) {
+                    if !entry.te.isEmpty {
+                        Text(entry.te).font(.system(size: 20, weight: .semibold))
+                    }
+                    Text(entry.iast).italic().foregroundStyle(.secondary)
+                    Spacer()
+                    Image(systemName: open ? "chevron.down" : "chevron.right")
+                        .font(.caption.weight(.semibold))
+                        .foregroundStyle(.tertiary)
+                }
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+            if open {
+                VStack(alignment: .leading, spacing: 4) {
+                    if !entry.deva.isEmpty {
+                        Text(entry.deva).foregroundStyle(.secondary)
+                    }
+                    if !entry.teMeaning.isEmpty {
+                        Text(entry.teMeaning).font(.system(size: 18))
+                    } else if entry.cardID != nil {
+                        Text("Telugu meaning not added yet").italic().foregroundStyle(.secondary)
+                    }
+                    Text(entry.en.joined(separator: "\n"))
+                        .font(.body)
+                }
+                .textSelection(.enabled)
+            }
+        }
+        .padding(10)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color.secondary.opacity(open ? 0.10 : 0.06), in: RoundedRectangle(cornerRadius: 10))
     }
 
     private func block<Content: View>(_ title: String, @ViewBuilder _ content: () -> Content) -> some View {
@@ -86,6 +160,7 @@ struct VerseCardView: View {
                 .foregroundStyle(Color.accentColor)
             content()
         }
+        .textSelection(.enabled)
     }
 }
 
