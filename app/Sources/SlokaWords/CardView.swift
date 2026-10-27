@@ -2,9 +2,13 @@ import SwiftUI
 
 struct CardView: View {
     let word: Word
+    /// English gloss for the verse being studied. Nil shows every sense of the word.
+    var verseEnglish: [String]? = nil
     let flipped: Bool
     let isKnown: Bool
     let isReview: Bool
+
+    private var english: [String] { verseEnglish ?? word.en }
 
     var body: some View {
         VStack(spacing: 0) {
@@ -68,16 +72,18 @@ struct CardView: View {
             }
             MeaningBlock(title: "English meaning") {
                 VStack(alignment: .leading, spacing: 6) {
-                    ForEach(word.en, id: \.self) { meaning in
-                        Text(word.en.count > 1 ? "• \(meaning)" : meaning)
+                    ForEach(english, id: \.self) { meaning in
+                        Text(english.count > 1 ? "• \(meaning)" : meaning)
                             .font(.system(size: 17))
                     }
                 }
             }
-            MeaningBlock(title: "Found in") {
-                Text(refSummary)
-                    .font(.callout)
-                    .foregroundStyle(.secondary)
+            if verseEnglish == nil {
+                MeaningBlock(title: "Found in") {
+                    Text(refSummary)
+                        .font(.callout)
+                        .foregroundStyle(.secondary)
+                }
             }
         }
         .frame(maxWidth: 640, alignment: .leading)

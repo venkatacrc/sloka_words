@@ -133,7 +133,7 @@ struct ContentView: View {
         .onChange(of: excludedRaw) { rebuild() }
         .onChange(of: shuffle) { rebuild() }
         .onChange(of: modeRaw) { rebuild() }
-        .onChange(of: kindRaw) { rebuild() }
+        .onChange(of: kindRaw) { switchKind() }
         .onChange(of: studyRaw) { rebuild() }
         .onChange(of: store.revision) { rebuild() }
         .sheet(isPresented: Binding(
@@ -179,6 +179,16 @@ struct ContentView: View {
 
     @ViewBuilder
     private var detail: some View {
+        VStack(spacing: 18) {
+            if kind == .words, let focusID = session.verseFocus {
+                focusBanner(focusID)
+            }
+            detailBody
+        }
+    }
+
+    @ViewBuilder
+    private var detailBody: some View {
         if study == .test && session.finished {
             testSummary
         } else if let index = currentIndex {
@@ -190,24 +200,32 @@ struct ContentView: View {
                     case .words:
                         CardView(
                             word: words[index],
+                            verseEnglish: verseEnglish(for: words[index]),
                             flipped: flipped,
                             isKnown: progress.known.contains(id),
                             isReview: progress.review.contains(id))
+                        .onTapGesture { if study == .test { session.flipped = true } }
                     case .verses:
                         VerseCardView(
                             verse: verse(at: index),
+                            words: verseWords(at: index),
+                            onStudy: { focusWords(on: verses[index]) },
+                            onReveal: { if study == .test { session.flipped = true } },
+                            openWordID: session.openWordID,
+                            setOpenWordID: { session.openWordID = $0 },
                             flipped: flipped,
                             isKnown: progress.known.contains(id),
                             isReview: progress.review.contains(id))
+                        .id(verses[index].id)
                     case .grammar:
                         GrammarCardView(
                             card: grammar[index],
                             flipped: flipped,
                             isKnown: progress.known.contains(id),
                             isReview: progress.review.contains(id))
+                        .onTapGesture { if study == .test { session.flipped = true } }
                     }
                 }
-                .onTapGesture { if study == .test { session.flipped = true } }
                 .animation(.easeInOut(duration: 0.15), value: flipped)
                 controls(index: index, id: id)
                     .disabled(session.editingVerse != nil)
@@ -220,11 +238,29 @@ struct ContentView: View {
         }
     }
 
+    private func focusBanner(_ id: String) -> some View {
+        let label = verses.first { $0.id == id }?.label ?? "this verse"
+        return HStack(spacing: 12) {
+            Text("Words of \(label)").font(.headline)
+            Spacer()
+            Button("Verse") { backToVerse() }
+            Button("All words") { showAllWords() }
+        }
+    }
+
     private var emptyHint: String {
-        switch mode {
-        case .review: "No cards are marked for review in the selected chapters. Press R on a card to mark it."
-        case .notKnown: "Every card in the selected chapters is marked known."
-        case .all: "Tick at least one chapter or section in the sidebar."
+        if session.verseFocus != nil {
+            switch mode {
+            case .review: "None of the words in this verse are marked for review."
+            case .notKnown: "Every word of this verse is marked known."
+            case .all: "This verse has no word cards. Go back to the verse, or show all words."
+            }
+        } else {
+            switch mode {
+            case .review: "No cards are marked for review in the selected chapters. Press R on a card to mark it."
+            case .notKnown: "Every card in the selected chapters is marked known."
+            case .all: "Tick at least one chapter or section in the sidebar."
+            }
         }
     }
 
@@ -352,7 +388,7 @@ struct ContentView: View {
                 ForEach(CardKind.allCases) { Text($0.title).tag($0.rawValue) }
             }
             .pickerStyle(.segmented)
-            .help("Practice words or whole verses")
+            .help("From a verse, Words practices that verse. All words leaves the verse.")
         }
         ToolbarItem(placement: .navigation) {
             Picker("Mode", selection: $studyRaw) {
@@ -379,6 +415,58 @@ struct ContentView: View {
         guard !order.isEmpty else { return }
         session.position = (position + delta + order.count) % order.count
         session.flipped = false
+        session.openWordID = nil
+    }
+
+    private func labelShared(_ verse: Verse) -> Bool {
+        verses.contains { $0.id != verse.id && $0.src == verse.src && $0.group == verse.group && $0.label == verse.label }
+    }
+
+    private func verseWords(at index: Int) -> [VerseWord] {
+        VerseWords.entries(for: verses[index], words: words, labelShared: labelShared(verses[index]))
+    }
+
+    /// English for a word card while a verse is in focus: the gloss from that verse.
+    private func verseEnglish(for word: Word) -> [String]? {
+        guard let id = session.verseFocus, let verse = verses.first(where: { $0.id == id }) else { return nil }
+        return VerseWords.entries(for: verse, words: words, labelShared: labelShared(verse))
+            .first { $0.cardID == word.id }?.en
+    }
+
+    /// Words of the verse the reader is on, so the next cards stay inside that verse.
+    private func focusWords(on verse: Verse) {
+        session.verseFocus = verse.id
+        session.returnVerseID = verse.id
+        if kindRaw == CardKind.words.rawValue {
+            rebuild()
+        } else {
+            kindRaw = CardKind.words.rawValue
+        }
+    }
+
+    private func showAllWords() {
+        session.verseFocus = nil
+        session.returnVerseID = nil
+        rebuild()
+    }
+
+    private func backToVerse() {
+        guard session.returnVerseID != nil else { return }
+        kindRaw = CardKind.verses.rawValue
+    }
+
+    private func switchKind() {
+        let returning = selectedKind == .verses ? session.returnVerseID : nil
+        if selectedKind == .words, session.kind == .verses, session.verseFocus == nil, let index = currentIndex {
+            session.verseFocus = verses[index].id
+            session.returnVerseID = verses[index].id
+        }
+        if selectedKind != .words { session.verseFocus = nil }
+        if selectedKind != .verses { session.returnVerseID = nil }
+        rebuild()
+        if let returning, let pos = session.order.firstIndex(where: { verses[$0].id == returning }) {
+            session.position = pos
+        }
     }
 
     private func rebuild() {
@@ -387,7 +475,13 @@ struct ContentView: View {
         var picked: [Int]
         switch kind {
         case .words:
-            picked = words.indices.filter { i in words[i].refs.contains { included($0.key, $0.src) } }
+            if let id = session.verseFocus, let verse = verses.first(where: { $0.id == id }) {
+                let ids = VerseWords.cardIDs(for: verse, words: words, labelShared: labelShared(verse))
+                let indexByID = Dictionary(uniqueKeysWithValues: words.enumerated().map { ($1.id, $0) })
+                picked = ids.compactMap { indexByID[$0] }
+            } else {
+                picked = words.indices.filter { i in words[i].refs.contains { included($0.key, $0.src) } }
+            }
         case .verses:
             picked = verses.indices.filter { included(verses[$0].key, verses[$0].src) }
         case .grammar:
@@ -403,6 +497,7 @@ struct ContentView: View {
         session.flipped = false
         session.answers = [:]
         session.finished = false
+        session.openWordID = nil
     }
 }
 
@@ -414,6 +509,12 @@ final class StudySession: ObservableObject {
     @Published var flipped = false
     @Published var collapsedSources: Set<String> = []
     @Published var editingVerse: Int?
+    /// When set, Words shows only this verse's word cards.
+    @Published var verseFocus: String?
+    /// Verse to restore when leaving that word drill.
+    @Published var returnVerseID: String?
+    /// Word row expanded on the current verse card.
+    @Published var openWordID: String?
     /// Test mode: card id → whether it was recalled correctly in this run.
     @Published var answers: [String: Bool] = [:]
     @Published var finished = false
