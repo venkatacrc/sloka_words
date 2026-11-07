@@ -5,6 +5,8 @@ struct VerseCardView: View {
     let words: [VerseWord]
     let onStudy: () -> Void
     let onReveal: () -> Void
+    /// Opens Samsaadhanii's word analysis; nil when the verse has none.
+    let onAnalysis: (() -> Void)?
     let openWordID: String?
     let setOpenWordID: (String?) -> Void
     let flipped: Bool
@@ -79,6 +81,13 @@ struct VerseCardView: View {
             }
             if !verse.enMeaning.isEmpty {
                 block("English meaning") { Text(verse.enMeaning).font(.system(size: 16)) }
+            }
+            if let onAnalysis {
+                Button(action: onAnalysis) {
+                    Label("పద విశ్లేషణ · Kāraka graph (A)", systemImage: "point.3.connected.trianglepath.dotted")
+                        .frame(maxWidth: .infinity)
+                }
+                .controlSize(.large)
             }
             if !words.isEmpty {
                 wordList

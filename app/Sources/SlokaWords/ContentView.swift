@@ -38,6 +38,7 @@ struct ContentView: View {
 
     @StateObject private var session = StudySession()
     @StateObject private var draft = VerseDraft()
+    @StateObject private var analysis = GitaAnalysisStore()
 
     private var words: [Word] { store.deck.words }
     private var verses: [Verse] { store.deck.verses }
@@ -156,6 +157,18 @@ struct ContentView: View {
                     onCancel: { session.editingVerse = nil })
             }
         }
+        .sheet(isPresented: Binding(
+            get: { session.analysisVerse != nil },
+            set: { if !$0 { session.analysisVerse = nil } })
+        ) {
+            if let index = session.analysisVerse {
+                GitaAnalysisView(
+                    verse: verse(at: index),
+                    deckWords: verseWords(at: index),
+                    store: analysis,
+                    onClose: { session.analysisVerse = nil })
+            }
+        }
         .sheet(isPresented: $pusher.isPresented) {
             PushEditsView(pusher: pusher, onPushed: { store.importDeck(from: $0) })
         }
@@ -211,6 +224,7 @@ struct ContentView: View {
                             words: verseWords(at: index),
                             onStudy: { focusWords(on: verses[index]) },
                             onReveal: { if study == .test { session.flipped = true } },
+                            onAnalysis: analysis.has(verses[index]) ? { session.analysisVerse = index } : nil,
                             openWordID: session.openWordID,
                             setOpenWordID: { session.openWordID = $0 },
                             flipped: flipped,
@@ -344,6 +358,13 @@ struct ContentView: View {
                     session.editingVerse = index
                 } label: { Label("Edit verse (E)", systemImage: "pencil") }
                 .keyboardShortcut("e", modifiers: [])
+                if analysis.has(verses[index]) {
+                    Button { session.analysisVerse = index } label: {
+                        Label("Analysis (A)", systemImage: "point.3.connected.trianglepath.dotted")
+                    }
+                    .keyboardShortcut("a", modifiers: [])
+                    .help("Word split, prose order, word analysis and kāraka graph from Samsaadhanii")
+                }
             }
             if study == .learn {
                 Button { progress.toggleKnown(id) } label: {
@@ -509,6 +530,8 @@ final class StudySession: ObservableObject {
     @Published var flipped = false
     @Published var collapsedSources: Set<String> = []
     @Published var editingVerse: Int?
+    /// Verse whose Samsaadhanii analysis sheet is open.
+    @Published var analysisVerse: Int?
     /// When set, Words shows only this verse's word cards.
     @Published var verseFocus: String?
     /// Verse to restore when leaving that word drill.

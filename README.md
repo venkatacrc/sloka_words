@@ -52,6 +52,21 @@ For development you can also run `swift run --package-path app`.
   - A verse card shows only the first line. Recite the rest, then press **Space** to check
     against the full verse in Telugu, Hindi (Devanagari) and IAST. The back also shows the
     Telugu meaning (where available), the English meaning and the word-by-word meanings.
+  - **A** (or the **పద విశ్లేషణ · Kāraka graph** button on a Gita verse) opens the word
+    analysis, in Telugu or Devanagari script. It has four views:
+    - *పదచ్ఛేదం*: the words in verse order and how each sandhi splits.
+    - *అన్వయం*: the words in prose order, with Telugu and English meanings.
+    - *పద పరిచయం*: each word's stem or root, gender, case, number, tense and compound type,
+      and how it relates to the other words.
+    - *కారక చిత్రం*: a kāraka tree for each sentence. Click a word to see its meaning and
+      relation.
+
+    The analysis comes from [Samsaadhanii](https://github.com/samsaadhanii/ereaders)
+    (University of Hyderabad). It has no licence, so it is not copied into this repo or the
+    bhakti site. Each verse is downloaded from Samsaadhanii's GitHub the first time you open
+    it, then kept on the device. **Save the whole Gītā for offline** downloads all 675 files
+    (about 4 MB). The app itself carries only a 41 KB index (`gita_analysis.json`), made by
+    `python3 tools/gita_analysis_index.py`. Gita 7.30 has no analysis in Samsaadhanii.
   - **E** opens the verse editor. Rewrite the lines the way the verse is chanted, one line
     per row, and press **Save**. The edit is used straight away, and the card is labelled
     *Edited*. **Remove my edit** goes back to the deck text.
@@ -82,7 +97,7 @@ Progress is saved per word, so adding new stotras keeps your known and review ma
 ## Phone and web app
 
 `web/` holds an installable web app with the same cards. It has Words and Verses, Learn and
-Test, chapter selection, verse editing and Print / Save as PDF. It works on Android phones,
+Test, chapter selection, verse editing, the Gita word analysis and Print / Save as PDF. It works on Android phones,
 iPhones and desktop browsers, and keeps working offline once it's opened. It's served from the
 bhakti GitHub Pages site at <https://venkatacrc.github.io/bhakti/flashcards/>.
 
@@ -188,6 +203,7 @@ app/                 Swift package (SwiftUI app)
 tools/build_deck.py  deck builder
 tools/lessons.py     grammar cards from the study page (a "type": "lessons" entry in sources.json)
 tools/push_edits.py  writes verse edits into the bhakti pages and verse_edits.json, commits and pushes
+tools/gita_analysis_index.py  index of Samsaadhanii's Gita analysis files (web/ and app resources)
 sources.json         source registry
 te_meanings/         Telugu meanings, one JSON file per batch or stotra
 missing_te.json      words still needing a Telugu meaning (generated)

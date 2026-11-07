@@ -17,7 +17,7 @@ fi
 
 rm -rf "$DEST"
 mkdir -p "$DEST/icons"
-cp "$ROOT"/web/{index.html,app.css,app.js,manifest.webmanifest} "$DEST/"
+cp "$ROOT"/web/{index.html,app.css,analysis.js,app.js,gita_analysis.json,manifest.webmanifest} "$DEST/"
 cp "$ROOT"/web/icons/*.png "$DEST/icons/"
 
 # The web app doesn't need the repo locations the Mac app uses for pushing edits.
