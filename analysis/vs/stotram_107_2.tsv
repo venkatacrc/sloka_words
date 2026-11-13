@@ -1,0 +1,8 @@
+index	word	poem	sandhied_word	morph_in_context	kaaraka_sambandha	english_meaning
+1.1	श्री-	1	श्रीसर्वप्रहरणायुध	श्री	कर्मधारयः,1.2	O glorious one armed with all weapons
+1.2	सर्व-	-		सर्व	कर्मधारयः,1.3
+1.3	प्रहरण-	-		प्रहरण	बहुव्रीहिः,1.4
+1.4	आयुध	-		आयुध{पुं;8;एक}	सम्बोध्यः,3.1
+2.1	ॐ	2	ॐ	ॐ{अव्य}	सम्बन्धः,3.1	Om
+3.1	नमः	3	नम	नमः{अव्य}		salutation
+4.1	इति	4	इति	इति{अव्य}	सम्बन्धः,3.1	thus (ends the list)

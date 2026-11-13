@@ -37,6 +37,9 @@ For development you can also run `swift run --package-path app`.
 
 ## Using the app
 
+- **Main script** (the toolbar's script menu, or View → Main Script, ⌥⌘1–3; on the web, in the
+  ☰ menu): choose తెలుగు, देवनागरी or English (IAST). That script is shown first on word and
+  verse cards, in a bigger font, with the other two smaller below it.
 - **Words / Verses / Grammar** (top left of the toolbar): practice single words, whole verses,
   or grammar lessons. There are 922 verse cards: 710 from the Gita, 181 from the Vishnu
   Sahasranamam and 31 from Bhaja Govindam. Gita verses show who is speaking (*arjuna uvāca*,
@@ -67,6 +70,14 @@ For development you can also run `swift run --package-path app`.
     it, then kept on the device. **Save the whole Gītā for offline** downloads all 675 files
     (about 4 MB). The app itself carries only a 41 KB index (`gita_analysis.json`), made by
     `python3 tools/gita_analysis_index.py`. Gita 7.30 has no analysis in Samsaadhanii.
+
+    Vishnu Sahasranamam verses have the same views. Samsaadhanii has no analysis of the
+    Sahasranamam, so this one is a draft made for this app in the same format, one file per
+    verse in `analysis/vs/`. It may contain mistakes; fix a verse by editing its file. The
+    names are modelled as "(सः) … (अस्ति)", "He is …", so their graph is a fan of names; the
+    compounds and roots in *పద పరిచయం* are the useful part. It is bundled with the app and works
+    offline. After editing, run `python3 tools/vs_analysis.py`, which checks every file
+    (including that the words rebuild the verse text) and writes `vs_analysis.json`.
   - **E** opens the verse editor. Rewrite the lines the way the verse is chanted, one line
     per row, and press **Save**. The edit is used straight away, and the card is labelled
     *Edited*. **Remove my edit** goes back to the deck text.
@@ -164,6 +175,45 @@ separated by `\n`:
 {"gita:12:1": {"te": "…line 1…\n…line 2…", "deva": "…", "iast": "…"}}
 ```
 
+## Printable Gita word list
+
+`tools/gita_glossary.py` builds a word list of the whole Gita for printing and review. It
+needs a clone of [samsaadhanii/ereaders](https://github.com/samsaadhanii/ereaders):
+
+```sh
+git clone https://github.com/samsaadhanii/ereaders ~/ereaders
+python3 tools/gita_glossary.py --local ~/ereaders --pdf
+open build/gita_glossary.pdf
+```
+
+Add `--compact` for a shorter version of about 20 pages, `build/gita_glossary_compact.pdf`. It
+puts each word on one line in three columns, in a smaller font, and leaves out the counts, the
+verse numbers and Part 2.
+
+How the list is built:
+
+- **Words:** every word of the padacchedam is used, with compound members counted separately.
+- **Merging forms:** each word is reduced to its stem or root using Samsaadhanii's analysis, so
+  forms like पश्यति, दृष्ट्वा and द्रष्टुम् are listed together under दृश्. Prefixed verbs
+  (अनु+दृश्) are shown under their root.
+- **Epithets:** the names of a person are merged into one entry, for example Pārtha, Kaunteya
+  and Dhanañjaya under Arjuna. A word like भारत or महाबाहो goes to whoever the speaker of
+  the verse is addressing.
+- **Synonyms:** words with the same meaning, such as देह, शरीर and कलेवर, are merged into one entry.
+- **Part 1** groups the entries by theme (senses, mind, action, war, …).
+- **Part 2** lists all entries from most to least frequent.
+
+Glosses, themes and synonym groups are kept by hand in `analysis/gita_glossary.tsv`, with
+these columns:
+
+- `te` and `en`: the meanings.
+- `theme`: one of the theme ids in the script.
+- `group`: a synonym-group id. Rows with the same group are printed as one entry.
+
+Edit the file and rerun the script. Words not yet in the file are added with empty glosses
+and shown in grey. The output stays in `build/` and is not published, because it is derived
+from the Samsaadhanii data.
+
 ## Adding a new stotra
 
 1. In `sources.json`, add an entry or set `"enabled": true` on one that is already listed.
@@ -204,6 +254,10 @@ tools/build_deck.py  deck builder
 tools/lessons.py     grammar cards from the study page (a "type": "lessons" entry in sources.json)
 tools/push_edits.py  writes verse edits into the bhakti pages and verse_edits.json, commits and pushes
 tools/gita_analysis_index.py  index of Samsaadhanii's Gita analysis files (web/ and app resources)
+tools/vs_analysis.py checks analysis/vs/ and writes vs_analysis.json
+analysis/vs/         draft word analysis of the Vishnu Sahasranamam, one TSV per verse
+tools/gita_glossary.py  printable Gita word list (build/gita_glossary.html and .pdf; --compact for the short one)
+analysis/gita_glossary.tsv  its glosses, themes and synonym groups, edited by hand
 sources.json         source registry
 te_meanings/         Telugu meanings, one JSON file per batch or stotra
 missing_te.json      words still needing a Telugu meaning (generated)

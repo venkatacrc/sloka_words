@@ -116,6 +116,45 @@ enum CardKind: String, CaseIterable, Identifiable {
     }
 }
 
+/// The script shown first and largest on the cards; the other two follow in smaller type.
+enum MainScript: String, CaseIterable, Identifiable {
+    case te, deva, iast
+
+    static let storageKey = "mainScript"
+
+    var id: String { rawValue }
+
+    var title: String {
+        switch self {
+        case .te: "తెలుగు"
+        case .deva: "देवनागरी"
+        case .iast: "English"
+        }
+    }
+
+    var cardLabel: String {
+        switch self {
+        case .te: "తెలుగు"
+        case .deva: "हिन्दी"
+        case .iast: "IAST"
+        }
+    }
+
+    /// Latin letters look bigger than Telugu or Devanagari at the same point size.
+    var scale: CGFloat { self == .iast ? 0.8 : 1 }
+
+    /// All three scripts, this one first.
+    var order: [MainScript] { [self] + Self.allCases.filter { $0 != self } }
+
+    func text(_ te: String, _ deva: String, _ iast: String) -> String {
+        switch self {
+        case .te: te
+        case .deva: deva
+        case .iast: iast
+        }
+    }
+}
+
 struct Source: Codable, Identifiable, Hashable {
     let id: String
     let title: String

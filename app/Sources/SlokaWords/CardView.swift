@@ -7,6 +7,7 @@ struct CardView: View {
     let flipped: Bool
     let isKnown: Bool
     let isReview: Bool
+    @AppStorage(MainScript.storageKey) private var mainRaw = MainScript.te.rawValue
 
     private var english: [String] { verseEnglish ?? word.en }
 
@@ -52,10 +53,14 @@ struct CardView: View {
     }
 
     private var scripts: some View {
-        VStack(spacing: 14) {
-            ScriptLine(label: "తెలుగు", text: word.te, size: flipped ? 38 : 50, weight: .semibold)
-            ScriptLine(label: "हिन्दी", text: word.deva, size: flipped ? 30 : 38, weight: .regular)
-            ScriptLine(label: "IAST", text: word.iast, size: flipped ? 18 : 22, weight: .regular, italic: true)
+        let order = (MainScript(rawValue: mainRaw) ?? .te).order
+        return VStack(spacing: 14) {
+            ForEach(Array(order.enumerated()), id: \.element) { i, script in
+                let main = i == 0
+                ScriptLine(label: script.cardLabel, text: script.text(word.te, word.deva, word.iast),
+                           size: (main ? (flipped ? 42 : 56) : (flipped ? 26 : 30)) * script.scale,
+                           weight: main ? .semibold : .regular, italic: script == .iast, secondary: !main)
+            }
         }
     }
 
@@ -103,6 +108,7 @@ private struct ScriptLine: View {
     let size: CGFloat
     let weight: Font.Weight
     var italic = false
+    var secondary = false
 
     var body: some View {
         VStack(spacing: 2) {
@@ -112,6 +118,7 @@ private struct ScriptLine: View {
             Text(text)
                 .font(.system(size: size, weight: weight))
                 .italic(italic)
+                .foregroundStyle(secondary ? .secondary : .primary)
                 .multilineTextAlignment(.center)
                 .textSelection(.enabled)
         }

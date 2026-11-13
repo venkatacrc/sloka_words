@@ -7,7 +7,8 @@ let package = Package(
     targets: [
         .executableTarget(
             name: "SlokaWords",
-            resources: [.copy("Resources/words.json"), .copy("Resources/gita_analysis.json")]
+            resources: [.copy("Resources/words.json"), .copy("Resources/gita_analysis.json"),
+                        .copy("Resources/vs_analysis.json")]
         )
     ]
 )

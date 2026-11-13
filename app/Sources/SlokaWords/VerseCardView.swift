@@ -12,6 +12,9 @@ struct VerseCardView: View {
     let flipped: Bool
     let isKnown: Bool
     let isReview: Bool
+    @AppStorage(MainScript.storageKey) private var mainRaw = MainScript.te.rawValue
+
+    private var mainScript: MainScript { MainScript(rawValue: mainRaw) ?? .te }
 
     var body: some View {
         ScrollView {
@@ -54,9 +57,7 @@ struct VerseCardView: View {
 
     private var firstLine: some View {
         VStack(spacing: 16) {
-            VerseLines(label: "తెలుగు", speaker: verse.speaker?.te, lines: Array(verse.te.prefix(1)), size: 32, weight: .semibold)
-            VerseLines(label: "हिन्दी", speaker: verse.speaker?.deva, lines: Array(verse.deva.prefix(1)), size: 26)
-            VerseLines(label: "IAST", speaker: verse.speaker?.iast, lines: Array(verse.iast.prefix(1)), size: 17, italic: true)
+            scripts(main: 34, other: 20) { Array($0.prefix(1)) }
             Text(verse.te.count > 1
                  ? "Recite the rest of the verse, then click the card or press Space to check"
                  : "Click the card or press Space to see the meaning")
@@ -68,9 +69,19 @@ struct VerseCardView: View {
 
     private var fullVerse: some View {
         VStack(spacing: 16) {
-            VerseLines(label: "తెలుగు", speaker: verse.speaker?.te, lines: verse.te, size: 26, weight: .semibold)
-            VerseLines(label: "हिन्दी", speaker: verse.speaker?.deva, lines: verse.deva, size: 22)
-            VerseLines(label: "IAST", speaker: verse.speaker?.iast, lines: verse.iast, size: 15, italic: true)
+            scripts(main: 29, other: 18) { $0 }
+        }
+    }
+
+    private func scripts(main: CGFloat, other: CGFloat, lines: @escaping ([String]) -> [String]) -> some View {
+        ForEach(Array(mainScript.order.enumerated()), id: \.element) { i, script in
+            VerseLines(label: script.cardLabel,
+                       speaker: verse.speaker.map { script.text($0.te, $0.deva, $0.iast) },
+                       lines: lines(script == .te ? verse.te : script == .deva ? verse.deva : verse.iast),
+                       size: (i == 0 ? main : other) * script.scale,
+                       weight: i == 0 ? .semibold : .regular,
+                       italic: script == .iast,
+                       secondary: i > 0)
         }
     }
 
@@ -124,15 +135,22 @@ struct VerseCardView: View {
 
     private func wordRow(_ entry: VerseWord) -> some View {
         let open = openWordID == entry.id
+        // The main script and one other in the row; the third shows when the row opens.
+        let main = mainScript
+        let second: MainScript = main == .iast ? .te : .iast
+        let rest = MainScript.allCases.first { $0 != main && $0 != second }!
+        let text = { (s: MainScript) in s.text(entry.te, entry.deva, entry.iast) }
         return VStack(alignment: .leading, spacing: 6) {
             Button {
                 setOpenWordID(open ? nil : entry.id)
             } label: {
                 HStack(alignment: .firstTextBaseline, spacing: 10) {
-                    if !entry.te.isEmpty {
-                        Text(entry.te).font(.system(size: 20, weight: .semibold))
+                    if !text(main).isEmpty {
+                        Text(text(main)).font(.system(size: 21 * main.scale, weight: .semibold)).italic(main == .iast)
                     }
-                    Text(entry.iast).italic().foregroundStyle(.secondary)
+                    if !text(second).isEmpty {
+                        Text(text(second)).italic(second == .iast).foregroundStyle(.secondary)
+                    }
                     Spacer()
                     Image(systemName: open ? "chevron.down" : "chevron.right")
                         .font(.caption.weight(.semibold))
@@ -143,8 +161,8 @@ struct VerseCardView: View {
             .buttonStyle(.plain)
             if open {
                 VStack(alignment: .leading, spacing: 4) {
-                    if !entry.deva.isEmpty {
-                        Text(entry.deva).foregroundStyle(.secondary)
+                    if !text(rest).isEmpty {
+                        Text(text(rest)).foregroundStyle(.secondary)
                     }
                     if !entry.teMeaning.isEmpty {
                         Text(entry.teMeaning).font(.system(size: 18))
@@ -180,6 +198,7 @@ private struct VerseLines: View {
     let size: CGFloat
     var weight: Font.Weight = .regular
     var italic = false
+    var secondary = false
 
     var body: some View {
         VStack(spacing: 4) {
@@ -196,6 +215,7 @@ private struct VerseLines: View {
                 Text(line)
                     .font(.system(size: size, weight: weight))
                     .italic(italic)
+                    .foregroundStyle(secondary ? .secondary : .primary)
                     .multilineTextAlignment(.center)
             }
         }

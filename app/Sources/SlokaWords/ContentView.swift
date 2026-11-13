@@ -27,18 +27,20 @@ struct ContentView: View {
     @EnvironmentObject private var verseEdits: VerseEditStore
     @EnvironmentObject private var pusher: RepoPushStore
     @EnvironmentObject private var printRequest: PrintRequest
+    @EnvironmentObject private var analysis: GitaAnalysisStore
+    @Environment(\.openWindow) private var openWindow
 
     /// Newline-separated `src|group` keys; `*` means every group in the deck.
     @AppStorage("selectedGroups") private var selectedRaw = "*"
     @AppStorage("excludedLangs") private var excludedRaw = ""
     @AppStorage("shuffle") private var shuffle = false
+    @AppStorage(MainScript.storageKey) private var mainScriptRaw = MainScript.te.rawValue
     @AppStorage("practiceMode") private var modeRaw = PracticeMode.all.rawValue
     @AppStorage("cardKind") private var kindRaw = CardKind.words.rawValue
     @AppStorage("studyMode") private var studyRaw = StudyMode.learn.rawValue
 
     @StateObject private var session = StudySession()
     @StateObject private var draft = VerseDraft()
-    @StateObject private var analysis = GitaAnalysisStore()
 
     private var words: [Word] { store.deck.words }
     private var verses: [Verse] { store.deck.verses }
@@ -157,18 +159,7 @@ struct ContentView: View {
                     onCancel: { session.editingVerse = nil })
             }
         }
-        .sheet(isPresented: Binding(
-            get: { session.analysisVerse != nil },
-            set: { if !$0 { session.analysisVerse = nil } })
-        ) {
-            if let index = session.analysisVerse {
-                GitaAnalysisView(
-                    verse: verse(at: index),
-                    deckWords: verseWords(at: index),
-                    store: analysis,
-                    onClose: { session.analysisVerse = nil })
-            }
-        }
+        .onChange(of: currentVerseID) { followInAnalysis() }
         .sheet(isPresented: $pusher.isPresented) {
             PushEditsView(pusher: pusher, onPushed: { store.importDeck(from: $0) })
         }
@@ -224,7 +215,7 @@ struct ContentView: View {
                             words: verseWords(at: index),
                             onStudy: { focusWords(on: verses[index]) },
                             onReveal: { if study == .test { session.flipped = true } },
-                            onAnalysis: analysis.has(verses[index]) ? { session.analysisVerse = index } : nil,
+                            onAnalysis: analysis.has(verses[index]) ? { openAnalysis(index) } : nil,
                             openWordID: session.openWordID,
                             setOpenWordID: { session.openWordID = $0 },
                             flipped: flipped,
@@ -359,7 +350,7 @@ struct ContentView: View {
                 } label: { Label("Edit verse (E)", systemImage: "pencil") }
                 .keyboardShortcut("e", modifiers: [])
                 if analysis.has(verses[index]) {
-                    Button { session.analysisVerse = index } label: {
+                    Button { openAnalysis(index) } label: {
                         Label("Analysis (A)", systemImage: "point.3.connected.trianglepath.dotted")
                     }
                     .keyboardShortcut("a", modifiers: [])
@@ -423,6 +414,13 @@ struct ContentView: View {
                 ForEach(PracticeMode.allCases) { Text($0.title).tag($0.rawValue) }
             }
             .pickerStyle(.segmented)
+            Picker(selection: $mainScriptRaw) {
+                ForEach(MainScript.allCases) { Text($0.title).tag($0.rawValue) }
+            } label: {
+                Label("Main script", systemImage: "character.bubble")
+            }
+            .pickerStyle(.menu)
+            .help("The script shown first on the cards, in a bigger font")
             Toggle(isOn: $shuffle) { Label("Shuffle", systemImage: "shuffle") }
                 .help("Shuffle the cards")
             Button { rebuild() } label: { Label("Restart", systemImage: "arrow.counterclockwise") }
@@ -441,6 +439,22 @@ struct ContentView: View {
 
     private func labelShared(_ verse: Verse) -> Bool {
         verses.contains { $0.id != verse.id && $0.src == verse.src && $0.group == verse.group && $0.label == verse.label }
+    }
+
+    private var currentVerseID: String? {
+        guard kind == .verses, let index = currentIndex else { return nil }
+        return verses[index].id
+    }
+
+    private func openAnalysis(_ index: Int) {
+        analysis.show(verse(at: index), words: verseWords(at: index))
+        openWindow(id: GitaAnalysisStore.windowID)
+    }
+
+    /// Keeps an open analysis window on the verse card being studied.
+    private func followInAnalysis() {
+        guard analysis.windowOpen, kind == .verses, let index = currentIndex, analysis.has(verses[index]) else { return }
+        analysis.show(verse(at: index), words: verseWords(at: index))
     }
 
     private func verseWords(at index: Int) -> [VerseWord] {
@@ -530,8 +544,6 @@ final class StudySession: ObservableObject {
     @Published var flipped = false
     @Published var collapsedSources: Set<String> = []
     @Published var editingVerse: Int?
-    /// Verse whose Samsaadhanii analysis sheet is open.
-    @Published var analysisVerse: Int?
     /// When set, Words shows only this verse's word cards.
     @Published var verseFocus: String?
     /// Verse to restore when leaving that word drill.

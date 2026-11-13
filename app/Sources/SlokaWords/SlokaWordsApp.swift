@@ -18,6 +18,8 @@ struct SlokaWordsApp: App {
     @StateObject private var verseEdits = VerseEditStore()
     @StateObject private var pusher = RepoPushStore()
     @StateObject private var printRequest = PrintRequest()
+    @StateObject private var analysis = GitaAnalysisStore()
+    @AppStorage(MainScript.storageKey) private var mainScriptRaw = MainScript.te.rawValue
 
     var body: some Scene {
         WindowGroup("Sloka Words") {
@@ -27,6 +29,7 @@ struct SlokaWordsApp: App {
                 .environmentObject(verseEdits)
                 .environmentObject(pusher)
                 .environmentObject(printRequest)
+                .environmentObject(analysis)
                 .frame(minWidth: 960, minHeight: 640)
         }
         .commands {
@@ -51,6 +54,21 @@ struct SlokaWordsApp: App {
                 Divider()
                 Button("Reset Progress…") { progress.reset() }
             }
+            CommandGroup(before: .toolbar) {
+                Picker("Main Script", selection: $mainScriptRaw) {
+                    ForEach(Array(MainScript.allCases.enumerated()), id: \.element) { i, script in
+                        Text(script.title).tag(script.rawValue)
+                            .keyboardShortcut(KeyEquivalent(Character(String(i + 1))), modifiers: [.command, .option])
+                    }
+                }
+                Divider()
+            }
         }
+
+        Window("పద విశ్లేషణ · Word analysis", id: GitaAnalysisStore.windowID) {
+            AnalysisWindow()
+                .environmentObject(analysis)
+        }
+        .defaultSize(width: 1100, height: 860)
     }
 }

@@ -41,22 +41,39 @@ struct GitaAnalysisView: View {
     let verse: Verse
     let deckWords: [VerseWord]
     @ObservedObject var store: GitaAnalysisStore
-    let onClose: () -> Void
 
     @AppStorage("analysisScript") private var scriptRaw = AnalysisScript.te.rawValue
     @AppStorage("analysisTab") private var tabRaw = AnalysisTab.graph.rawValue
+    @AppStorage("analysisZoom") private var zoom = 1.0
     @StateObject private var state = AnalysisSheetState()
 
     private var script: AnalysisScript { AnalysisScript(rawValue: scriptRaw) ?? .te }
     private var tab: AnalysisTab { AnalysisTab(rawValue: tabRaw) ?? .graph }
     private var L: AnalysisLabels { .of(script) }
+    private static let zoomSteps: [Double] = [0.8, 0.9, 1, 1.15, 1.3, 1.5, 1.75, 2, 2.5]
+
+    /// Font size scaled by the window's zoom.
+    private func z(_ size: CGFloat) -> CGFloat { size * zoom }
+
+    private func stepZoom(_ delta: Int) {
+        let i = Self.zoomSteps.firstIndex { $0 >= zoom - 0.001 } ?? 2
+        zoom = Self.zoomSteps[min(max(i + delta, 0), Self.zoomSteps.count - 1)]
+    }
 
     var body: some View {
         VStack(spacing: 0) {
             header
             Divider()
+            if tab == .graph, state.models != nil {
+                pickedInfo(teluguMeanings)
+                    .font(.system(size: z(13)))
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 10)
+                    .background(Color(nsColor: .textBackgroundColor))
+            }
             ScrollView {
                 content
+                    .font(.system(size: z(13)))
                     .padding(20)
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
@@ -64,7 +81,8 @@ struct GitaAnalysisView: View {
             Divider()
             footer
         }
-        .frame(minWidth: 720, idealWidth: 880, minHeight: 560, idealHeight: 780)
+        .frame(minWidth: 720, maxWidth: .infinity, minHeight: 560, maxHeight: .infinity)
+        .navigationTitle("\(verse.label) · పద విశ్లేషణ")
         .task(id: verse.id) { await load() }
     }
 
@@ -73,10 +91,22 @@ struct GitaAnalysisView: View {
             HStack {
                 VStack(alignment: .leading, spacing: 2) {
                     Text(verse.label).font(.headline)
-                    Text("పద విశ్లేషణ · Word analysis").font(.caption).foregroundStyle(.secondary)
+                    Text("పద విశ్లేషణ · Word analysis" + (store.isBundled(verse) ? " · draft" : ""))
+                        .font(.caption).foregroundStyle(.secondary)
                 }
                 Spacer()
-                Button("Done", action: onClose).keyboardShortcut(.cancelAction)
+                HStack(spacing: 4) {
+                    Button { stepZoom(-1) } label: { Image(systemName: "minus.magnifyingglass") }
+                        .keyboardShortcut("-", modifiers: .command)
+                        .help("Smaller (⌘−)")
+                    Button { zoom = 1 } label: { Text("\(Int((zoom * 100).rounded()))%").monospacedDigit().frame(minWidth: 44) }
+                        .keyboardShortcut("0", modifiers: .command)
+                        .help("Actual size (⌘0)")
+                    Button { stepZoom(1) } label: { Image(systemName: "plus.magnifyingglass") }
+                        .keyboardShortcut("=", modifiers: .command)
+                        .help("Larger (⌘=)")
+                }
+                .buttonStyle(.borderless)
             }
             HStack(spacing: 16) {
                 Picker("Script", selection: $scriptRaw) {
@@ -144,7 +174,11 @@ struct GitaAnalysisView: View {
 
     private var footer: some View {
         VStack(alignment: .leading, spacing: 6) {
-            if let source = store.index?.source {
+            if store.isBundled(verse) {
+                if let source = store.bundled?.source {
+                    Text(source.credit).font(.caption).foregroundStyle(.secondary)
+                }
+            } else if let source = store.index?.source {
                 HStack(alignment: .firstTextBaseline, spacing: 6) {
                     Text(source.credit)
                     if let url = URL(string: "https://github.com/\(source.repo)") { Link("Source", destination: url) }
@@ -152,21 +186,27 @@ struct GitaAnalysisView: View {
                 .font(.caption)
                 .foregroundStyle(.secondary)
             }
-            HStack {
-                Text(savedLine).font(.caption).foregroundStyle(.secondary)
-                Spacer()
-                if store.savedCount < store.allFiles.count {
-                    Button {
-                        Task { await store.downloadAll() }
-                    } label: {
-                        Label("Save the whole Gītā for offline", systemImage: "arrow.down.circle")
-                    }
-                    .disabled(store.saving != nil && store.saving!.failed == 0 && store.saving!.done < store.saving!.total)
-                }
+            if !store.isBundled(verse) {
+                saveRow
             }
         }
         .padding(.horizontal, 16)
         .padding(.vertical, 10)
+    }
+
+    private var saveRow: some View {
+        HStack {
+            Text(savedLine).font(.caption).foregroundStyle(.secondary)
+            Spacer()
+            if store.savedCount < store.allFiles.count {
+                Button {
+                    Task { await store.downloadAll() }
+                } label: {
+                    Label("Save the whole Gītā for offline", systemImage: "arrow.down.circle")
+                }
+                .disabled(store.saving != nil && store.saving!.failed == 0 && store.saving!.done < store.saving!.total)
+            }
+        }
     }
 
     private var savedLine: String {
@@ -241,7 +281,7 @@ struct GitaAnalysisView: View {
     }
 
     private func sectionTitle(_ text: String) -> some View {
-        Text(text).font(.caption.weight(.bold)).foregroundStyle(Color.accentColor).padding(.top, 4)
+        Text(text).font(.system(size: z(11), weight: .bold)).foregroundStyle(Color.accentColor).padding(.top, 4)
     }
 
     // MARK: - Views
@@ -250,7 +290,7 @@ struct GitaAnalysisView: View {
         VStack(alignment: .leading, spacing: 8) {
             sectionTitle(L.verseOrder)
             Text(model.verseOrder.map { show($0.text) }.joined(separator: "   "))
-                .font(.system(size: 22))
+                .font(.system(size: z(22)))
                 .lineSpacing(6)
             if !model.splits.isEmpty {
                 sectionTitle(L.sandhi)
@@ -261,7 +301,7 @@ struct GitaAnalysisView: View {
                         ) { line, item in
                             line + Text(item.offset > 0 ? "  +  " : "") + Text(show(item.element.text)).foregroundStyle(Color.accentColor)
                         }
-                        .font(.system(size: 18))
+                        .font(.system(size: z(18)))
                     }
                 }
             }
@@ -273,17 +313,17 @@ struct GitaAnalysisView: View {
         return VStack(alignment: .leading, spacing: 10) {
             sectionTitle(L.proseOrder)
             Text(model.anvaya.map { show($0.text) }.joined(separator: "   "))
-                .font(.system(size: 22))
+                .font(.system(size: z(22)))
                 .lineSpacing(6)
             FlowLayout(spacing: 8) {
                 ForEach(model.anvaya) { w in
                     let m = meaning(w, map)
                     VStack(alignment: .leading, spacing: 2) {
-                        Text(show(w.text)).font(.system(size: 17, weight: .semibold))
-                        if !m.te.isEmpty { Text(m.te).font(.system(size: 14)) }
-                        if !m.en.isEmpty { Text(m.en).font(.caption).foregroundStyle(.secondary) }
+                        Text(show(w.text)).font(.system(size: z(17), weight: .semibold))
+                        if !m.te.isEmpty { Text(m.te).font(.system(size: z(14))) }
+                        if !m.en.isEmpty { Text(m.en).font(.system(size: z(11))).foregroundStyle(.secondary) }
                     }
-                    .frame(maxWidth: 260, alignment: .leading)
+                    .frame(maxWidth: z(260), alignment: .leading)
                     .padding(.horizontal, 10)
                     .padding(.vertical, 7)
                     .overlay(
@@ -292,7 +332,7 @@ struct GitaAnalysisView: View {
                 }
             }
             if model.anvaya.contains(where: \.supplied) {
-                Text(L.supplied).font(.caption).foregroundStyle(.secondary)
+                Text(L.supplied).font(.system(size: z(11))).foregroundStyle(.secondary)
             }
         }
     }
@@ -305,7 +345,7 @@ struct GitaAnalysisView: View {
                 VStack(alignment: .leading, spacing: 6) {
                     HStack(alignment: .firstTextBaseline, spacing: 10) {
                         Text(show(w.text))
-                            .font(.system(size: 20, weight: .semibold))
+                            .font(.system(size: z(20), weight: .semibold))
                             .foregroundStyle(w.supplied ? .secondary : .primary)
                         Text([m.te, m.en].filter { !$0.isEmpty }.joined(separator: " · "))
                             .foregroundStyle(.secondary)
@@ -349,7 +389,7 @@ struct GitaAnalysisView: View {
 
     private func chip(_ text: Text, filled: Bool) -> some View {
         text
-            .font(.system(size: 13))
+            .font(.system(size: z(13)))
             .padding(.horizontal, 8)
             .padding(.vertical, 3)
             .background(filled ? Color.secondary.opacity(0.12) : .clear, in: Capsule())
@@ -357,7 +397,6 @@ struct GitaAnalysisView: View {
     }
 
     private func graphView(_ model: AnalysisModel) -> some View {
-        let map = teluguMeanings
         var used: [String: RelationInfo] = [:]
         var usedOrder: [String] = []
         for w in model.words {
@@ -367,15 +406,15 @@ struct GitaAnalysisView: View {
             }
         }
         return VStack(alignment: .leading, spacing: 12) {
-            pickedInfo(map)
             ForEach(Array(model.sentences.enumerated()), id: \.offset) { i, root in
                 VStack(alignment: .leading, spacing: 4) {
                     if model.sentences.count > 1 { sectionTitle("\(L.sentence) \(i + 1)") }
                     ScrollView(.horizontal) {
-                        KarakaTree(layout: TreeLayout(root: root, script: script, label: relLabel),
+                        KarakaTree(layout: TreeLayout(root: root, script: script, scale: zoom, label: relLabel),
                                    picked: state.picked, onPick: { state.picked = $0 })
                             .padding(.bottom, 6)
                     }
+                    .defaultScrollAnchor(.center)
                 }
             }
             if !usedOrder.isEmpty {
@@ -398,7 +437,7 @@ struct GitaAnalysisView: View {
                 Text(show(w.text)).bold() + Text("  " + [m.te, m.en].filter { !$0.isEmpty }.joined(separator: " · "))
                 if let rel = w.rel, let parent = w.parent {
                     Text("\(relLabel(rel)) → \(show(parent.text))" + (rel.te.isEmpty ? "" : " · \(rel.te)"))
-                        .font(.callout)
+                        .font(.system(size: z(12)))
                         .foregroundStyle(.secondary)
                 }
             } else {
@@ -409,6 +448,27 @@ struct GitaAnalysisView: View {
         .padding(.horizontal, 12)
         .padding(.vertical, 8)
         .background(Color.accentColor.opacity(0.08), in: RoundedRectangle(cornerRadius: 10))
+    }
+}
+
+/// The analysis in its own window, so it can be resized, moved to another screen or made full screen.
+struct AnalysisWindow: View {
+    @EnvironmentObject private var analysis: GitaAnalysisStore
+
+    var body: some View {
+        Group {
+            if let verse = analysis.verse {
+                GitaAnalysisView(verse: verse, deckWords: analysis.deckWords, store: analysis)
+            } else {
+                ContentUnavailableView(
+                    "No verse chosen",
+                    systemImage: "point.3.connected.trianglepath.dotted",
+                    description: Text("On a Gita or Vishnu Sahasranamam verse card, press A or click the Kāraka graph button."))
+                    .frame(minWidth: 720, minHeight: 560)
+            }
+        }
+        .onAppear { analysis.windowOpen = true }
+        .onDisappear { analysis.windowOpen = false }
     }
 }
 
@@ -429,16 +489,22 @@ private struct TreeNode: Identifiable {
 
 /// Lays out one sentence as a tree: head word on top, each dependent below it.
 private struct TreeLayout {
-    static let nodeH: CGFloat = 32, gap: CGFloat = 12, bus: CGFloat = 14, stub: CGFloat = 30, pad: CGFloat = 12
-    static let level = nodeH + bus + stub
-    static let wordFont = NSFont.systemFont(ofSize: 15, weight: .semibold)
-    static let labelFont = NSFont.systemFont(ofSize: 11.5, weight: .medium)
+    let nodeH, gap, bus, stub, pad, level: CGFloat
+    let wordFont, labelFont: NSFont
 
     var nodes: [TreeNode] = []
     var width: CGFloat = 0
     var height: CGFloat = 0
 
-    init(root: AnalysisWord, script: AnalysisScript, label: (RelationInfo?) -> String) {
+    init(root: AnalysisWord, script: AnalysisScript, scale: CGFloat, label: (RelationInfo?) -> String) {
+        nodeH = 32 * scale
+        gap = 12 * scale
+        bus = 14 * scale
+        stub = 30 * scale
+        pad = 12
+        level = nodeH + bus + stub
+        wordFont = NSFont.systemFont(ofSize: 15 * scale, weight: .semibold)
+        labelFont = NSFont.systemFont(ofSize: 11.5 * scale, weight: .medium)
         func measure(_ text: String, _ font: NSFont) -> CGFloat {
             NSAttributedString(string: text, attributes: [.font: font]).size().width
         }
@@ -449,11 +515,11 @@ private struct TreeLayout {
             let id = nodes.count
             nodes.append(TreeNode(
                 id: id, word: w, depth: depth, label: text, rel: rel,
-                boxW: max(measure(text, Self.wordFont) + 20, 40),
-                relW: rel.isEmpty ? 0 : measure(rel, Self.labelFont) + 10))
+                boxW: max(measure(text, wordFont) + 20 * scale, 40 * scale),
+                relW: rel.isEmpty ? 0 : measure(rel, labelFont) + 10 * scale))
             let kids = w.children.map { walk($0, depth + 1) }
             nodes[id].children = kids
-            let colW = max(nodes[id].boxW, nodes[id].relW) + Self.gap
+            let colW = max(nodes[id].boxW, nodes[id].relW) + gap
             widths[id] = max(colW, kids.reduce(0) { $0 + widths[$1]! })
             return id
         }
@@ -467,12 +533,12 @@ private struct TreeLayout {
                 for k in kids { place(k, x); x += widths[k]! }
                 nodes[id].x = (nodes[kids.first!].x + nodes[kids.last!].x) / 2
             }
-            nodes[id].y = Self.pad + CGFloat(nodes[id].depth) * Self.level + Self.nodeH / 2
+            nodes[id].y = pad + CGFloat(nodes[id].depth) * level + nodeH / 2
         }
-        place(top, Self.pad)
+        place(top, pad)
         let depth = nodes.map(\.depth).max() ?? 0
-        width = ceil(widths[top]! + Self.pad * 2)
-        height = ceil(Self.pad * 2 + CGFloat(depth) * Self.level + Self.nodeH)
+        width = ceil(widths[top]! + pad * 2)
+        height = ceil(pad * 2 + CGFloat(depth) * level + nodeH)
     }
 }
 
@@ -482,15 +548,15 @@ private struct TreeEdges: Shape {
     init(layout: TreeLayout) {
         var segments: [(CGPoint, CGPoint)] = []
         for n in layout.nodes where !n.children.isEmpty {
-            let bottom = n.y + TreeLayout.nodeH / 2
-            let busY = bottom + TreeLayout.bus
+            let bottom = n.y + layout.nodeH / 2
+            let busY = bottom + layout.bus
             segments.append((CGPoint(x: n.x, y: bottom), CGPoint(x: n.x, y: busY)))
             let xs = n.children.map { layout.nodes[$0].x }
             let lo = min(n.x, xs.min()!), hi = max(n.x, xs.max()!)
             if hi > lo { segments.append((CGPoint(x: lo, y: busY), CGPoint(x: hi, y: busY))) }
             for c in n.children {
                 let child = layout.nodes[c]
-                segments.append((CGPoint(x: child.x, y: busY), CGPoint(x: child.x, y: child.y - TreeLayout.nodeH / 2)))
+                segments.append((CGPoint(x: child.x, y: busY), CGPoint(x: child.x, y: child.y - layout.nodeH / 2)))
             }
         }
         self.segments = segments
@@ -517,13 +583,13 @@ private struct KarakaTree: View {
             ForEach(layout.nodes) { n in
                 if !n.rel.isEmpty {
                     Text(n.rel)
-                        .font(Font(TreeLayout.labelFont))
+                        .font(Font(layout.labelFont))
                         .fontWeight(n.word.rel?.kind == "karaka" ? .bold : .medium)
                         .foregroundStyle(GitaAnalysisView.kindColor(n.word.rel?.kind))
                         .fixedSize()
                         .padding(.horizontal, 3)
                         .background(Color(nsColor: .textBackgroundColor))
-                        .position(x: n.x, y: n.y - TreeLayout.nodeH / 2 - 9)
+                        .position(x: n.x, y: n.y - layout.nodeH / 2 - 9 * layout.nodeH / 32)
                         .help(n.word.rel.map { [$0.te, $0.en].filter { !$0.isEmpty }.joined(separator: " · ") } ?? "")
                 }
                 node(n)
@@ -537,10 +603,10 @@ private struct KarakaTree: View {
         let selected = picked === n.word
         return Button { onPick(n.word) } label: {
             Text(n.label)
-                .font(Font(TreeLayout.wordFont))
+                .font(Font(layout.wordFont))
                 .foregroundStyle(n.word.supplied ? .secondary : .primary)
                 .fixedSize()
-                .frame(width: n.boxW, height: TreeLayout.nodeH)
+                .frame(width: n.boxW, height: layout.nodeH)
                 .background(
                     RoundedRectangle(cornerRadius: 9)
                         .fill(isRoot ? Color.orange.opacity(0.16) : Color(nsColor: .textBackgroundColor)))

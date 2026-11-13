@@ -19,6 +19,7 @@ mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Resources"
 cp "$BIN/SlokaWords" "$APP/Contents/MacOS/SlokaWords"
 cp "$ROOT/app/Sources/SlokaWords/Resources/words.json" "$APP/Contents/Resources/words.json"
 cp "$ROOT/app/Sources/SlokaWords/Resources/gita_analysis.json" "$APP/Contents/Resources/gita_analysis.json"
+cp "$ROOT/app/Sources/SlokaWords/Resources/vs_analysis.json" "$APP/Contents/Resources/vs_analysis.json"
 
 ICONSET="$ROOT/build/AppIcon.iconset"
 rm -rf "$ICONSET"

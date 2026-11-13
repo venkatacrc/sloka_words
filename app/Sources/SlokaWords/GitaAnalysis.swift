@@ -22,6 +22,18 @@ struct GitaAnalysisIndex: Decodable {
     let tags: [String: TagInfo]
 }
 
+/// Our own draft analysis, bundled with the app: verse id → TSV text.
+struct BundledAnalysis: Decodable {
+    struct SourceInfo: Decodable {
+        let name: String
+        let credit: String
+        let draft: Bool
+    }
+
+    let source: SourceInfo
+    let verses: [String: String]
+}
+
 struct RelationInfo: Decodable, Hashable {
     let sa: String
     let kind: String
@@ -106,24 +118,40 @@ struct AnalysisModel {
 
 @MainActor
 final class GitaAnalysisStore: ObservableObject {
+    static let windowID = "analysis"
+
     @Published private(set) var savedCount = 0
     @Published private(set) var saving: (done: Int, total: Int, failed: Int)?
+    /// Verse shown in the analysis window, with its deck words for Telugu meanings.
+    @Published private(set) var verse: Verse?
+    @Published private(set) var deckWords: [VerseWord] = []
+    /// While the window is open it follows the verse card the reader moves to.
+    var windowOpen = false
 
     let index: GitaAnalysisIndex?
+    /// Vishnu Sahasranamam; Samsaadhanii has no analysis of it.
+    let bundled: BundledAnalysis?
     private var models: [String: AnalysisModel] = [:]
+    private static let bundledPrefix = "vs:"
 
     init() {
-        if let url = Bundle.main.url(forResource: "gita_analysis", withExtension: "json")
-            ?? Bundle.module.url(forResource: "gita_analysis", withExtension: "json"),
-           let data = try? Data(contentsOf: url) {
-            index = try? JSONDecoder().decode(GitaAnalysisIndex.self, from: data)
-        } else {
-            index = nil
+        func resource<T: Decodable>(_ name: String, as type: T.Type) -> T? {
+            guard let url = Bundle.main.url(forResource: name, withExtension: "json")
+                    ?? Bundle.module.url(forResource: name, withExtension: "json"),
+                  let data = try? Data(contentsOf: url) else { return nil }
+            return try? JSONDecoder().decode(type, from: data)
         }
+        index = resource("gita_analysis", as: GitaAnalysisIndex.self)
+        bundled = resource("vs_analysis", as: BundledAnalysis.self)
         refreshSavedCount()
     }
 
+    func isBundled(_ verse: Verse) -> Bool { verse.src == "vs" }
+
     func files(for verse: Verse) -> [String] {
+        if isBundled(verse) {
+            return bundled?.verses[verse.id] != nil ? [Self.bundledPrefix + verse.id] : []
+        }
         guard verse.src == "gita", let index else { return [] }
         let parts = verse.id.split(separator: ":")
         guard parts.count == 3 else { return [] }
@@ -132,9 +160,15 @@ final class GitaAnalysisStore: ObservableObject {
 
     func has(_ verse: Verse) -> Bool { !files(for: verse).isEmpty }
 
+    func show(_ verse: Verse, words: [VerseWord]) {
+        guard self.verse != verse || deckWords != words else { return }
+        self.verse = verse
+        deckWords = words
+    }
+
     /// Verse numbers ("1.4") a file covers, for files that analyse several verses together.
     func versesInFile(_ stem: String) -> [String] {
-        guard let index else { return [] }
+        guard let index, !stem.hasPrefix(Self.bundledPrefix) else { return [] }
         return index.verses.filter { $0.value.contains(stem) }.keys
             .sorted { $0.compare($1, options: .numeric) == .orderedAscending }
             .map { $0.replacingOccurrences(of: ":", with: ".") }
@@ -182,7 +216,12 @@ final class GitaAnalysisStore: ObservableObject {
     func model(_ stem: String) async throws -> AnalysisModel {
         if let model = models[stem] { return model }
         let text: String
-        if let file = cachedFile(stem), let saved = try? String(contentsOf: file, encoding: .utf8) {
+        if stem.hasPrefix(Self.bundledPrefix) {
+            guard let tsv = bundled?.verses[String(stem.dropFirst(Self.bundledPrefix.count))] else {
+                throw URLError(.fileDoesNotExist)
+            }
+            text = tsv
+        } else if let file = cachedFile(stem), let saved = try? String(contentsOf: file, encoding: .utf8) {
             text = saved
         } else {
             text = try await download(stem)
