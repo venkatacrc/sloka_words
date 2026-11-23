@@ -273,7 +273,22 @@ struct ContentView: View {
         HStack {
             Text("Card \(position + 1) of \(order.count)")
                 .font(.headline)
-            Spacer()
+                .fixedSize()
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 2) {
+                    ForEach(Self.jumpTargets(order.count), id: \.self) { target in
+                        Button("\(target)") { move(target - 1 - position) }
+                            .buttonStyle(.borderless)
+                            .font(.callout.monospacedDigit().weight(target == position + 1 ? .semibold : .regular))
+                            .padding(.horizontal, 5)
+                            .padding(.vertical, 1)
+                            .background(target == position + 1 ? Color.accentColor.opacity(0.15) : .clear,
+                                        in: RoundedRectangle(cornerRadius: 5))
+                            .help("Go to card \(target)")
+                    }
+                }
+            }
+            .frame(maxWidth: .infinity)
             if study == .test {
                 let answered = session.answers.count
                 let correct = session.answers.values.filter { $0 }.count
@@ -428,6 +443,13 @@ struct ContentView: View {
             Button { printRequest.isPresented = true } label: { Label("Print", systemImage: "printer") }
                 .help("Print the selected verses or save them as a PDF")
         }
+    }
+
+    /// Card numbers to jump to: 1, 10, 20, … with a wider step for long lists, so about 20 at most.
+    static func jumpTargets(_ count: Int) -> [Int] {
+        let step = [10, 25, 50, 100, 250, 500, 1000].first { count <= $0 * 20 } ?? (count + 19) / 20
+        guard count > step else { return [] }
+        return [1] + Array(stride(from: step, through: count, by: step))
     }
 
     private func move(_ delta: Int) {

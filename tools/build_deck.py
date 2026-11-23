@@ -21,6 +21,7 @@ import sys
 import unicodedata
 
 from lessons import build_lessons
+from verse_split import add_splits
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -513,6 +514,7 @@ def main():
             grammar += cards
             print(f"{src['title']}: {len(cards)} grammar cards in {len(source['groups'])} lesson(s)")
     edited = apply_verse_edits(verses)
+    add_splits(verses)
     glosses = load_glosses()
 
     missing = {}

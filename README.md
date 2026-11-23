@@ -43,7 +43,8 @@ For development you can also run `swift run --package-path app`.
 - **Words / Verses / Grammar** (top left of the toolbar): practice single words, whole verses,
   or grammar lessons. There are 922 verse cards: 710 from the Gita, 181 from the Vishnu
   Sahasranamam and 31 from Bhaja Govindam. Gita verses show who is speaking (*arjuna uvāca*,
-  *śrī-bhagavān uvāca*, …) above the verse in each script, on the card and in printouts.
+  *śrī-bhagavān uvāca*, …) above the verse in each script, on the card; printouts show it only
+  where the speaker changes.
   - There are 417 grammar cards from the *Sanskrit via Telugu* primer
     (`Study/sanskrit_via_telugu_starter.html`), one set for each of its 25 lessons:
     pronouns, cases, sandhi, samāsa, verb forms, particles, numbers, stotra formulas, metre,
@@ -91,6 +92,18 @@ For development you can also run `swift run --package-path app`.
 - **Print** (⌘P, or the printer button in the toolbar): prints the verses in the chapters and
   sections ticked in the sidebar, or saves them as a PDF. Choose which scripts and meanings to
   include, and optionally only the verses marked for review. Your verse edits are used.
+  Pages are A4. Each verse has an empty line above and below it for handwritten corrections,
+  its number in the left margin, and small run-in meanings. A verse is never split across
+  pages. Gita chapters open with *अथ प्रथमोऽध्यायः* and close with *इति
+  श्रीमद्भगवद्गीतासूपनिषत्सु … नाम प्रथमोऽध्यायः* (in Telugu as well when Telugu is printed).
+  **Word-separated (శ్లోక విభాగం)** prints each word apart so the Devanagari top line breaks
+  between words, keeping the chanted sound: a consonant joined to the next word keeps its
+  virama (*विष्णुर् वषट्कारो*, *वह्निर् अनिलो*). Long compounds are split into their members
+  (*भूत भव्य भवत् प्रभुः*). Vowel sandhi (*भूतात्मा*) stays joined. These added breaks print as
+  a small gap; the verse's own spaces
+  print wide. The split lines are
+  made by `python3 tools/verse_split.py` (run by `build_deck.py` too), from the IAST line's
+  word breaks and the word-by-word meanings.
 - **Sidebar:** tick the chapters or sections to practice. Each source has **Select all** and
   **Clear**, and the card count updates as you change selections. Your choices are saved.
 - **← / →:** previous / next card (in Test, → skips the card).
@@ -251,6 +264,7 @@ from the Samsaadhanii data.
 app/                 Swift package (SwiftUI app)
   Sources/SlokaWords/Resources/words.json   generated deck bundled into the app
 tools/build_deck.py  deck builder
+tools/verse_split.py  word-separated verse lines for printing (adds `split` to each verse)
 tools/lessons.py     grammar cards from the study page (a "type": "lessons" entry in sources.json)
 tools/push_edits.py  writes verse edits into the bhakti pages and verse_edits.json, commits and pushes
 tools/gita_analysis_index.py  index of Samsaadhanii's Gita analysis files (web/ and app resources)

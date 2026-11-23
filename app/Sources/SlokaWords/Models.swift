@@ -63,11 +63,14 @@ struct Verse: Codable, Identifiable, Hashable {
     let enMeaning: String
     let words: String
     var edited: Bool
+    /// The lines with a space at every word boundary, for word-separated printing
+    /// (made by tools/verse_split.py). Nil once the verse is edited in the app.
+    var split: SplitLines?
 
     var key: String { GroupKey.make(src, group) }
 
     enum CodingKeys: String, CodingKey {
-        case id, src, group, label, speaker, deva, te, iast, words, edited
+        case id, src, group, label, speaker, deva, te, iast, words, edited, split
         case teMeaning = "te_meaning"
         case enMeaning = "en_meaning"
     }
@@ -79,8 +82,16 @@ struct Verse: Codable, Identifiable, Hashable {
         v.deva = edit.deva.lines
         v.iast = edit.iast.lines
         v.edited = true
+        // An edit already pushed into the deck leaves the text as it is, and its split lines still fit.
+        if v.te != te || v.deva != deva || v.iast != iast { v.split = nil }
         return v
     }
+}
+
+struct SplitLines: Codable, Hashable {
+    let deva: [String]
+    let te: [String]
+    let iast: [String]
 }
 
 struct Speaker: Codable, Hashable {

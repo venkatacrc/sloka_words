@@ -43,7 +43,7 @@ const prefs = {
     shuffle: saved.get('shuffle', false),
     collapsed: saved.get('collapsed', []),
     print: saved.get('print', {
-        te: true, deva: true, iast: true, teMeaning: true, enMeaning: true, words: false, reviewOnly: false,
+        te: true, deva: true, iast: true, teMeaning: true, enMeaning: true, words: false, reviewOnly: false, split: false,
     }),
     mainScript: saved.get('mainScript', 'te'),
     analysisScript: saved.get('analysisScript', 'te'),
@@ -120,7 +120,12 @@ function includedTest() {
 function verseAt(index) {
     const v = deck.verses[index];
     const e = edits[v.id];
-    return e ? { ...v, te: splitLines(e.te), deva: splitLines(e.deva), iast: splitLines(e.iast), edited: true } : v;
+    if (!e) return v;
+    const edited = { ...v, te: splitLines(e.te), deva: splitLines(e.deva), iast: splitLines(e.iast), edited: true };
+    // An edit already pushed into the deck leaves the text as it is, and its split lines still fit.
+    const same = (a, b) => a.length === b.length && a.every((line, i) => line === b[i]);
+    if (!(same(edited.te, v.te) && same(edited.deva, v.deva) && same(edited.iast, v.iast))) edited.split = null;
+    return edited;
 }
 
 const PARTICLES = new Set(['ca', 'eva', 'api', 'hi', 'tu', 'vā']);
@@ -306,6 +311,14 @@ function move(delta) {
     render();
 }
 
+/** Card numbers to jump to: 1, 10, 20, … with a wider step for long lists, so about 20 at most. */
+function jumpTargets(n) {
+    const step = [10, 25, 50, 100, 250, 500, 1000].find((s) => n / s <= 20) ?? Math.ceil(n / 20);
+    const targets = [1];
+    for (let t = step; t <= n; t += step) targets.push(t);
+    return n > step ? targets : [];
+}
+
 function studyVerseWords(verseIndex) {
     const verse = deck.verses[verseIndex];
     session.verseFocus = verse.id;
@@ -417,7 +430,13 @@ function renderStatus() {
     el.replaceChildren();
     if (!deck || !session.order.length || (prefs.study === 'test' && session.finished)) return;
     const n = session.order.length;
-    el.append(h('span', {}, h('strong', {}, `Card ${session.position + 1}`), ` of ${n}`));
+    const targets = jumpTargets(n);
+    el.append(h('span', { class: 'pos' }, h('strong', {}, `Card ${session.position + 1}`), ` of ${n}`),
+        targets.length > 0 && h('span', { class: 'jumps', 'aria-label': 'Go to card' }, targets.map((t) => h('button', {
+            type: 'button',
+            class: t === session.position + 1 ? 'on' : null,
+            onclick: () => move(t - 1 - session.position),
+        }, t))));
     if (prefs.study === 'test') {
         const answered = Object.keys(session.answers).length;
         const correct = Object.values(session.answers).filter(Boolean).length;
@@ -994,7 +1013,8 @@ function openPrint() {
             h('h2', {}, 'Print verses'),
             countLine,
             h('h4', { style: 'margin:12px 0 6px' }, 'Scripts'),
-            h('div', { class: 'panel' }, opt('te', 'తెలుగు'), opt('deva', 'हिन्दी (Devanagari)'), opt('iast', 'IAST')),
+            h('div', { class: 'panel' }, opt('te', 'తెలుగు'), opt('deva', 'हिन्दी (Devanagari)'), opt('iast', 'IAST'),
+                opt('split', 'Word-separated (శ్లోక విభాగం): विष्णुर्   वषट्कारो')),
             h('h4', { style: 'margin:12px 0 6px' }, 'Meanings'),
             h('div', { class: 'panel' },
                 opt('teMeaning', 'తెలుగు భావం'), opt('enMeaning', 'English meaning'), opt('words', 'Word by word')),
@@ -1006,6 +1026,28 @@ function openPrint() {
     update();
     dialog.showModal();
 }
+
+/** The traditional opening and closing lines of Gita chapters 1–18. */
+const GITA_COLOPHON = {
+    ordinals: ['प्रथम', 'द्वितीय', 'तृतीय', 'चतुर्थ', 'पञ्चम', 'षष्ठ', 'सप्तम', 'अष्टम', 'नवम',
+        'दशम', 'एकादश', 'द्वादश', 'त्रयोदश', 'चतुर्दश', 'पञ्चदश', 'षोडश', 'सप्तदश', 'अष्टादश'],
+    yogas: ['अर्जुनविषादयोगो', 'साङ्ख्ययोगो', 'कर्मयोगो', 'ज्ञानकर्मसंन्यासयोगो', 'कर्मसंन्यासयोगो',
+        'ध्यानयोगो', 'ज्ञानविज्ञानयोगो', 'अक्षरब्रह्मयोगो', 'राजविद्याराजगुह्ययोगो', 'विभूतियोगो',
+        'विश्वरूपदर्शनयोगो', 'भक्तियोगो', 'क्षेत्रक्षेत्रज्ञविभागयोगो', 'गुणत्रयविभागयोगो',
+        'पुरुषोत्तमयोगो', 'दैवासुरसम्पद्विभागयोगो', 'श्रद्धात्रयविभागयोगो', 'मोक्षसंन्यासयोगो'],
+    chapter(v) {
+        const n = Number(v.group);
+        return v.src === 'gita' && n >= 1 && n <= 18 ? n : null;
+    },
+    opening(n) { return `अथ ${this.ordinals[n - 1]}ोऽध्यायः`; },
+    closing(n) {
+        return 'इति श्रीमद्भगवद्गीतासूपनिषत्सु ब्रह्मविद्यायां योगशास्त्रे श्रीकृष्णार्जुनसंवादे '
+            + `${this.yogas[n - 1]} नाम ${this.ordinals[n - 1]}ोऽध्यायः ॥`;
+    },
+};
+
+/** Devanagari and Telugu letters sit at the same offsets in their Unicode blocks. */
+const gitaTelugu = (deva) => deva.replace(/[\u0901-\u094D]/g, (c) => String.fromCharCode(c.charCodeAt(0) + 0x300));
 
 function versesToPrint(opts) {
     const verses = selectedVerses();
@@ -1023,29 +1065,64 @@ function printVerses(opts) {
     };
     const title = [...new Set(verses.map((v) => v.src))].map((id) => sources[id]?.title ?? id).join(', ') || 'Sloka Words';
 
+    // Each verse sits between empty lines left for handwritten corrections. The speaker is
+    // printed only where it changes, and the verse number goes in the left margin.
     const area = $('#print-area');
-    area.replaceChildren(
-        h('h1', {}, title),
-        h('div', { class: 'count' }, `${verses.length} verse${verses.length === 1 ? '' : 's'}`));
+    area.replaceChildren();
+    const colophon = (text, cls) => [
+        opts.te && h('div', { class: 'pv-colophon te ' + cls }, gitaTelugu(text)),
+        (opts.deva || !opts.te) && h('div', { class: 'pv-colophon deva ' + cls }, text),
+    ];
     let last = null;
+    let lastSpeaker = null;
+    let chapter = null;
+    let gapPending = false;
+    const closeChapter = () => {
+        if (chapter) area.append(h('div', { class: 'pv-close' }, !gapPending && h('div', { class: 'pv-gap' }),
+            colophon(GITA_COLOPHON.closing(chapter), 'closing')));
+    };
     for (const v of verses) {
         const head = heading(v);
+        const block = h('div', { class: 'pv' });
         if (head !== last) {
-            area.append(h('h2', {}, head));
+            closeChapter();
             last = head;
+            lastSpeaker = null;
+            chapter = GITA_COLOPHON.chapter(v);
+            gapPending = false;
+            block.append(h('h2', {}, head), ...(chapter ? colophon(GITA_COLOPHON.opening(chapter), 'opening') : [])
+                .filter(Boolean));
         }
-        const lines = (cls, list, speaker) => h('div', { class: 'pv-lines ' + cls },
-            speaker && h('div', { class: 'pv-speaker' }, speaker),
-            list.flatMap((l, i) => (i ? [h('br'), l] : [l])));
-        area.append(h('div', { class: 'pv' },
-            h('div', { class: 'pv-label' }, v.label),
-            opts.te && lines('te', v.te, v.speaker?.te),
-            opts.deva && lines('deva', v.deva, v.speaker?.deva),
-            opts.iast && lines('iast', v.iast, v.speaker?.iast),
-            opts.teMeaning && v.te_meaning && h('p', { class: 'pv-meaning te' }, h('b', {}, 'తెలుగు భావం  '), v.te_meaning),
-            opts.enMeaning && v.en_meaning && h('p', { class: 'pv-meaning' }, h('b', {}, 'MEANING  '), v.en_meaning),
-            opts.words && v.words && h('p', { class: 'pv-meaning words' }, h('b', {}, 'WORD BY WORD  '), v.words)));
+        const speakerChanged = (v.speaker?.iast ?? null) !== lastSpeaker;
+        lastSpeaker = v.speaker?.iast ?? null;
+        const label = v.label.startsWith('Gita ') ? v.label.slice(5) : v.label;
+        let labelled = false;
+        const gap = () => h('div', { class: 'pv-gap' });
+        if (!gapPending) block.append(gap());
+        // Word-separated lines from tools/verse_split.py; an edit not yet pushed has none.
+        const text = opts.split && v.split ? v.split : v;
+        for (const id of ['te', 'deva', 'iast']) {
+            if (!opts[id]) continue;
+            block.append(h('div', { class: 'pv-lines ' + id + (text === v ? '' : ' split') },
+                speakerChanged && v.speaker && h('div', { class: 'pv-speaker' }, v.speaker[id]),
+                text[id].map((line) => {
+                    const first = !labelled;
+                    labelled = true;
+                    // Added breaks are thin spaces in the deck; print them a quarter em wide.
+                    const shown = text === v ? line : line.replaceAll('\u2009', '\u2005');
+                    return h('div', { class: 'pv-line' }, first && h('span', { class: 'pv-label' }, label), shown);
+                })), gap());
+        }
+        const meanings = [
+            opts.teMeaning && v.te_meaning && h('p', { class: 'pv-meaning te' }, h('b', {}, 'తెలుగు భావం'), ' ', v.te_meaning),
+            opts.enMeaning && v.en_meaning && h('p', { class: 'pv-meaning' }, h('b', {}, 'MEANING'), ' ', v.en_meaning),
+            opts.words && v.words && h('p', { class: 'pv-meaning words' }, h('b', {}, 'WORD BY WORD'), ' ', v.words),
+        ].filter(Boolean);
+        block.append(...meanings);
+        gapPending = meanings.length === 0;
+        area.append(block);
     }
+    closeChapter();
 
     const oldTitle = document.title;
     document.title = title;
