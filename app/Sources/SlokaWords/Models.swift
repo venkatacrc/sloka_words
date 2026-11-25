@@ -92,6 +92,22 @@ struct SplitLines: Codable, Hashable {
     let deva: [String]
     let te: [String]
     let iast: [String]
+
+    /// The verse's own spaces shown three wide; breaks added by tools/verse_split.py (thin
+    /// spaces in the deck) shown as one plain space.
+    static func display(_ lines: [String]) -> [String] {
+        lines.map { $0.replacingOccurrences(of: " ", with: "   ").replacingOccurrences(of: "\u{2009}", with: " ") }
+    }
+}
+
+extension Verse {
+    static let splitDevaKey = "splitDevanagari"
+
+    /// The Devanagari lines, word-separated when asked and available.
+    func devaLines(split: Bool) -> [String] {
+        guard split, let lines = self.split?.deva else { return deva }
+        return SplitLines.display(lines)
+    }
 }
 
 struct Speaker: Codable, Hashable {

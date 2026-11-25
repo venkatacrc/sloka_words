@@ -13,6 +13,7 @@ struct VerseCardView: View {
     let isKnown: Bool
     let isReview: Bool
     @AppStorage(MainScript.storageKey) private var mainRaw = MainScript.te.rawValue
+    @AppStorage(Verse.splitDevaKey) private var splitDeva = false
 
     private var mainScript: MainScript { MainScript(rawValue: mainRaw) ?? .te }
 
@@ -77,7 +78,7 @@ struct VerseCardView: View {
         ForEach(Array(mainScript.order.enumerated()), id: \.element) { i, script in
             VerseLines(label: script.cardLabel,
                        speaker: verse.speaker.map { script.text($0.te, $0.deva, $0.iast) },
-                       lines: lines(script == .te ? verse.te : script == .deva ? verse.deva : verse.iast),
+                       lines: lines(script == .te ? verse.te : script == .deva ? verse.devaLines(split: splitDeva) : verse.iast),
                        size: (i == 0 ? main : other) * script.scale,
                        weight: i == 0 ? .semibold : .regular,
                        italic: script == .iast,

@@ -13,8 +13,10 @@ struct PrintOptions {
     var teMeaning = true
     var enMeaning = true
     var words = false
-    /// Print each word separately so the Devanagari top line breaks between words.
-    var split = false
+    /// Print each word of that script separately, so the top line breaks between words.
+    var splitTe = false
+    var splitDeva = false
+    var splitIast = false
 }
 
 /// The traditional opening and closing lines of each Gita chapter.
@@ -174,18 +176,14 @@ enum VersePrinter {
             }
         }
 
-        /// In word-separated lines the verse's own spaces print three wide; breaks added by
-        /// tools/verse_split.py (thin spaces in the deck) print as one plain space.
-        func pick(_ plain: [String], _ split: [String]?) -> [String] {
-            guard options.split, let split else { return plain }
-            return split.map {
-                $0.replacingOccurrences(of: " ", with: "   ").replacingOccurrences(of: "\u{2009}", with: " ")
-            }
+        func pick(_ on: Bool, _ plain: [String], _ split: [String]?) -> [String] {
+            guard on, let split else { return plain }
+            return SplitLines.display(split)
         }
         let scripts: [(on: Bool, lines: (Verse) -> [String], speaker: (Speaker) -> String, font: NSFont, color: NSColor)] = [
-            (options.te, { pick($0.te, $0.split?.te) }, \.te, telugu, ink),
-            (options.deva, { pick($0.deva, $0.split?.deva) }, \.deva, deva, ink),
-            (options.iast, { pick($0.iast, $0.split?.iast) }, \.iast, iast, muted),
+            (options.te, { pick(options.splitTe, $0.te, $0.split?.te) }, \.te, telugu, ink),
+            (options.deva, { pick(options.splitDeva, $0.deva, $0.split?.deva) }, \.deva, deva, ink),
+            (options.iast, { pick(options.splitIast, $0.iast, $0.split?.iast) }, \.iast, iast, muted),
         ]
 
         var lastHeading: String?
@@ -281,12 +279,27 @@ struct PrintVersesView: View {
     @AppStorage("printEnMeaning") private var enMeaning = true
     @AppStorage("printWords") private var words = false
     @AppStorage("printReviewOnly") private var reviewOnly = false
-    @AppStorage("printSplit") private var split = false
+    @AppStorage("printSplitTe") private var splitTe = false
+    @AppStorage("printSplit") private var splitDeva = false
+    @AppStorage("printSplitIast") private var splitIast = false
 
     private var picked: [Verse] { reviewOnly ? verses.filter { reviewIDs.contains($0.id) } : verses }
     private var options: PrintOptions {
         PrintOptions(te: te, deva: deva, iast: iast, teMeaning: teMeaning, enMeaning: enMeaning, words: words,
-                     split: split)
+                     splitTe: splitTe, splitDeva: splitDeva, splitIast: splitIast)
+    }
+
+    /// A script's checkbox with its word-separated choice indented below it.
+    private func script(_ title: String, _ on: Binding<Bool>, split: Binding<Bool>) -> some View {
+        VStack(alignment: .leading, spacing: 3) {
+            Toggle(title, isOn: on)
+            Toggle("Word-separated", isOn: split)
+                .font(.callout)
+                .padding(.leading, 20)
+                .disabled(!on.wrappedValue)
+                .help("Each word printed separately so the top line breaks between words: "
+                      + "विष्णुर् वषट्कारो. The sound stays as chanted.")
+        }
     }
 
     var body: some View {
@@ -307,13 +320,10 @@ struct PrintVersesView: View {
 
             GroupBox("Include") {
                 HStack(alignment: .top, spacing: 40) {
-                    VStack(alignment: .leading, spacing: 6) {
-                        Toggle("తెలుగు script", isOn: $te)
-                        Toggle("हिन्दी (Devanagari)", isOn: $deva)
-                        Toggle("IAST", isOn: $iast)
-                        Toggle("Word-separated (శ్లోక విభాగం)", isOn: $split)
-                            .help("Each word printed separately so the top line breaks between words: "
-                                  + "विष्णुर्   वषट्कारो. The sound stays as chanted.")
+                    VStack(alignment: .leading, spacing: 8) {
+                        script("తెలుగు script", $te, split: $splitTe)
+                        script("हिन्दी (Devanagari)", $deva, split: $splitDeva)
+                        script("IAST", $iast, split: $splitIast)
                     }
                     VStack(alignment: .leading, spacing: 6) {
                         Toggle("తెలుగు భావం (Telugu meaning)", isOn: $teMeaning)

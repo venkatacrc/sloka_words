@@ -96,14 +96,17 @@ For development you can also run `swift run --package-path app`.
   its number in the left margin, and small run-in meanings. A verse is never split across
   pages. Gita chapters open with *अथ प्रथमोऽध्यायः* and close with *इति
   श्रीमद्भगवद्गीतासूपनिषत्सु … नाम प्रथमोऽध्यायः* (in Telugu as well when Telugu is printed).
-  **Word-separated (శ్లోక విభాగం)** prints each word apart so the Devanagari top line breaks
-  between words, keeping the chanted sound: a consonant joined to the next word keeps its
-  virama (*विष्णुर् वषट्कारो*, *वह्निर् अनिलो*). Long compounds are split into their members
-  (*भूत भव्य भवत् प्रभुः*). Vowel sandhi (*भूतात्मा*) stays joined. These added breaks print as
-  a small gap; the verse's own spaces
-  print wide. The split lines are
-  made by `python3 tools/verse_split.py` (run by `build_deck.py` too), from the IAST line's
-  word breaks and the word-by-word meanings.
+  Each script has its own **Word-separated** option under it. It prints each word apart, so
+  the Devanagari top line breaks between words, and keeps the chanted sound: a consonant
+  joined to the next word keeps its virama (*विष्णुर् वषट्कारो*, *वह्निर् अनिलो*). Long
+  compounds are split into their members (*भूत भव्य भवत् प्रभुः*). Vowel sandhi (*भूतात्मा*)
+  stays joined. These added breaks print as a small gap; the verse's own spaces print wide.
+  The split lines are made by `python3 tools/verse_split.py` (run by `build_deck.py` too),
+  from the IAST line's word breaks and the word-by-word meanings. A verse edited but not yet
+  pushed prints as written.
+- **Word-separated Devanagari on the cards:** **View → Word-separated Devanagari** (⌥⌘4) or
+  the script menu in the toolbar on the Mac, or the checkbox under **Main script** in the web
+  app's menu, shows the verse cards' Devanagari lines split the same way.
 - **Sidebar:** tick the chapters or sections to practice. Each source has **Select all** and
   **Clear**, and the card count updates as you change selections. Your choices are saved.
 - **← / →:** previous / next card (in Test, → skips the card).

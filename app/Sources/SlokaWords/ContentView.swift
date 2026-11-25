@@ -35,6 +35,7 @@ struct ContentView: View {
     @AppStorage("excludedLangs") private var excludedRaw = ""
     @AppStorage("shuffle") private var shuffle = false
     @AppStorage(MainScript.storageKey) private var mainScriptRaw = MainScript.te.rawValue
+    @AppStorage(Verse.splitDevaKey) private var splitDeva = false
     @AppStorage("practiceMode") private var modeRaw = PracticeMode.all.rawValue
     @AppStorage("cardKind") private var kindRaw = CardKind.words.rawValue
     @AppStorage("studyMode") private var studyRaw = StudyMode.learn.rawValue
@@ -429,13 +430,17 @@ struct ContentView: View {
                 ForEach(PracticeMode.allCases) { Text($0.title).tag($0.rawValue) }
             }
             .pickerStyle(.segmented)
-            Picker(selection: $mainScriptRaw) {
-                ForEach(MainScript.allCases) { Text($0.title).tag($0.rawValue) }
+            Menu {
+                Picker("Main script", selection: $mainScriptRaw) {
+                    ForEach(MainScript.allCases) { Text($0.title).tag($0.rawValue) }
+                }
+                .pickerStyle(.inline)
+                Divider()
+                Toggle("Word-separated Devanagari", isOn: $splitDeva)
             } label: {
                 Label("Main script", systemImage: "character.bubble")
             }
-            .pickerStyle(.menu)
-            .help("The script shown first on the cards, in a bigger font")
+            .help("The script shown first on the cards, in a bigger font, and word-separated Devanagari")
             Toggle(isOn: $shuffle) { Label("Shuffle", systemImage: "shuffle") }
                 .help("Shuffle the cards")
             Button { rebuild() } label: { Label("Restart", systemImage: "arrow.counterclockwise") }

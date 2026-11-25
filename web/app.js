@@ -43,8 +43,10 @@ const prefs = {
     shuffle: saved.get('shuffle', false),
     collapsed: saved.get('collapsed', []),
     print: saved.get('print', {
-        te: true, deva: true, iast: true, teMeaning: true, enMeaning: true, words: false, reviewOnly: false, split: false,
+        te: true, deva: true, iast: true, teMeaning: true, enMeaning: true, words: false, reviewOnly: false,
+        splitTe: false, splitDeva: false, splitIast: false,
     }),
+    splitDeva: saved.get('splitDeva', false),
     mainScript: saved.get('mainScript', 'te'),
     analysisScript: saved.get('analysisScript', 'te'),
     analysisTab: saved.get('analysisTab', 'graph'),
@@ -563,7 +565,7 @@ function verseCard(v, index, flipped) {
     editBtn.style.padding = '2px 10px';
     return h('article', { class: 'card verse' + (flipped ? ' flipped' : '') },
         badges(v.id, v.label, [v.edited && h('span', { class: 'badge edited' }, 'Edited'), editBtn]),
-        scripts((id) => [take(v[id]), v.speaker?.[id]]),
+        scripts((id) => [take(id === 'deva' && prefs.splitDeva ? wordSeparated(v, id) : v[id]), v.speaker?.[id]]),
         flipped
             ? h('div', { class: 'meanings' },
                 v.te_meaning && meaning('తెలుగు భావం', h('p', { class: 'te-text' }, v.te_meaning)),
@@ -781,7 +783,9 @@ function renderDrawer() {
             class: prefs.mainScript === id ? 'on' : null,
             onclick: () => { setPref('mainScript', id); renderDrawer(); renderStage(); },
         }, name))),
-        h('p', { class: 'hint-text' }, 'Shown first on the cards, in a bigger font.')));
+        h('p', { class: 'hint-text' }, 'Shown first on the cards, in a bigger font.'),
+        checkRow('Word-separated Devanagari: विष्णुर् वषट्कारो', prefs.splitDeva,
+            (on) => { setPref('splitDeva', on); renderStage(); })));
 
     const sources = sourcesFor(session.kind);
     const langs = [...new Set(sources.map((s) => s.lang))].sort();
@@ -994,7 +998,8 @@ function openAnalysis(verse) {
 function openPrint() {
     if (!deck) return;
     const dialog = $('#print-dialog');
-    const opts = { ...prefs.print };
+    const { split, ...opts } = prefs.print;
+    if (split !== undefined && opts.splitDeva === undefined) opts.splitDeva = split;
     const countLine = h('p', {});
     const printBtn = h('button', { class: 'btn primary', onclick: () => { dialog.close(); printVerses(opts); } },
         'Print / Save as PDF');
@@ -1008,13 +1013,18 @@ function openPrint() {
         printBtn.disabled = n === 0;
     };
     const opt = (key, label) => checkRow(label, opts[key], (on) => { opts[key] = on; update(); });
+    const subOpt = (key, label) => {
+        const row = opt(key, label);
+        row.classList.add('sub-row');
+        return row;
+    };
     dialog.replaceChildren(
         h('div', { class: 'dialog-body' },
             h('h2', {}, 'Print verses'),
             countLine,
             h('h4', { style: 'margin:12px 0 6px' }, 'Scripts'),
-            h('div', { class: 'panel' }, opt('te', 'తెలుగు'), opt('deva', 'हिन्दी (Devanagari)'), opt('iast', 'IAST'),
-                opt('split', 'Word-separated (శ్లోక విభాగం): विष्णुर्   वषट्कारो')),
+            h('div', { class: 'panel' }, [['te', 'తెలుగు'], ['deva', 'हिन्दी (Devanagari)'], ['iast', 'IAST']]
+                .map(([id, label]) => [opt(id, label), subOpt(SPLIT_OPTION[id], 'Word-separated: विष्णुर् वषट्कारो')])),
             h('h4', { style: 'margin:12px 0 6px' }, 'Meanings'),
             h('div', { class: 'panel' },
                 opt('teMeaning', 'తెలుగు భావం'), opt('enMeaning', 'English meaning'), opt('words', 'Word by word')),
@@ -1048,6 +1058,17 @@ const GITA_COLOPHON = {
 
 /** Devanagari and Telugu letters sit at the same offsets in their Unicode blocks. */
 const gitaTelugu = (deva) => deva.replace(/[\u0901-\u094D]/g, (c) => String.fromCharCode(c.charCodeAt(0) + 0x300));
+
+/** The print option that word-separates each script. */
+const SPLIT_OPTION = { te: 'splitTe', deva: 'splitDeva', iast: 'splitIast' };
+
+/** A verse's lines in `id` script with each word separate (from tools/verse_split.py): its own
+ *  spaces a full em wide, the added breaks (thin spaces in the deck) a quarter em. Falls back
+ *  to the plain lines for an edit not yet pushed, which has none. */
+function wordSeparated(v, id) {
+    if (!v.split) return v[id];
+    return v.split[id].map((line) => line.replaceAll(' ', '\u2002\u2002').replaceAll('\u2009', '\u2005'));
+}
 
 function versesToPrint(opts) {
     const verses = selectedVerses();
@@ -1099,18 +1120,15 @@ function printVerses(opts) {
         let labelled = false;
         const gap = () => h('div', { class: 'pv-gap' });
         if (!gapPending) block.append(gap());
-        // Word-separated lines from tools/verse_split.py; an edit not yet pushed has none.
-        const text = opts.split && v.split ? v.split : v;
         for (const id of ['te', 'deva', 'iast']) {
             if (!opts[id]) continue;
-            block.append(h('div', { class: 'pv-lines ' + id + (text === v ? '' : ' split') },
+            const lines = opts[SPLIT_OPTION[id]] ? wordSeparated(v, id) : v[id];
+            block.append(h('div', { class: 'pv-lines ' + id },
                 speakerChanged && v.speaker && h('div', { class: 'pv-speaker' }, v.speaker[id]),
-                text[id].map((line) => {
+                lines.map((line) => {
                     const first = !labelled;
                     labelled = true;
-                    // Added breaks are thin spaces in the deck; print them a quarter em wide.
-                    const shown = text === v ? line : line.replaceAll('\u2009', '\u2005');
-                    return h('div', { class: 'pv-line' }, first && h('span', { class: 'pv-label' }, label), shown);
+                    return h('div', { class: 'pv-line' }, first && h('span', { class: 'pv-label' }, label), line);
                 })), gap());
         }
         const meanings = [

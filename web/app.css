@@ -517,6 +517,7 @@ main {
 .script-switch button:nth-child(1) { font-family: var(--te); }
 .script-switch button:nth-child(2) { font-family: var(--deva); }
 .panel .hint-text { margin: 0 14px 10px; font-size: 0.8rem; color: var(--muted); }
+.row.sub-row { padding-left: 40px; min-height: 38px; font-size: 0.9rem; }
 .row input[type="checkbox"] { width: 20px; height: 20px; accent-color: var(--saffron); flex: none; }
 .row label, .row .grow { flex: 1; }
 .row select { font: inherit; padding: 6px; border-radius: 8px; }
@@ -770,8 +771,6 @@ dialog.analysis[open] { display: flex; }
     #print-area .pv-lines.te { font-family: var(--te); font-size: 13pt; font-weight: 500; }
     #print-area .pv-lines.deva { font-family: var(--deva); font-size: 13pt; }
     #print-area .pv-lines.iast { font-style: italic; font-size: 10pt; color: #444; }
-    /* The verse's own spaces; added breaks are narrower quarter-em spaces, which word-spacing doesn't widen. */
-    #print-area .pv-lines.split { word-spacing: 0.7em; }
     #print-area .pv-speaker { color: #c0602a; font-size: 0.8em; font-weight: 500; }
     #print-area .pv-meaning { margin: 0 0 2pt; font-size: 8.5pt; line-height: 1.35; }
     #print-area .pv-meaning b { color: #c0602a; font-size: 6.5pt; letter-spacing: 0.04em; margin-right: 3pt; }

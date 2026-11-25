@@ -20,6 +20,7 @@ struct SlokaWordsApp: App {
     @StateObject private var printRequest = PrintRequest()
     @StateObject private var analysis = GitaAnalysisStore()
     @AppStorage(MainScript.storageKey) private var mainScriptRaw = MainScript.te.rawValue
+    @AppStorage(Verse.splitDevaKey) private var splitDeva = false
 
     var body: some Scene {
         WindowGroup("Sloka Words") {
@@ -61,6 +62,8 @@ struct SlokaWordsApp: App {
                             .keyboardShortcut(KeyEquivalent(Character(String(i + 1))), modifiers: [.command, .option])
                     }
                 }
+                Toggle("Word-separated Devanagari", isOn: $splitDeva)
+                    .keyboardShortcut("4", modifiers: [.command, .option])
                 Divider()
             }
         }
